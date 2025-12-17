@@ -31,6 +31,11 @@ public class GhostItem : MonoBehaviour
 
     private void Update()
     {
+        if (ConstructionManager.Instance.inConstructionMode)
+        {
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(),ConstructionManager.Instance.player.GetComponent<Collider>());
+        }
+
         // We need the solid collider so the ray cast will detect it
         if (ConstructionManager.Instance.inConstructionMode && isPlaced)
         {

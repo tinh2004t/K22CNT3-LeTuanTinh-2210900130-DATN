@@ -109,7 +109,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void UseItem()
     {
-        Debug.Log("Dang su dung item ten la: " + gameObject.name);
+        
         itemInfoUI.SetActive(false);
 
         InventorySystem.Instance.isOpen = false;
@@ -135,6 +135,12 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 break;
             case "Foundation":
                 ConstructionManager.Instance.ActivateConstructionPlacement("FoundationModel");
+                break;
+            case "Wall(Clone)":
+                ConstructionManager.Instance.ActivateConstructionPlacement("WallModel");
+                break;
+            case "Wall":
+                ConstructionManager.Instance.ActivateConstructionPlacement("WallModel");
                 break;
             default:
                                 
