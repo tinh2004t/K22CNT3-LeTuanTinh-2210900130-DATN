@@ -197,7 +197,7 @@ public class CraftingSystem : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.C) && !isOpen)
+        if (Input.GetKeyDown(KeyCode.C) && !isOpen && !ConstructionManager.Instance.inConstructionMode)
         {
 
             craftingScreenUI.SetActive(true);
@@ -210,7 +210,7 @@ public class CraftingSystem : MonoBehaviour
             isOpen = true;
 
         }
-        else if (Input.GetKeyDown(KeyCode.C) && isOpen && !ConstructionManager.Instance.inConstructionMode)
+        else if (Input.GetKeyDown(KeyCode.C) && isOpen )
         {
             craftingScreenUI.SetActive(false);
             toolsScreenUI.SetActive(false);
