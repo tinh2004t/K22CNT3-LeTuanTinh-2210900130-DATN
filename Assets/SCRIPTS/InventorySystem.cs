@@ -9,6 +9,8 @@ public class InventorySystem : MonoBehaviour
 
     public static InventorySystem Instance { get; set; }
 
+    private Coroutine hideCoroutine;
+
     public GameObject inventoryScreenUI;
 
     public List<GameObject> slotList = new List<GameObject>();
@@ -125,13 +127,32 @@ public class InventorySystem : MonoBehaviour
 
     void TriggerPickupPopUp(string itemName, Sprite itemSprite)
     {
+        // 1. C?p nh?t thông tin UI
         pickupAlert.SetActive(true);
-
         pickupName.text = itemName;
-
         pickupImage.sprite = itemSprite;
 
+        // 2. N?u ?ang có b? ??m ng??c c? (do nh?t liên ti?p), hãy h?y nó ?i
+        if (hideCoroutine != null)
+        {
+            StopCoroutine(hideCoroutine);
+        }
 
+        // 3. B?t ??u b? ??m ng??c m?i 4 giây
+        hideCoroutine = StartCoroutine(HidePopupAfterDelay(4f));
+    }
+
+    // Hàm Coroutine ?? ??m ng??c và t?t
+    IEnumerator HidePopupAfterDelay(float delay)
+    {
+        // Ch? 4 giây (theo th?i gian game)
+        yield return new WaitForSeconds(delay);
+
+        // Sau khi ch? xong thì t?t Popup
+        pickupAlert.SetActive(false);
+
+        // Reset bi?n coroutine v? null
+        hideCoroutine = null;
     }
 
 
