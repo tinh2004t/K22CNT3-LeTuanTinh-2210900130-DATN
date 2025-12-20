@@ -54,7 +54,7 @@ public class GhostItem : MonoBehaviour
         }
         else
         {
-            mRenderer.material = semiTransparentMat; //change to semi if in debug else full
+            mRenderer.material = fullTransparentnMat; //change to semi if in debug else full
         }
     }
 }
