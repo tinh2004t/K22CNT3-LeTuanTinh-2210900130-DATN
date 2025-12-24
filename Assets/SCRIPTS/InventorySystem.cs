@@ -15,6 +15,8 @@ public class InventorySystem : MonoBehaviour
 
     public List<GameObject> slotList = new List<GameObject>();
 
+    public List<string> itemsPickedup;
+
     public List<string> itemList = new List<string>();
 
     private GameObject itemToAdd;
@@ -106,22 +108,26 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string itemName)
     {
+        if (!SaveManager.Instance.isLoading)
+        {
+        SoundManager.Instance.PlaySound(SoundManager.Instance.pickUpItemSound);
 
-            SoundManager.Instance.PlaySound(SoundManager.Instance.pickUpItemSound);
-
-            whatSlotToEquip = FindNextEmptySlot();
-            itemToAdd = (GameObject)Instantiate(Resources.Load<GameObject>(itemName),whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
-            itemToAdd.transform.SetParent(whatSlotToEquip.transform);
-
-            itemList.Add(itemName);
-
-            TriggerPickupPopUp(itemName, itemToAdd.GetComponent<Image>().sprite);
+        }
 
 
+        whatSlotToEquip = FindNextEmptySlot();
+        itemToAdd = (GameObject)Instantiate(Resources.Load<GameObject>(itemName),whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
+        itemToAdd.transform.SetParent(whatSlotToEquip.transform);
+
+        itemList.Add(itemName);
+
+        TriggerPickupPopUp(itemName, itemToAdd.GetComponent<Image>().sprite);
 
 
-            ReCalculeList();
-            CraftingSystem.Instance.RefreshNeededItems();
+
+
+        ReCalculeList();
+        CraftingSystem.Instance.RefreshNeededItems();
 
     }
 
