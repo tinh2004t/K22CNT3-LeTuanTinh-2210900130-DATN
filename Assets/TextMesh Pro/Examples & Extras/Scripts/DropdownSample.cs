@@ -4,7 +4,7 @@ using UnityEngine;
 public class DropdownSample: MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI text = null;
+	private TMPro.TextMeshProUGUI text = null;
 
 	[SerializeField]
 	private TMP_Dropdown dropdownWithoutPlaceholder = null;

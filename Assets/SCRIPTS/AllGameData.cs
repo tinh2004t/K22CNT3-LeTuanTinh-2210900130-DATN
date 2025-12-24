@@ -6,9 +6,9 @@ public class AllGameData
 {
     public PlayerData playerData; 
 
-    //public EnvironmentData environmentData;
+    public EnvironmentData environmentData;
 
     //public ConstructionData constructionData;
 
-   
+
 }
