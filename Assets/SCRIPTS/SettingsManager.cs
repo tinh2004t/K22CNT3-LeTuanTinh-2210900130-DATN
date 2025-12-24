@@ -66,9 +66,9 @@ public class SettingsManager : MonoBehaviour
 
     private void Update()
     {
-        masterValue.GetComponent<TextMeshProUGUI>().text = "" + (masterSlider.value) + "";
-        musicValue.GetComponent<TextMeshProUGUI>().text = "" + (musicSlider.value) + "";
-        effectsValue.GetComponent<TextMeshProUGUI>().text = "" + (effectsSlider.value) + "";
+        masterValue.GetComponent<TMPro.TextMeshProUGUI>().text = "" + (masterSlider.value) + "";
+        musicValue.GetComponent<TMPro.TextMeshProUGUI>().text = "" + (musicSlider.value) + "";
+        effectsValue.GetComponent<TMPro.TextMeshProUGUI>().text = "" + (effectsSlider.value) + "";
     }
 
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem;
 
 public class SelectionManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class SelectionManager : MonoBehaviour
     public GameObject selectedObject;
 
 
-    public TextMeshProUGUI interaction_text;
+    public TMPro.TextMeshProUGUI interaction_text;
     public GameObject interaction_Info_UI;
 
     public Image centerDotImage;
@@ -26,11 +27,13 @@ public class SelectionManager : MonoBehaviour
     public GameObject selectedTree;
     public GameObject chopHolder;
 
+   
+
 
     public void Start()
     {
         onTarget = false;
-        interaction_text = interaction_Info_UI.GetComponentInChildren<TextMeshProUGUI>();
+        interaction_text = interaction_Info_UI.GetComponentInChildren<TMPro.TextMeshProUGUI>();
     }
 
     private void Awake()
@@ -56,7 +59,34 @@ public class SelectionManager : MonoBehaviour
             var selectionTransform = hit.transform;
             var interactable = selectionTransform.GetComponent<InteractableObject>();
 
+
             ChoppableTree choppableTree = selectionTransform.GetComponent<ChoppableTree>();
+
+            NPC npc = selectionTransform.GetComponent<NPC>();
+
+            if (npc && npc.playerInRange)
+            {
+                interaction_text.text = "Talk";
+                interaction_Info_UI.SetActive(true);
+
+                if (Input.GetMouseButtonDown(0) && npc.isTalkingWithPlayer == false)
+                {
+                    npc.StartConversation();
+                }
+
+                if (DialogSystem.Instance.dialogUIActive)
+                {
+                    interaction_Info_UI.SetActive(false);
+                    centerDotImage.gameObject.SetActive(true);
+                }
+
+            }
+            else
+            {
+                interaction_text.text = "";
+                interaction_Info_UI.SetActive(false);
+
+            }
 
             if (choppableTree && choppableTree.playerInRange)
             {
@@ -73,7 +103,7 @@ public class SelectionManager : MonoBehaviour
                 {
                     selectedTree.gameObject.GetComponent<ChoppableTree>().canBeChopped = false;
                     selectedTree = null;
-                    chopHolder.gameObject.SetActive(false); 
+                    chopHolder.gameObject.SetActive(false);
                 }
             }
 
@@ -104,7 +134,7 @@ public class SelectionManager : MonoBehaviour
             else
             {
                 onTarget = false;
-                interaction_Info_UI.SetActive(false);
+                //interaction_Info_UI.SetActive(false);
                 centerDotImage.gameObject.SetActive(true);
                 handIcon.gameObject.SetActive(false);
                 handIsVisible = false;
