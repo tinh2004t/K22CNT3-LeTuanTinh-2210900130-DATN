@@ -21,11 +21,12 @@ public class EquipableItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && 
+        if (Input.GetMouseButtonDown(0) && //Left mouse button
             InventorySystem.Instance.isOpen == false && 
             CraftingSystem.Instance.isOpen == false && 
             SelectionManager.Instance.handIsVisible == false && 
-            !ConstructionManager.Instance.inConstructionMode) //Left mouse button
+            !ConstructionManager.Instance.inConstructionMode &&
+            !DialogSystem.Instance.dialogUIActive) 
         {
 
             StartCoroutine(SwingSoundDelay());
