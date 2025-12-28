@@ -16,6 +16,9 @@ public class SoundManager : MonoBehaviour
     // Music
     public AudioSource startingZoneBGMusic;
 
+    //Voice Clips
+    public AudioSource voiceover;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -33,6 +36,20 @@ public class SoundManager : MonoBehaviour
         if (!soundToPlay.isPlaying)
         {
             soundToPlay.Play();
+        }
+    }
+
+    public void PlayVoiceOver(AudioClip clip)
+    {
+        voiceover.clip = clip;
+        if (!voiceover.isPlaying)
+        {
+            voiceover.Play();
+        }
+        else
+        {
+            voiceover.Stop();
+            voiceover.Play();   
         }
     }
 

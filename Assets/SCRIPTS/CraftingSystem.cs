@@ -200,7 +200,11 @@ public class CraftingSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && !isOpen && !ConstructionManager.Instance.inConstructionMode)
         {
 
+
             craftingScreenUI.SetActive(true);
+
+            craftingScreenUI.GetComponentInParent<Canvas>().sortingOrder = MenuManager.Instance.SetAsFront();
+
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
