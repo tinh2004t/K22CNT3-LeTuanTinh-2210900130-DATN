@@ -4,6 +4,7 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class EquipSystem : MonoBehaviour
 {
@@ -218,6 +219,39 @@ public class EquipSystem : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    internal bool IsHoldingWeapon()
+    {
+        if (selectedItem != null)
+        {
+            Weapon weapon = selectedItem.GetComponent<Weapon>();
+            if (weapon != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    internal int GetWeaponDamage()
+    {
+        if (selectedItem != null)
+        {
+            return selectedItem.GetComponent<Weapon>().weaponDamage;
+            
+        }
+        else
+        {
+            return 0;
         }
     }
 }
