@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a04ab43ec46244e881a610d2970b30, type: 3}
+  m_Name: First_NPC_Quest_1
+  m_EditorClassIdentifier: Assembly-CSharp::QuestInfo
+  initialDialog:
+  - Hey there! You look like you can handle yourself in the wild.
+  - A bear smashed my fence last night. If I don't fix it, I'm dead meat tonight.
+  - I'm too injured to chop wood. Can you bring me some Logs and Sticks?
+  initialDialogClips:
+  - {fileID: 8300000, guid: 36fd0b1a5badc5740991754dd63d1316, type: 3}
+  - {fileID: 8300000, guid: 4a7681b179c97884dbfafd1f41dcdfc9, type: 3}
+  - {fileID: 8300000, guid: 2700dcdd06d894b41baa3cef1676f39c, type: 3}
+  acceptOption: I'll get the wood for you.
+  acceptAnswer: Thank you! Please hurry, it's getting dark.
+  acceptAnswerClip: {fileID: 8300000, guid: aa13f2bf2574c2040a13a99aa5b4c030, type: 3}
+  declineOption: Sorry, I'm busy surviving.
+  declineAnswer: Fine. I guess I'll just sleep with one eye open.
+  declineAnswerClip: {fileID: 8300000, guid: 7b02fcca5160da24ba08997ea71b9587, type: 3}
+  comebackAfterDecline: Changed your mind? The hole in the fence is getting bigger.
+  comebackAfterDeclineClip: {fileID: 8300000, guid: b60f944f797979349b4829f656a2d985, type: 3}
+  comebackInProgress: Do you have the materials? I need to start building.
+  comebackInProgressClip: {fileID: 8300000, guid: d06e3c146bb6a5f4a88c7fefbf7a12ca, type: 3}
+  comebackCompleted: Great work! This wood is strong. I can sleep soundly tonight.
+  comebackCompletedClip: {fileID: 8300000, guid: f56de347d241eac49956843cb0c1e9f2, type: 3}
+  finalWords: Here, take my spare axe. It's old but sharp. Use it well.
+  finalWordsClip: {fileID: 8300000, guid: fcc6b93be3a87c24d9c66bd84869c796, type: 3}
+  coinReward: 50
+  rewardItem1: Axe
+  rewardItem2: Plank
+  firstRequirementItem: Stick
+  firstRequirementAmount: 1
+  secondRequirementItem: 
+  secondRequirementAmount: 0
+  hasCheckPoints: 1
+  checkpoints:
+  - {fileID: 11400000, guid: dcf6648eb473ca7438523a56c7019cc0, type: 2}
