@@ -22,11 +22,14 @@ public class EquipableItem : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && //Left mouse button
-            InventorySystem.Instance.isOpen == false && 
-            CraftingSystem.Instance.isOpen == false && 
-            SelectionManager.Instance.handIsVisible == false && 
+            !InventorySystem.Instance.isOpen && 
+            !CraftingSystem.Instance.isOpen && 
+            !SelectionManager.Instance.handIsVisible && 
             !ConstructionManager.Instance.inConstructionMode &&
-            !DialogSystem.Instance.dialogUIActive) 
+            !DialogSystem.Instance.dialogUIActive &&
+            !QuestManager.Instance.isQuestMenuOpen &&
+            !MenuManager.Instance.isMenuOpen)
+
         {
 
             StartCoroutine(SwingSoundDelay());
@@ -52,7 +55,7 @@ public class EquipableItem : MonoBehaviour
 
     IEnumerator SwingSoundDelay()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1f);
         SoundManager.Instance.PlaySound(SoundManager.Instance.toolSwingSound);
 
     }

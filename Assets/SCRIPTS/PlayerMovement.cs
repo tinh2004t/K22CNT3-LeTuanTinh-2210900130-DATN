@@ -23,7 +23,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialogSystem.Instance.dialogUIActive == false)
+        if (!DialogSystem.Instance.dialogUIActive &&
+            !StorageManager.Instance.storageUIOpen &&
+            !CampfireUIManager.Instance.isUiOpen)
         {
             Movement();
         }

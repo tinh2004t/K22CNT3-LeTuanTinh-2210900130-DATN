@@ -42,7 +42,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             if (transform.CompareTag("QuickSlot") == false)
             {
                 DragDrop.itemBeingDragged.GetComponent<InventoryItem>().isInsidedQuickSlot = false;
-                InventorySystem.Instance.ReCalculeList();
+                InventorySystem.Instance.ReCalculateList();
 
             }
 
@@ -50,7 +50,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             {
                 DragDrop.itemBeingDragged.GetComponent<InventoryItem>().isInsidedQuickSlot = true;
 
-                InventorySystem.Instance.ReCalculeList();
+                InventorySystem.Instance.ReCalculateList();
 
             }
 

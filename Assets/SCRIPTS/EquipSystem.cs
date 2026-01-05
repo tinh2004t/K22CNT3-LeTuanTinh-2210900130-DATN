@@ -182,7 +182,7 @@ public class EquipSystem : MonoBehaviour
         // Set transform of our object
         itemToEquip.transform.SetParent(availableSlot.transform, false);
 
-        InventorySystem.Instance.ReCalculeList();
+        InventorySystem.Instance.ReCalculateList();
 
     }
 
