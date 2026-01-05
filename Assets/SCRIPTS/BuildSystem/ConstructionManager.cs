@@ -222,7 +222,7 @@ public class ConstructionManager : MonoBehaviour
             }
         }
         // Right Mouse Click to Cancel                      //TODO - don't destroy the ui item until you actually placed it.
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && inConstructionMode)
         {     // Left Mouse Button
             itemToBeDestroyed.SetActive(true);
             itemToBeDestroyed = null;
@@ -237,7 +237,7 @@ public class ConstructionManager : MonoBehaviour
     void DestroyItem (GameObject item)
     {
         DestroyImmediate(item);
-        InventorySystem.Instance.ReCalculeList();
+        InventorySystem.Instance.ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
     }
 

@@ -18,10 +18,10 @@ public class CraftingSystem : MonoBehaviour
     Button toolsBTN, survivalBTN, refineBTN, constructionBTN;                                                                 
 
     //Craft Buttons
-    Button craftAxeBTN, craftPlankBTN, craftFoundationBTN, craftWallBTN;
+    Button craftAxeBTN, craftPlankBTN, craftFoundationBTN, craftWallBTN, craftStorageBoxBTN;
 
     //Requirement Text
-    public TMP_Text AxeReq1, AxeReq2, PlankReq1, FoundationReq1, WallReq1;
+    public TMP_Text AxeReq1, AxeReq2, PlankReq1, FoundationReq1, WallReq1, StorageBoxReq1;
 
     public bool isOpen;
 
@@ -31,6 +31,7 @@ public class CraftingSystem : MonoBehaviour
     public Blueprint PlankBLP = new Blueprint("Plank",2, 1, "Log", 1, "", 0);
     public Blueprint FoundationBLP = new Blueprint("Foundation",3, 1, "Plank", 1, "", 0);
     public Blueprint WallBLP = new Blueprint("Wall",3, 1, "Plank", 2, "", 0);
+    public Blueprint StorageBoxBLP = new Blueprint("StorageBox", 1, 1, "Plank", 2, "", 0);
 
 
 
@@ -93,6 +94,12 @@ public class CraftingSystem : MonoBehaviour
 
         craftWallBTN = constructionScreenUI.transform.Find("Wall").transform.Find("Button").GetComponent<Button>();
         craftWallBTN.onClick.AddListener(delegate { CraftAnyItem(WallBLP); });
+
+        //Storage Box
+        StorageBoxReq1 = survivalScreenUI.transform.Find("StorageBox").transform.Find("req1").GetComponent<TMP_Text>();
+
+        craftStorageBoxBTN = survivalScreenUI.transform.Find("StorageBox").transform.Find("Button").GetComponent<Button>();
+        craftStorageBoxBTN.onClick.AddListener(delegate { CraftAnyItem(StorageBoxBLP); });
     }
 
 
@@ -173,7 +180,7 @@ public class CraftingSystem : MonoBehaviour
     {
         yield return 0;
 
-        InventorySystem.Instance.ReCalculeList();
+        InventorySystem.Instance.ReCalculateList();
         RefreshNeededItems();
 
     }
@@ -324,6 +331,20 @@ public class CraftingSystem : MonoBehaviour
         else
         {
             craftWallBTN.gameObject.SetActive(false);
+
+        }
+
+        //--- StorageBox x1 ---//
+
+        StorageBoxReq1.text = "2 Plank [" + plank_count + "]";
+
+        if (plank_count >= 1 && InventorySystem.Instance.CheckSlotsAvailable(2))
+        {
+            craftStorageBoxBTN.gameObject.SetActive(true);
+        }
+        else
+        {
+            craftStorageBoxBTN.gameObject.SetActive(false);
 
         }
 

@@ -76,35 +76,48 @@ public class InventorySystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I) && !isOpen && !ConstructionManager.Instance.inConstructionMode)
         {
-
-            inventoryScreenUI.SetActive(true);
-
-            inventoryScreenUI.GetComponentInParent<Canvas>().sortingOrder = MenuManager.Instance.SetAsFront();
-
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
-
-            SelectionManager.Instance.DisableSelection();
-            SelectionManager.Instance.GetComponent<SelectionManager>().enabled = false;
-
-
-            isOpen = true;
+            OpenUI();
 
         }
         else if (Input.GetKeyDown(KeyCode.I) && isOpen)
         {
-            inventoryScreenUI.SetActive(false);
-            if (!CraftingSystem.Instance.isOpen)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+            CloseUI();
 
-                SelectionManager.Instance.EnableSelection();
-                SelectionManager.Instance.GetComponent<SelectionManager>().enabled = true;
-            }
-            isOpen = false;
         }
+    }
+
+
+    public void OpenUI()
+    {
+        inventoryScreenUI.SetActive(true);
+
+        inventoryScreenUI.GetComponentInParent<Canvas>().sortingOrder = MenuManager.Instance.SetAsFront();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+
+        SelectionManager.Instance.DisableSelection();
+        SelectionManager.Instance.GetComponent<SelectionManager>().enabled = false;
+
+
+        isOpen = true;
+    }
+
+    public void CloseUI()
+    {
+        inventoryScreenUI.SetActive(false);
+        if (!CraftingSystem.Instance.isOpen &&
+            !StorageManager.Instance.storageUIOpen &&
+            !CampfireUIManager.Instance.isUiOpen)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            SelectionManager.Instance.EnableSelection();
+            SelectionManager.Instance.GetComponent<SelectionManager>().enabled = true;
+        }
+        isOpen = false;
     }
 
 
@@ -119,6 +132,7 @@ public class InventorySystem : MonoBehaviour
 
 
         whatSlotToEquip = FindNextEmptySlot();
+        print(itemName+ " add");
         itemToAdd = (GameObject)Instantiate(Resources.Load<GameObject>(itemName),whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
         itemToAdd.transform.SetParent(whatSlotToEquip.transform);
 
@@ -129,7 +143,7 @@ public class InventorySystem : MonoBehaviour
 
 
 
-        ReCalculeList();
+        ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
         QuestManager.Instance.RefreshTrackerList();
 
@@ -221,14 +235,14 @@ public class InventorySystem : MonoBehaviour
             }
         }
 
-        ReCalculeList();
+        ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
 
         QuestManager.Instance.RefreshTrackerList();
 
     }
 
-    public void ReCalculeList()
+    public void ReCalculateList()
     {
         itemList.Clear();
 
