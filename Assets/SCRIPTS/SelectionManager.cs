@@ -28,7 +28,9 @@ public class SelectionManager : MonoBehaviour
     public GameObject selectedTree;
     public GameObject chopHolder;
 
-   
+    public GameObject selectedStorageBox;
+
+    public GameObject selectedCampfire;
 
 
     public void Start()
@@ -116,6 +118,50 @@ public class SelectionManager : MonoBehaviour
                 handIsVisible = true;
             }
 
+            StorageBox storageBox = selectionTransform.GetComponent<StorageBox>();
+
+            if (storageBox && storageBox.playerInrange && !PlacementSystem.Instance.inPlacementMode)
+            {
+                interaction_text.text = "Open";
+                interaction_Info_UI.SetActive(true);
+
+                selectedStorageBox = storageBox.gameObject;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    StorageManager.Instance.OpenBox(storageBox);
+                }
+            }
+            else
+            {
+                if (selectedStorageBox != null)
+                {
+                    selectedStorageBox = null;
+                }
+            }
+
+            Campfire campfire = selectionTransform.GetComponent<Campfire>();
+
+            if (campfire && campfire.playerInrange && !PlacementSystem.Instance.inPlacementMode)
+            {
+                interaction_text.text = "Interact";
+                interaction_Info_UI.SetActive(true);
+
+                selectedCampfire = campfire.gameObject;
+
+                if (Input.GetMouseButtonDown(0) && campfire.isCooking == false)
+                {
+                    campfire.OpenUI();
+                }
+            }
+            else
+            {
+                if (selectedStorageBox != null)
+                {
+                    selectedStorageBox = null;
+                }
+            }
+
             Animal animal = selectionTransform.GetComponent<Animal>();
 
             if (animal && animal.playerInRange)
@@ -162,7 +208,7 @@ public class SelectionManager : MonoBehaviour
                 handIcon.gameObject.SetActive(false);
             }
 
-            if (!npc && !interactable && !animal && !choppableTree)
+            if (!npc && !interactable && !animal && !choppableTree && !storageBox && !campfire)
             {
                 interaction_text.text = "";
                 interaction_Info_UI.SetActive(false); 
