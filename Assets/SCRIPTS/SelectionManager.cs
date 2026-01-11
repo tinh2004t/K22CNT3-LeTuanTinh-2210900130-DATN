@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -84,8 +84,21 @@ public class SelectionManager : MonoBehaviour
 
             ChoppableTree choppableTree = selectionTransform.GetComponent<ChoppableTree>();
 
+            // Nếu không thấy, thử tìm trong các đối tượng con (vì script có thể nằm ở object con trigger như 'tree_base')
+            if (choppableTree == null)
+            {
+                choppableTree = selectionTransform.GetComponentInChildren<ChoppableTree>();
+            }
+
+            // (Tùy chọn) Đôi khi raycast trúng lá cây (con), script lại nằm ở cha, nên có thể thêm dòng này để chắc chắn:
+            if (choppableTree == null)
+            {
+                choppableTree = selectionTransform.GetComponentInParent<ChoppableTree>();
+            }
+
             if (choppableTree && choppableTree.playerInRange)
             {
+                interaction_text.text = "Chop";
                 choppableTree.canBeChopped = true;
                 selectedTree = choppableTree.gameObject;
                 chopHolder.gameObject.SetActive(true);
