@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance { get; set; }
+
+    public UnityEvent OnDayPass = new UnityEvent();
 
     public int dayInGame = 1;
 
@@ -31,6 +34,8 @@ public class TimeManager : MonoBehaviour
     {
         dayInGame += 1; // Tăng ngày lên 1
         UpdateDayUI();
+
+        OnDayPass.Invoke(); // Gọi sự kiện ngày mới
     }
 
     void UpdateDayUI()

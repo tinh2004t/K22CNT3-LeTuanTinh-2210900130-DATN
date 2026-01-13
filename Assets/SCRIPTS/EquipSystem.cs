@@ -143,10 +143,32 @@ public class EquipSystem : MonoBehaviour
         }
 
         string selectedItemName = selectedItem.name.Replace("(Clone)", "");
-        selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"), new Vector3(0.666f, 1.056f, 0.943f), Quaternion.Euler(106, -99.42f, -9.12f));
+
+        //selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"), 
+        //    new Vector3(0.666f, 1.056f, 0.943f), Quaternion.Euler(106, -99.42f, -9.12f));
+        print("Loaded model: " + CalculateItemModel(selectedItemName));
+
+        selectedItemModel = Instantiate(Resources.Load<GameObject>(CalculateItemModel(selectedItemName)));
+
         selectedItemModel.transform.SetParent(toolHolder.transform, false);
     }
 
+    private string CalculateItemModel(string selectedItemName)
+    {
+        switch (selectedItemName)
+        {
+            case "Axe":
+                return "Axe_Model";
+            case "Tomato Seed":
+                return "Hand_Model";
+            case "Pumpkin Seed":
+                return "Hand_Model";
+            case "Watering Can":
+                return "WateringCan_Model";
+            default:
+                return null;
+        }
+    }
 
     GameObject getSelectedItem(int slotNumber)
     {
@@ -252,6 +274,45 @@ public class EquipSystem : MonoBehaviour
         else
         {
             return 0;
+        }
+    }
+
+    public bool IsPlayerHoldingSeed()
+    {
+        if (selectedItemModel != null)
+        {
+            switch (selectedItemModel.gameObject.name)
+            {
+                case "Hand_Model(Clone)":
+                    return true;
+                case "Hand_Model":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    internal bool IsPlayerHoldingWateringCan()
+    {
+        if (selectedItem != null)
+        {
+            switch (selectedItem.gameObject.name)
+            {
+                case "Watering Can":
+                    return true;
+                
+                default:
+                    return false;
+            }
+        }
+        else
+        {
+            return false;
         }
     }
 }
