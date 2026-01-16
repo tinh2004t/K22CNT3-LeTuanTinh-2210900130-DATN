@@ -7,7 +7,7 @@ public class InteractableObject : MonoBehaviour
     public bool playerInRange;
     public string ItemName;
 
-    public float detectionRange = 10f;
+    public float detectionRange = 3f;
 
     public string GetItemName()
     {

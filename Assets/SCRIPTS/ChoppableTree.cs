@@ -55,6 +55,8 @@ public class ChoppableTree : MonoBehaviour
 
         brokenTree.transform.SetParent(transform.parent.transform.parent.transform.parent);
 
+        brokenTree.GetComponent<RegrowTree>().dayOfRegrowth = TimeManager.Instance.dayInGame + 2;
+
     }
 
 

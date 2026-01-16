@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,13 +51,34 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        var tempItemReference = itemBeingDragged;
 
         itemBeingDragged = null;
 
         if (transform.parent == startParent || transform.parent == transform.root)
         {
-            transform.position = startPosition;
-            transform.SetParent(startParent);
+            tempItemReference.SetActive(false);
+
+            AlertDialogManager dialogManager = FindObjectOfType<AlertDialogManager>();
+
+            dialogManager.ShowDialog("Drop It?", (response) =>
+            {
+                if (response)
+                {
+                    
+                    DropItemIntoTheWorld(tempItemReference);
+                }
+                else
+                {
+                    transform.position = startPosition;
+                    transform.SetParent(startParent);
+
+                    tempItemReference.SetActive(true);
+                }
+            });
+
+
+            
 
         }
 
@@ -65,6 +87,25 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         canvasGroup.blocksRaycasts = true;
     }
 
+    private void DropItemIntoTheWorld(GameObject tempItemReference)
+    {
+        // Get clean name
+        string cleanName = tempItemReference.name.Split(new string[] { "(Clone)" }, StringSplitOptions.None)[0];
 
+        // Instantiate item
+        GameObject item = Instantiate(Resources.Load<GameObject>(cleanName + "_Model"));
 
+        item.transform.position = Vector3.zero;
+        var dropSpawnPosition = PlayerState.Instance.playerBody.transform.Find("DropSpawn").transform.position;
+        item.transform.localPosition = new Vector3(dropSpawnPosition.x, dropSpawnPosition.y, dropSpawnPosition.z);
+
+        // Set instantiated item to be the child of [Items] object
+        var itemsObject = FindObjectOfType<EnvirontmentManager>().gameObject.transform.Find("[Items]");
+        item.transform.SetParent(itemsObject.transform);
+
+        // Delete item from inventory
+        DestroyImmediate(tempItemReference.gameObject);
+        InventorySystem.Instance.ReCalculateList();
+        CraftingSystem.Instance.RefreshNeededItems();
+    }
 }
