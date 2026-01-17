@@ -5,7 +5,10 @@ public class PlayerMovement : MonoBehaviour
    public CharacterController controller;
  
     public float speed = 12f;
-    public float gravity = -9.81f * 2;
+    public float walkingGravity = -9.81f * 2;
+    public float gravity;
+
+
     public float jumpHeight = 3f;
  
     public Transform groundCheck;
@@ -15,10 +18,16 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
  
     bool isGrounded;
+    public bool isUnderwater;
 
     private Vector3 lastPositon = new Vector3(0f, 0f, 0f);
 
     private bool isMoving;
+
+    //Swimming
+    public bool isSwimming;
+    public float swimmingGravity = -0.5f;
+
 
     // Update is called once per frame
     void Update()
@@ -33,6 +42,24 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement()
     {
+        if (isSwimming)
+        {
+            if (isUnderwater)
+            {
+                gravity = swimmingGravity;
+            }
+            else
+            {
+                velocity.y = 0f;
+            }
+            
+        }
+        else
+        {
+            gravity = walkingGravity;
+        }
+
+
         //checking if we hit the ground to reset our falling velocity, otherwise we will fall faster the next time
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
