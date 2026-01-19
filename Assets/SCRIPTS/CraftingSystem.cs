@@ -56,6 +56,8 @@ public class CraftingSystem : MonoBehaviour
     {
         isOpen = false;
 
+        MovementManager.Instance.EnableLook(true);
+
 
         toolsBTN = craftingScreenUI.transform.Find("ToolsButton").GetComponent<Button>();
         toolsBTN.onClick.AddListener(delegate { OpenToolsCategory(); });
@@ -220,6 +222,8 @@ public class CraftingSystem : MonoBehaviour
             SelectionManager.Instance.GetComponent<SelectionManager>().enabled = false;
             isOpen = true;
 
+            MovementManager.Instance.EnableLook(false);
+
         }
         else if (Input.GetKeyDown(KeyCode.C) && isOpen )
         {
@@ -242,6 +246,8 @@ public class CraftingSystem : MonoBehaviour
             }
 
             isOpen = false;
+
+            MovementManager.Instance.EnableLook(true);
         }
 
     }
