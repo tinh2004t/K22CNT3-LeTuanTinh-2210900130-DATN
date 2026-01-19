@@ -34,6 +34,9 @@ public class DialogSystem : MonoBehaviour
         dialogUI.gameObject.SetActive(true);
         dialogUIActive = true;
 
+        MovementManager.Instance.EnableLook(false);
+        MovementManager.Instance.EnableMovement(false);
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -42,6 +45,10 @@ public class DialogSystem : MonoBehaviour
     {
         dialogUI.gameObject.SetActive(false);
         dialogUIActive = false;
+
+        MovementManager.Instance.EnableLook(true);
+        MovementManager.Instance.EnableMovement(true);
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

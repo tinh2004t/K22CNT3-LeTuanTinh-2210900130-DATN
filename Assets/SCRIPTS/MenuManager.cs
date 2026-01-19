@@ -43,6 +43,8 @@ public class MenuManager : MonoBehaviour
 
             isMenuOpen = true;
 
+            MovementManager.Instance.EnableLook(false);
+
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             
@@ -60,6 +62,8 @@ public class MenuManager : MonoBehaviour
             menuCanvas.SetActive(false);
             uiCanvas.SetActive(true);
             isMenuOpen = false;
+
+            MovementManager.Instance.EnableLook(true);
 
             if (!CraftingSystem.Instance.isOpen && !InventorySystem.Instance.isOpen)
             {
