@@ -89,6 +89,10 @@ public class CampfireUIManager : MonoBehaviour
         campfirePanel.SetActive(true);
         isUiOpen = true;
 
+
+        MovementManager.Instance.EnableMovement(false);
+        MovementManager.Instance.EnableLook(false);
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -103,6 +107,9 @@ public class CampfireUIManager : MonoBehaviour
     {
         campfirePanel.SetActive(false);
         isUiOpen = false;
+
+        MovementManager.Instance.EnableMovement(true);
+        MovementManager.Instance.EnableLook(true);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

@@ -32,6 +32,9 @@ public class StorageManager : MonoBehaviour
         GetRelevantUI(selectedStorage).SetActive(true);
         storageUIOpen = true;
 
+        MovementManager.Instance.EnableMovement(false);
+        MovementManager.Instance.EnableLook(false);
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -74,6 +77,9 @@ public class StorageManager : MonoBehaviour
 
         GetRelevantUI(selectedStorage).SetActive(false);
         storageUIOpen = false;
+
+        MovementManager.Instance.EnableMovement(true);
+        MovementManager.Instance.EnableLook(true);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

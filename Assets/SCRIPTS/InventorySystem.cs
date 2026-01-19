@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,8 @@ public class InventorySystem : MonoBehaviour
 
     //public bool isFull;
 
+    public TextMeshProUGUI currencyUI;
+
     //Pickup Pop Up
 
     public GameObject pickupAlert;
@@ -34,6 +37,8 @@ public class InventorySystem : MonoBehaviour
     public Image pickupImage;
 
     public GameObject ItemInfoUi;
+
+    internal int currentCoins = 100;
 
 
 
@@ -54,6 +59,8 @@ public class InventorySystem : MonoBehaviour
     {
         isOpen = false;
         PopulateSlotList();
+
+        MovementManager.Instance.EnableLook(false);
 
 
         Cursor.visible = false;
@@ -84,6 +91,8 @@ public class InventorySystem : MonoBehaviour
             CloseUI();
 
         }
+
+        currencyUI.text = $"Coins: {currentCoins}";
     }
 
 
@@ -102,6 +111,9 @@ public class InventorySystem : MonoBehaviour
 
 
         isOpen = true;
+
+        MovementManager.Instance.EnableLook(false);
+
     }
 
     public void CloseUI()
@@ -109,7 +121,8 @@ public class InventorySystem : MonoBehaviour
         inventoryScreenUI.SetActive(false);
         if (!CraftingSystem.Instance.isOpen &&
             !StorageManager.Instance.storageUIOpen &&
-            !CampfireUIManager.Instance.isUiOpen)
+            !CampfireUIManager.Instance.isUiOpen &&
+            !BuySystem.Instance.ShopKeeper.isTalkingWithPlayer)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -118,17 +131,19 @@ public class InventorySystem : MonoBehaviour
             SelectionManager.Instance.GetComponent<SelectionManager>().enabled = true;
         }
         isOpen = false;
+
+        MovementManager.Instance.EnableLook(true);
     }
 
 
 
     public void AddToInventory(string itemName)
     {
-        if (!SaveManager.Instance.isLoading)
-        {
-        SoundManager.Instance.PlaySound(SoundManager.Instance.pickUpItemSound);
+        //if (!SaveManager.Instance.isLoading)
+        //{
+        //SoundManager.Instance.PlaySound(SoundManager.Instance.pickUpItemSound);
 
-        }
+        //}
 
 
         whatSlotToEquip = FindNextEmptySlot();

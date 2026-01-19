@@ -138,6 +138,8 @@ public class QuestManager : MonoBehaviour
 
             isQuestMenuOpen = true;
 
+            MovementManager.Instance.EnableLook(false);
+
         }
         else if (Input.GetKeyDown(KeyCode.Q) && isQuestMenuOpen)
         {
@@ -151,6 +153,8 @@ public class QuestManager : MonoBehaviour
                 SelectionManager.Instance.GetComponent<SelectionManager>().enabled = true;
             }
             isQuestMenuOpen = false;
+
+            MovementManager.Instance.EnableLook(true);
         }
     }
 
