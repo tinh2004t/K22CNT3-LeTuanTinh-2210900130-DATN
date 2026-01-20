@@ -28,6 +28,9 @@ public class ShopKeeper : MonoBehaviour
         sellPanelUI.SetActive(true);
         buyPanelUI.SetActive(false);
 
+        MovementManager.Instance.EnableLook(false);
+        MovementManager.Instance.EnableMovement(false);
+
         HideDialogUI();
     }
 
@@ -35,6 +38,9 @@ public class ShopKeeper : MonoBehaviour
     {
         sellPanelUI.SetActive(false);
         buyPanelUI.SetActive(true);
+
+        MovementManager.Instance.EnableLook(false);
+        MovementManager.Instance.EnableMovement(false);
 
         HideDialogUI();
     }
@@ -46,7 +52,10 @@ public class ShopKeeper : MonoBehaviour
         sellPanelUI.SetActive(false);
         buyPanelUI.SetActive(false);
 
-        
+        MovementManager.Instance.EnableLook(false);
+        MovementManager.Instance.EnableMovement(false);
+
+
     }
 
     public void Talk()
@@ -78,11 +87,13 @@ public class ShopKeeper : MonoBehaviour
     private void DisplayDialogUI()
     {
         shopkeeperDialogUI.SetActive(true);
+
     }
 
     private void HideDialogUI()
     {
         shopkeeperDialogUI.SetActive(false);
+
     }
 
     #region || ----- Ontrigger Methods ----- ||
