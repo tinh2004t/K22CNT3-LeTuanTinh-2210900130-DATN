@@ -16,6 +16,7 @@ TagManager:
   - wallGhost
   - placedWall
   - Building
+  - Waypoints
   layers:
   - Default
   - TransparentFX
