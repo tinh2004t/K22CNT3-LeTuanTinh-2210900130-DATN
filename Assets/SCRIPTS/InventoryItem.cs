@@ -37,6 +37,10 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public bool isUseable;
 
+    [Header("Economy")]
+    public int sellPrice;
+    public bool isSellable;
+
 
     private void Start()
     {
