@@ -11,8 +11,8 @@ public class Animal : MonoBehaviour
 
     [Header("Sound")]
     [SerializeField] AudioSource soundChannel;
-    [SerializeField] AudioClip rabbitHitAndScream;
-    [SerializeField] AudioClip rabbitHitAndDie;
+    [SerializeField] AudioClip animalHitAndScream;
+    [SerializeField] AudioClip animalHitAndDie;
 
     private Animator animator;
     public bool isDead;
@@ -22,7 +22,7 @@ public class Animal : MonoBehaviour
     enum AnimalType
     {
         Rabbit,
-        Fox,
+        Bear,
     }
 
     [SerializeField] AnimalType thisAnimalType;
@@ -46,8 +46,12 @@ public class Animal : MonoBehaviour
                 PlayDyingSound();
 
                 animator.SetTrigger("DIE");
-                GetComponent<AI_Movement>().enabled = false;
 
+                //if (thisAnimalType == AnimalType.Rabbit)
+                //{
+                //GetComponent<AI_Movement>().enabled = false;
+
+                //}
                 StartCoroutine(PuddleDelay());
                 isDead = true;
             }
@@ -67,36 +71,13 @@ public class Animal : MonoBehaviour
 
     private void PlayDyingSound()
     {
-        switch (thisAnimalType)
-        {
-            case AnimalType.Rabbit:
-                soundChannel.PlayOneShot(rabbitHitAndDie);
-                break;
-            case AnimalType.Fox:
-                //soundChannel.PlayOneShot(rabbitHitAndDie);
-                break;
-            default:
-                break;
-        }
-
-        
+       soundChannel.PlayOneShot(animalHitAndDie);
 
     }
 
     private void PlayHitSound()
     {
-        switch (thisAnimalType)
-        {
-            case AnimalType.Rabbit:
-                soundChannel.PlayOneShot(rabbitHitAndScream);
-                break;
-            case AnimalType.Fox:
-                //soundChannel.PlayOneShot(rabbitHitAndScream);
-                break;
-            default:
-                break;
-        }
-
+                soundChannel.PlayOneShot(animalHitAndScream);
     }
 
 

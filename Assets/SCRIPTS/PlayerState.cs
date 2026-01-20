@@ -144,4 +144,18 @@ public class PlayerState : MonoBehaviour
     {
         currentHydrationPercent = newHydration;
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Player is dead");
+        }
+        else
+        {
+            Debug.Log("Player is hurt");
+        }
+    }
 }
