@@ -58,6 +58,8 @@ public class CreatureAttackState : StateMachineBehaviour
 
     private void Attack()
     {
+        agent.gameObject.GetComponent<Animal>().PlayAttackSound();
+
         PlayerState.Instance.TakeDamage(damageToInflict);
     }
 }

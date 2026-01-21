@@ -1,23 +1,28 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Animal : MonoBehaviour
 {
     public string animalName;
     public bool playerInRange;
 
-    [SerializeField] int currentHealth;
-    [SerializeField] int maxHealth;
+    [SerializeField] float currentHealth;
+    [SerializeField] float maxHealth;
 
     [Header("Sound")]
     [SerializeField] AudioSource soundChannel;
     [SerializeField] AudioClip animalHitAndScream;
     [SerializeField] AudioClip animalHitAndDie;
 
+    [SerializeField] AudioClip animalAttack;
+
     private Animator animator;
     public bool isDead;
 
     [SerializeField] ParticleSystem bloodSplashParticles;
+
+    public Slider healthBarSlider;
 
     enum AnimalType
     {
@@ -35,10 +40,20 @@ public class Animal : MonoBehaviour
         isDead = false;
     }
 
+    private void Update()
+    {
+        if (thisAnimalType != AnimalType.Rabbit)
+        {
+            healthBarSlider.value = currentHealth / maxHealth;
+        }
+    }
+
     public void TakeDamage(int damage)
     {
+
         if (isDead == false)
         {
+
             currentHealth -= damage;
             bloodSplashParticles.Play();
             if (currentHealth <= 0)
@@ -58,6 +73,8 @@ public class Animal : MonoBehaviour
             else
             {
                 PlayHitSound();
+                animator.SetTrigger("HURT");
+
             }
         }
         
@@ -77,7 +94,12 @@ public class Animal : MonoBehaviour
 
     private void PlayHitSound()
     {
-                soundChannel.PlayOneShot(animalHitAndScream);
+       soundChannel.PlayOneShot(animalHitAndScream);
+    }
+
+    public void PlayAttackSound()
+    {
+        soundChannel.PlayOneShot(animalAttack);
     }
 
 
@@ -86,6 +108,7 @@ public class Animal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            healthBarSlider.gameObject.SetActive(true);
         }
     }
 
@@ -94,6 +117,7 @@ public class Animal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            healthBarSlider.gameObject.SetActive(false);
         }
     }
 
