@@ -163,6 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2646893059860978725}
+  - component: {fileID: 1194313340973092071}
   m_Layer: 0
   m_Name: Preset_House_02_C
   m_TagString: Untagged
@@ -186,6 +187,27 @@ Transform:
   - {fileID: 6144526653599040534}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1194313340973092071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827860988155849514}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.08374, y: 9.251282, z: 8.216492}
+  m_Center: {x: -2.6037598, y: 1.9456787, z: -1.6838379}
 --- !u!1 &5730298380684160650
 GameObject:
   m_ObjectHideFlags: 0

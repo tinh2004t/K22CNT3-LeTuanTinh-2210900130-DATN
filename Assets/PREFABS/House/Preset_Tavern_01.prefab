@@ -1005,6 +1005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2974617713900503164}
+  - component: {fileID: 843782243850441378}
   m_Layer: 0
   m_Name: Preset_Tavern_01
   m_TagString: Untagged
@@ -1029,6 +1030,27 @@ Transform:
   - {fileID: 1609676875991345053}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180.045, z: 0}
+--- !u!65 &843782243850441378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429284263174742704}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14.666048, y: 12.635071, z: 11.297012}
+  m_Center: {x: -2.2136002, y: 3.7167664, z: -5.1485457}
 --- !u!1 &8530806073000376177
 GameObject:
   m_ObjectHideFlags: 0
