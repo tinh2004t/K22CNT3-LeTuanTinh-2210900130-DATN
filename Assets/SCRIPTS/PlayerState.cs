@@ -24,6 +24,8 @@ public class PlayerState : MonoBehaviour
 
     public GameObject playerBody;
 
+    public bool isPlayerDead;
+
 
     // ------ Player Hydration ------
     public float currentHydrationPercent;
@@ -40,7 +42,15 @@ public class PlayerState : MonoBehaviour
 
     public float outOfAirDamegePerSecond = 5f;
 
+    public AudioSource playerAudioSource;
+    public AudioClip playerPainSound;
+    public AudioClip playerDeathSound;
 
+    public RespawnLocation registeredRespawnLocation;
+    public event Action OnRespawnRegistered;
+
+    private float hurtSoundDelay = 2f;
+    private float nextHurtTime = 0f;
 
     void Awake()
     {
@@ -149,13 +159,62 @@ public class PlayerState : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isPlayerDead)
         {
-            Debug.Log("Player is dead");
+            PlayerDead();
         }
         else
         {
-            Debug.Log("Player is hurt");
+            if (currentHealth > 0 && Time.time >= nextHurtTime)
+            {
+                playerAudioSource.PlayOneShot(playerPainSound);
+                Debug.Log("Player is hurt");
+                
+                nextHurtTime = Time.time + hurtSoundDelay;
+            }
         }
+    }
+
+    public void PlayerDead()
+    {
+        isPlayerDead = true;
+        playerAudioSource.PlayOneShot(playerDeathSound);
+
+        RespawnPlayer();
+    }
+
+    public void RespawnPlayer()
+    {
+        StartCoroutine(RespawnCoroutine());
+    }
+    public IEnumerator RespawnCoroutine()
+    {
+        playerBody.GetComponent<PlayerMovement>().enabled = false;
+        playerBody.GetComponent<MouseMovement>().enabled = false;
+
+        if (registeredRespawnLocation != null)
+        {
+            Vector3 position = registeredRespawnLocation.transform.position;
+
+            position.y += 7f; // above the location
+            position.z += 7f; // next to the location
+
+            playerBody.transform.position = position; // actually respawn the player
+
+            currentHealth = maxHealth;
+        }
+
+        yield return new WaitForSeconds(0.2f);
+
+        isPlayerDead = false;
+
+        playerBody.GetComponent<PlayerMovement>().enabled = true;
+        playerBody.GetComponent<MouseMovement>().enabled = true;
+    }
+
+    internal void SetRegisteredLocation(RespawnLocation respawnLocation)
+    {
+        registeredRespawnLocation = respawnLocation;
+        OnRespawnRegistered?.Invoke();
     }
 }
