@@ -609,6 +609,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6596305370640628238}
+  - component: {fileID: 5983606894124202965}
+  - component: {fileID: 8445918483364604112}
   m_Layer: 0
   m_Name: Preset_House_Windmill_01
   m_TagString: Untagged
@@ -638,6 +640,48 @@ Transform:
   - {fileID: 8735427047597493227}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5983606894124202965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636321614153282826}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.6544495, y: 19.161865, z: 5.8431396}
+  m_Center: {x: -1.3272247, y: 7.031891, z: -1.2573547}
+--- !u!65 &8445918483364604112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636321614153282826}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.4681702, y: 7.333374, z: 1.13974}
+  m_Center: {x: -1.2340851, y: 1.2107849, z: -6.1237946}
 --- !u!1 &7027435436963473000
 GameObject:
   m_ObjectHideFlags: 0

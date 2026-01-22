@@ -550,6 +550,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5119913864419223704}
+  - component: {fileID: 6529418763551647920}
+  - component: {fileID: 1962761171509692370}
   m_Layer: 0
   m_Name: Preset_House_Archway_01
   m_TagString: Untagged
@@ -575,6 +577,48 @@ Transform:
   - {fileID: 8972633702658310226}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -84.345, z: 0}
+--- !u!65 &6529418763551647920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2669124044422108647}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.57038, y: 11.704407, z: 5.1566315}
+  m_Center: {x: -2.5050197, y: 3.3458252, z: -0.73104835}
+--- !u!65 &1962761171509692370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2669124044422108647}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16.622025, y: 17.167877, z: 6.4675026}
+  m_Center: {x: 0.1495633, y: 5.699997, z: -10.109376}
 --- !u!1 &2744909688593237342
 GameObject:
   m_ObjectHideFlags: 0
