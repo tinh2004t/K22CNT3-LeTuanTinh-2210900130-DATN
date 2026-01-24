@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,8 @@ public class Animal : MonoBehaviour
 
     public Slider healthBarSlider;
 
+    public event Action OnDestroyed;
+
     enum AnimalType
     {
         Rabbit,
@@ -40,21 +43,20 @@ public class Animal : MonoBehaviour
         isDead = false;
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-        if (thisAnimalType != AnimalType.Rabbit)
-        {
-            healthBarSlider.value = currentHealth / maxHealth;
-        }
+        OnDestroyed?.Invoke();
     }
+
 
     public void TakeDamage(int damage)
     {
 
         if (isDead == false)
         {
-
             currentHealth -= damage;
+            healthBarSlider.value = currentHealth / maxHealth;
+
             bloodSplashParticles.Play();
             if (currentHealth <= 0)
             {

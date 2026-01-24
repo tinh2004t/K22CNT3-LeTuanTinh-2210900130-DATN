@@ -38,7 +38,7 @@ public class InventorySystem : MonoBehaviour
 
     public GameObject ItemInfoUi;
 
-    internal int currentCoins = 100;
+    internal int currentCoins = 0;
 
 
 
