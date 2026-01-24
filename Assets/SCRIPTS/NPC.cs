@@ -301,7 +301,7 @@ public class NPC : MonoBehaviour
         });
     }
 
-    private void ReceiveRewardAndCompleteQuest()
+    public void ReceiveRewardAndCompleteQuest()
     {
         QuestManager.Instance.MarkQuestCompleted(currentActiveQuest);
 
@@ -309,6 +309,7 @@ public class NPC : MonoBehaviour
 
         var coinsRecieved = currentActiveQuest.info.coinReward;
         print("You recieved " + coinsRecieved + " gold coins");
+        InventorySystem.Instance.currentCoins += coinsRecieved;
 
         if (currentActiveQuest.info.rewardItem1 != "")
         {
