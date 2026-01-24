@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a04ab43ec46244e881a610d2970b30, type: 3}
+  m_Name: Start_Quest 2
+  m_EditorClassIdentifier: Assembly-CSharp::QuestInfo
+  initialDialog:
+  - Now that you have a weapon, you don't need to hide here anymore. It is time for
+    you to head to the Village.
+  - "It is not hard to find. Follow the dirt path straight from this camp. Keep an
+    eye out for Signposts\u2014the first one is just ahead."
+  - Be careful. The Plains are crawling with Wild Wolves and Bear. If they attack,
+    use that Axe to defend yourself.
+  initialDialogClips:
+  - {fileID: 8300000, guid: d7c665acbf3fb3d4685f59787961e65f, type: 3}
+  - {fileID: 8300000, guid: 00c942a6c2e959742986d8e1e29686a2, type: 3}
+  - {fileID: 8300000, guid: c971267591d8cac4b909f6feb87937df, type: 3}
+  acceptOption: I'm ready. I will head to the Village.
+  acceptAnswer: Good spirit. The villagers might need help too. Go safe!
+  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  declineOption: Monsters? I think I'll stay here a bit longer...
+  declineAnswer: Suit yourself. But you can't survive on berries forever.
+  declineAnswerClip: {fileID: 8300000, guid: ea000b2629d8e104db216d24868afb17, type: 3}
+  comebackAfterDecline: Changed your mind? You can't hide here forever. The path
+    to the Village is still open if you are ready.
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 5b74928bee9709d409115ca9a195ee3c, type: 3}
+  comebackInProgress: Lost? Just look for the Signpost down the path. It points straight
+    to the Village.
+  comebackInProgressClip: {fileID: 8300000, guid: 38ef40db76924b842b03a4411f912419, type: 3}
+  comebackCompleted: Here are a few gold coins for your efforts. Use them when you
+    need them.
+  comebackCompletedClip: {fileID: 8300000, guid: 08ceb276d1e7ffa47bce6d3045b3de6d, type: 3}
+  finalWords: Safe travels. Remember to watch for the Signposts. And don't let the
+    wolves bite!
+  finalWordsClip: {fileID: 8300000, guid: abb5fb604fbe033449147ba50abc8632, type: 3}
+  coinReward: 20
+  rewardItem1: 
+  rewardItem2: 
+  firstRequirementItem: 
+  firstRequirementAmount: 0
+  secondRequirementItem: 
+  secondRequirementAmount: 0
+  hasCheckPoints: 1
+  checkpoints:
+  - {fileID: 11400000, guid: dcf6648eb473ca7438523a56c7019cc0, type: 2}

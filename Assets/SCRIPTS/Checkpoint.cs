@@ -7,6 +7,6 @@ public class Checkpoint : ScriptableObject
 {
 
     public string name;
-    public bool isCompleted;
+    public bool isCompleted = false;
 
 }

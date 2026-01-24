@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity;
 
 
-    public float jumpHeight = 3f;
+    public float jumpHeight = 2f;
  
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
  
     Vector3 velocity;
  
-    bool isGrounded;
+    public bool isGrounded;
     public bool isUnderwater;
 
     private Vector3 lastPositon = new Vector3(0f, 0f, 0f);

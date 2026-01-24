@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 2476303207439608247}
   - component: {fileID: 3376406208864020417}
   - component: {fileID: 1591271282599723816}
+  - component: {fileID: 49752963055282470}
   m_Layer: 0
   m_Name: Stick
   m_TagString: pickable
@@ -233,8 +234,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.33, y: -1.04, z: -4.86}
-  m_Center: {x: -1.17, y: 1.35, z: -5.92}
+  m_Size: {x: 0.8537892, y: 0.49639356, z: 4.8599925}
+  m_Center: {x: -1.1864203, y: 1.2606356, z: -5.9200077}
 --- !u!65 &3376406208864020417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -270,3 +271,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
   playerInRange: 0
   ItemName: Stick
+  detectionRange: 3
+--- !u!54 &49752963055282470
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012107264112507361}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
