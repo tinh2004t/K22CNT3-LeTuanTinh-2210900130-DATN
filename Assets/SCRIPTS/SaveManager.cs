@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -42,6 +42,9 @@ public class SaveManager : MonoBehaviour
     public bool isLoading;
 
     public Canvas loadingScreen;
+
+    public UnityEngine.UI.Slider loadingSlider;
+    public TMPro.TextMeshProUGUI loadingText;
 
     private void Start()
     {
@@ -319,20 +322,36 @@ public class SaveManager : MonoBehaviour
 
     public void StartLoadedGame(int slotNumber)
     {
-        ActivateLoadingScreen();
-
-        SceneManager.LoadScene("GameScene");
+        ActivateLoadingScreen(); // Bật màn hình Loading lên
         isLoading = true;
 
-        StartCoroutine(DelayedLoading(slotNumber));
+        // Bắt đầu tiến trình tải Scene và Data kết hợp
+        StartCoroutine(LoadSceneAndDataAsync("GameScene", slotNumber));
     }
 
-    private IEnumerator DelayedLoading( int slotNumber)
+    private IEnumerator LoadSceneAndDataAsync(string sceneName, int slotNumber)
     {
-        yield return new WaitForSeconds(1f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+
+            if (loadingSlider != null)
+                loadingSlider.value = progress;
+
+            if (loadingText != null)
+                loadingText.text = "Đang tải bản đồ: " + (progress * 100f).ToString("F0") + "%";
+
+            yield return null;
+        }
+
+        if (loadingText != null)
+            loadingText.text = "Đang nạp dữ liệu sinh tồn...";
+
+        yield return new WaitForSeconds(0.5f);
 
         LoadGame(slotNumber);
-
     }
 
     #endregion
