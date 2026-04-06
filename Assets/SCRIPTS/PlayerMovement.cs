@@ -4,7 +4,10 @@ public class PlayerMovement : MonoBehaviour
 {
    public CharacterController controller;
  
-    public float speed = 12f;
+    public float walkSpeed = 12f;
+    public float sprintSpeed = 18f;
+
+    public float currentSpeed = 12f;
     public float walkingGravity = -9.81f * 2;
     public float gravity;
 
@@ -27,6 +30,12 @@ public class PlayerMovement : MonoBehaviour
     //Swimming
     public bool isSwimming;
     public float swimmingGravity = -0.5f;
+
+    private void Start()
+    {
+        currentSpeed = walkSpeed;
+
+    }
 
 
     // Update is called once per frame
@@ -76,10 +85,19 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        if (Input.GetKey(KeyCode.LeftShift) && isGrounded && z > 0)
+        {
+            currentSpeed = sprintSpeed;
+        }
+        else
+        {
+            currentSpeed = walkSpeed;
+        }
+
         //right is the red Axis, foward is the blue axis
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+        controller.Move(move * currentSpeed * Time.deltaTime);
 
         //check if the player is on the ground so he can jump
         if (Input.GetButtonDown("Jump") && isGrounded)
