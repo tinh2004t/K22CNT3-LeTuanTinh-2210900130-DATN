@@ -4,13 +4,9 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public Button LoadGameBTN;
-
-    
-
     public void NewGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("IntroScene");
     }
 
     public void ExitGame()
