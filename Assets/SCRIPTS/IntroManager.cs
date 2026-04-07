@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.UI;
+using System.Collections;
 
 public class IntroManager : MonoBehaviour
 {
@@ -9,8 +11,16 @@ public class IntroManager : MonoBehaviour
     public string gameSceneName = "GameScene";
     public float timeToSkip = 3f;
 
+    [Header("UI Skip Elements")]
+    public GameObject skipPromptRoot;
+    public Image holdFillImage;
+
+    [Header("Fade Transition")]
+    public CanvasGroup faderCanvasGroup;
+    public float fadeDuration = 1f;    
+
     private float currentHoldTime = 0f;
-    private bool isSkipping = false;
+    private bool isTransitioning = false;
 
     void Start()
     {
@@ -18,40 +28,88 @@ public class IntroManager : MonoBehaviour
         {
             introVideo.loopPointReached += OnVideoEnd;
         }
-        else
-        {
-            Debug.LogError("Chưa gán VideoPlayer vào IntroManager!");
-        }
+
+        if (skipPromptRoot != null) skipPromptRoot.SetActive(false);
+
+        if (faderCanvasGroup != null) faderCanvasGroup.alpha = 0f;
     }
 
     void Update()
     {
-        if (isSkipping) return;
+        if (isTransitioning) return;
 
         if (Input.GetKey(KeyCode.Space))
         {
+            if (skipPromptRoot != null && !skipPromptRoot.activeSelf)
+                skipPromptRoot.SetActive(true);
+
             currentHoldTime += Time.deltaTime;
 
+            if (holdFillImage != null)
+            {
+                holdFillImage.fillAmount = Mathf.Clamp01(currentHoldTime / timeToSkip);
+            }
 
             if (currentHoldTime >= timeToSkip)
             {
-                SkipIntro();
+                StartTransition();
             }
         }
         else
         {
-            currentHoldTime = 0f;
+            if (currentHoldTime > 0)
+            {
+                currentHoldTime = 0f;
+                if (holdFillImage != null) holdFillImage.fillAmount = 0f;
+                if (skipPromptRoot != null) skipPromptRoot.SetActive(false);
+            }
         }
     }
 
     void OnVideoEnd(VideoPlayer vp)
     {
-        SkipIntro();
+        StartTransition();
     }
 
-    void SkipIntro()
+    void StartTransition()
     {
-        isSkipping = true;
+        if (isTransitioning) return;
+
+        isTransitioning = true;
+
+        if (skipPromptRoot != null) skipPromptRoot.SetActive(false);
+
+        if (introVideo != null && introVideo.isPlaying)
+        {
+            introVideo.Pause();
+        }
+
+        StartCoroutine(FadeToBlackAndLoad());
+    }
+
+    IEnumerator FadeToBlackAndLoad()
+    {
+        float timer = 0f;
+
+        if (faderCanvasGroup == null)
+        {
+            Debug.LogError("Chưa gán CanvasGroup cho Fader!");
+            SceneManager.LoadScene(gameSceneName);
+            yield break;
+        }
+
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            faderCanvasGroup.alpha = timer / fadeDuration;
+
+            yield return null;
+        }
+
+        faderCanvasGroup.alpha = 1f;
+
+        yield return new WaitForSeconds(0.3f);
+
         SceneManager.LoadScene(gameSceneName);
     }
 }
