@@ -34,7 +34,7 @@ MonoBehaviour:
     and 3 Stone. We really need tools.
   comebackAfterDeclineClip: {fileID: 8300000, guid: 9fe08963c6a7d714ebb48f44f1a5cb01, type: 3}
   comebackInProgress: 'Let me see... No, you are still missing some items. Remember:
-    I need 5 Wood and 3 Stone.'
+    I need 5 Wood and 5 Stone.'
   comebackInProgressClip: {fileID: 8300000, guid: 36ee9b9e057745946afc63b5e28b8fe0, type: 3}
   comebackCompleted: Here are a few gold coins for your efforts. Use them when you
     need them.
@@ -42,11 +42,11 @@ MonoBehaviour:
   finalWords: Now! You can press C to craft your axe, and press I to equip it
   finalWordsClip: {fileID: 8300000, guid: 70637ddda9f90a74285aaed937f6f80d, type: 3}
   coinReward: 20
-  rewardItem1: Axe
+  rewardItem1: 
   rewardItem2: 
   firstRequirementItem: Stick
   firstRequirementAmount: 5
   secondRequirementItem: Stone
-  secondRequirementAmount: 3
+  secondRequirementAmount: 5
   hasCheckPoints: 0
   checkpoints: []
