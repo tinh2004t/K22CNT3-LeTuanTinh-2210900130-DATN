@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DayNightSystem : MonoBehaviour
 {
+    public static DayNightSystem Instance;
+
     [Header("Settings")]
     public Light directionalLight;
     public float dayDurationInSeconds = 24.0f;
@@ -22,6 +24,16 @@ public class DayNightSystem : MonoBehaviour
     private float blendedValue = 0.0f;
     private bool lockNextDayTrigger = false;
     private int lastHour = -1; // Dùng để kiểm tra xem giờ có thay đổi không
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
+
+    public bool IsNight()
+    {
+        return currentHour < 6 || currentHour >= 18;
+    }
 
     private void Update()
     {

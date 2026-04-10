@@ -126,7 +126,8 @@ public class InventorySystem : MonoBehaviour
         if (!CraftingSystem.Instance.isOpen &&
             !StorageManager.Instance.storageUIOpen &&
             !CampfireUIManager.Instance.isUiOpen &&
-            !BuySystem.Instance.ShopKeeper.isTalkingWithPlayer)
+            !BuySystem.Instance.ShopKeeper.isTalkingWithPlayer
+            )
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

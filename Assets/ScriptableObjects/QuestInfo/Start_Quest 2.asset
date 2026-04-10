@@ -33,7 +33,7 @@ MonoBehaviour:
   comebackAfterDecline: Have you changed your mind? Ready to start woodworking?
   comebackAfterDeclineClip: {fileID: 8300000, guid: 5b74928bee9709d409115ca9a195ee3c, type: 3}
   comebackInProgress: Still working on it? Remember, you need to craft an axe, gather
-    30 Wood, and place a Wooden Chest.
+    15 Log, and place a Wooden Chest.
   comebackInProgressClip: {fileID: 8300000, guid: 38ef40db76924b842b03a4411f912419, type: 3}
   comebackCompleted: Great job! That chest will keep our hard-earned resources safe.
   comebackCompletedClip: {fileID: 8300000, guid: 08ceb276d1e7ffa47bce6d3045b3de6d, type: 3}
@@ -44,9 +44,8 @@ MonoBehaviour:
   rewardItem1: Bread
   rewardItem2: Bread
   firstRequirementItem: Log
-  firstRequirementAmount: 20
-  secondRequirementItem: 
-  secondRequirementAmount: 0
-  hasCheckPoints: 1
-  checkpoints:
-  - {fileID: 11400000, guid: dcf6648eb473ca7438523a56c7019cc0, type: 2}
+  firstRequirementAmount: 15
+  secondRequirementItem: Plank
+  secondRequirementAmount: 3
+  hasCheckPoints: 0
+  checkpoints: []

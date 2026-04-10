@@ -124,5 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f75ec72a6e37494188cd9d0311191e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  enemyPrefab: {fileID: 1931298151966786, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+  enemyPrefab: {fileID: 1931298151966786, guid: ea91c11c5dc21084ababdaeabcd4c804, type: 3}
   respawnDelay: 10
