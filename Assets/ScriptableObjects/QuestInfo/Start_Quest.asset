@@ -31,7 +31,7 @@ MonoBehaviour:
     itself.
   declineAnswerClip: {fileID: 8300000, guid: 86e207dd4f42abe47a830d2828465e89, type: 3}
   comebackAfterDecline: Feeling any better? If you are up for it, bring me 5 Stick
-    and 3 Stone. We really need tools.
+    and 5 Stone. We really need tools.
   comebackAfterDeclineClip: {fileID: 8300000, guid: 9fe08963c6a7d714ebb48f44f1a5cb01, type: 3}
   comebackInProgress: 'Let me see... No, you are still missing some items. Remember:
     I need 5 Wood and 5 Stone.'
