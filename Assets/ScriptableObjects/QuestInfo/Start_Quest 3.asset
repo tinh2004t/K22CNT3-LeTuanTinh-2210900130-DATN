@@ -42,10 +42,9 @@ MonoBehaviour:
   coinReward: 100
   rewardItem1: Iron ingot
   rewardItem2: 
-  firstRequirementItem: slime
-  firstRequirementAmount: 20
+  firstRequirementItem: Slime
+  firstRequirementAmount: 5
   secondRequirementItem: 
   secondRequirementAmount: 0
-  hasCheckPoints: 1
-  checkpoints:
-  - {fileID: 11400000, guid: dcf6648eb473ca7438523a56c7019cc0, type: 2}
+  hasCheckPoints: 0
+  checkpoints: []

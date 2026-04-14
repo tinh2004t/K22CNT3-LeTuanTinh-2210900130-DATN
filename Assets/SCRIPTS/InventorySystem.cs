@@ -81,7 +81,10 @@ public class InventorySystem : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.I) && !isOpen && !ConstructionManager.Instance.inConstructionMode)
+        if (Input.GetKeyDown(KeyCode.I) && !isOpen &&
+            !ConstructionManager.Instance.inConstructionMode &&
+            !DeveloperConsole.Instance.isConsoleOpen
+            )
         {
             MovementManager.Instance.EnableLook(false);
 
@@ -126,7 +129,8 @@ public class InventorySystem : MonoBehaviour
         if (!CraftingSystem.Instance.isOpen &&
             !StorageManager.Instance.storageUIOpen &&
             !CampfireUIManager.Instance.isUiOpen &&
-            !BuySystem.Instance.ShopKeeper.isTalkingWithPlayer)
+            !BuySystem.Instance.ShopKeeper.isTalkingWithPlayer
+            )
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
