@@ -51,3 +51,5 @@ MonoBehaviour:
   hasCheckPoints: 1
   checkpoints:
   - {fileID: 11400000, guid: dcf6648eb473ca7438523a56c7019cc0, type: 2}
+  unlocksNPC: 1
+  npcToUnlock: 2
