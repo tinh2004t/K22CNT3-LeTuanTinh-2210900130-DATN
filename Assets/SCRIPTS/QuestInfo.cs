@@ -66,6 +66,9 @@ public class QuestInfo : ScriptableObject
     public bool hasCheckPoints;
     public List<Checkpoint> checkpoints;
 
+    [Header("Unlock NPC Feature")]
+    public bool unlocksNPC;
 
+    public NPC_ID npcToUnlock;
 
 }

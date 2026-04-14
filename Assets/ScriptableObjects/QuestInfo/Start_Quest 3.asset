@@ -42,7 +42,7 @@ MonoBehaviour:
   coinReward: 100
   rewardItem1: Iron ingot
   rewardItem2: 
-  firstRequirementItem: slime
+  firstRequirementItem: Slime
   firstRequirementAmount: 5
   secondRequirementItem: 
   secondRequirementAmount: 0
