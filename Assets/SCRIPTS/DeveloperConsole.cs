@@ -13,7 +13,7 @@ public class DeveloperConsole : MonoBehaviour
     public TMP_Dropdown commandDropdown;
     public TMP_InputField commandInput;
 
-    private bool isConsoleOpen = false;
+    public bool isConsoleOpen = false;
 
     private void Awake()
     {
@@ -31,6 +31,7 @@ public class DeveloperConsole : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F9))
         {
             ToggleConsole();
+            MovementManager.Instance.canMove = !isConsoleOpen;
         }
 
         if (isConsoleOpen && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))

@@ -81,7 +81,10 @@ public class InventorySystem : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.I) && !isOpen && !ConstructionManager.Instance.inConstructionMode)
+        if (Input.GetKeyDown(KeyCode.I) && !isOpen &&
+            !ConstructionManager.Instance.inConstructionMode &&
+            !DeveloperConsole.Instance.isConsoleOpen
+            )
         {
             MovementManager.Instance.EnableLook(false);
 
