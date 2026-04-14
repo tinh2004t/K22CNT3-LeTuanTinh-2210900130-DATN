@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497cf2cd2eefed147a5e21a139fb6514, type: 3}
   m_Name: Village1_CP
   m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
-  name: Reach Dana's Village
-  isCompleted: 0
+  name: Dana's Village
+  isCompleted: 1

@@ -42,6 +42,16 @@ public class QuestManager : MonoBehaviour
 
     public List<Quest> allTrackedQuests;
 
+    [System.Serializable]
+    public struct LockableNPC
+    {
+        public NPC_ID npcID;
+        public GameObject npcObject;
+    }
+
+    [Header("Unlockable NPCs")]
+    public List<LockableNPC> lockableNPCsList;
+
     public void TrackQuest(Quest quest)
     {
         allTrackedQuests.Add(quest);
@@ -171,6 +181,11 @@ public class QuestManager : MonoBehaviour
         allCompletedQuests.Add(quest);
         UnTrackQuest(quest);
         RefreshQuestList();
+
+        if (quest.info.unlocksNPC && quest.info.npcToUnlock != NPC_ID.None)
+        {
+            UnlockNPCInScene(quest.info.npcToUnlock);
+        }
     }
 
 
@@ -272,5 +287,19 @@ public class QuestManager : MonoBehaviour
     {
         var itemToGet = Resources.Load<GameObject>(item);
         return itemToGet.GetComponent<Image>().sprite;
+    }
+
+    public void UnlockNPCInScene(NPC_ID idToUnlock)
+    {
+        if (idToUnlock == NPC_ID.None) return;
+
+        foreach (LockableNPC npc in lockableNPCsList)
+        {
+            if (npc.npcID == idToUnlock)
+            {
+                npc.npcObject.SetActive(true);
+                return;
+            }
+        }
     }
 }
