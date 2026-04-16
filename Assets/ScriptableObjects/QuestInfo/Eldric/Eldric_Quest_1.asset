@@ -42,9 +42,9 @@ MonoBehaviour:
     it well to survive out there.
   finalWordsClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
   coinReward: 50
-  rewardItem1: Raw Meat
-  rewardItem2: Raw Meat
-  firstRequirementItem: Raw Meat
+  rewardItem1: Raw_meat
+  rewardItem2: Raw_meat
+  firstRequirementItem: Raw_meat
   firstRequirementAmount: 5
   secondRequirementItem: Stick
   secondRequirementAmount: 4
