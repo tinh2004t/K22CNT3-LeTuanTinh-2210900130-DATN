@@ -2,6 +2,8 @@
 {
     None,
     Dana,
-    VillageChief,
-    ShopKeeper
+    Eldric,
+    ShopKeeper,
+    Kael,
+    Elara
 }

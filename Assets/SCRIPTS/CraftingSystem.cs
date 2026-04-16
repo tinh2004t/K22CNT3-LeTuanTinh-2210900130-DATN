@@ -18,10 +18,10 @@ public class CraftingSystem : MonoBehaviour
     Button toolsBTN, survivalBTN, refineBTN, constructionBTN;                                                                 
 
     //Craft Buttons
-    Button craftAxeBTN, craftPlankBTN, craftFoundationBTN, craftWallBTN, craftStorageBoxBTN;
+    Button craftAxeBTN, craftPlankBTN, craftFoundationBTN, craftWallBTN, craftStorageBoxBTN, craftCampfireBTN;
 
     //Requirement Text
-    public TMP_Text AxeReq1, AxeReq2, PlankReq1, FoundationReq1, WallReq1, StorageBoxReq1;
+    public TMP_Text AxeReq1, AxeReq2, PlankReq1, FoundationReq1, WallReq1, StorageBoxReq1, CampfireReq1, CampfireReq2;
 
     public bool isOpen;
 
@@ -32,6 +32,7 @@ public class CraftingSystem : MonoBehaviour
     public Blueprint FoundationBLP = new Blueprint("Foundation",3, 1, "Plank", 1, "", 0);
     public Blueprint WallBLP = new Blueprint("Wall",3, 1, "Plank", 2, "", 0);
     public Blueprint StorageBoxBLP = new Blueprint("StorageBox", 1, 1, "Plank", 2, "", 0);
+    public Blueprint CampfireBLP = new Blueprint("Campfire", 1, 2, "Stick", 3, "Stone", 5);
 
 
 
@@ -102,6 +103,13 @@ public class CraftingSystem : MonoBehaviour
 
         craftStorageBoxBTN = survivalScreenUI.transform.Find("StorageBox").transform.Find("Button").GetComponent<Button>();
         craftStorageBoxBTN.onClick.AddListener(delegate { CraftAnyItem(StorageBoxBLP); });
+
+        //Campfire
+        CampfireReq1 = survivalScreenUI.transform.Find("Campfire").transform.Find("req1").GetComponent<TMP_Text>();
+        CampfireReq2 = survivalScreenUI.transform.Find("Campfire").transform.Find("req2").GetComponent<TMP_Text>();
+
+        craftCampfireBTN = survivalScreenUI.transform.Find("Campfire").transform.Find("Button").GetComponent<Button>();
+        craftCampfireBTN.onClick.AddListener(delegate { CraftAnyItem(CampfireBLP); });
     }
 
 
@@ -353,6 +361,20 @@ public class CraftingSystem : MonoBehaviour
         else
         {
             craftStorageBoxBTN.gameObject.SetActive(false);
+
+        }
+
+        //--- Campfire x1 ---//
+        CampfireReq1.text = "3 Stick [" + stick_count + "]";
+        CampfireReq2.text = "5 Stone [" + stone_count + "]";
+
+        if (stick_count >= 3 && stone_count >= 5 && InventorySystem.Instance.CheckSlotsAvailable(1))
+        {
+            craftCampfireBTN.gameObject.SetActive(true);
+        }
+        else
+        {
+            craftCampfireBTN.gameObject.SetActive(false);
 
         }
 

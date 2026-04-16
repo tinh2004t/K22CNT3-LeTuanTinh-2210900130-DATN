@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a04ab43ec46244e881a610d2970b30, type: 3}
+  m_Name: Eldric_Quest_1
+  m_EditorClassIdentifier: Assembly-CSharp::QuestInfo
+  initialDialog:
+  - Young traveler, you've arrived just in time. Winter is approaching, and our camp's
+    supplies are running dangerously low.
+  - The rabbits at the edge of the forest are breeding rapidly. Could you help me
+    hunt a few for meat, and while you're at it, gather some dry sticks to keep our
+    fire going?
+  initialDialogClips: []
+  acceptOption: Sure, I'll bring back the meat and firewood for you.
+  acceptAnswer: Excellent! Make sure your aim is true; those rabbits are incredibly
+    fast. Good luck hunting!
+  acceptAnswerClip: {fileID: 0}
+  declineOption: I'm too busy surviving on my own right now. Maybe another time.
+  declineAnswer: Ah... That's a shame. Let's hope tonight isn't too freezing, or
+    the folks in the camp will be in deep trouble.
+  declineAnswerClip: {fileID: 0}
+  comebackAfterDecline: Changed your mind? The campfire is dying out and everyone
+    is starving. Will you help us?
+  comebackAfterDeclineClip: {fileID: 0}
+  comebackInProgress: Looks like your inventory doesn't have everything yet. Remember,
+    I need 5 pieces of rabbit meat and 4 sticks. Don't come back empty-handed!
+  comebackInProgressClip: {fileID: 0}
+  comebackCompleted: Wonderful! This meat and firewood are more than enough for us
+    to have a warm, hearty dinner tonight.
+  comebackCompletedClip: {fileID: 0}
+  finalWords: Thank you so much. Here is a little reward for your hard work. Use
+    it well to survive out there.
+  finalWordsClip: {fileID: 0}
+  coinReward: 50
+  rewardItem1: Raw Meat
+  rewardItem2: Raw Meat
+  firstRequirementItem: Raw Meat
+  firstRequirementAmount: 5
+  secondRequirementItem: Stick
+  secondRequirementAmount: 4
+  hasCheckPoints: 0
+  checkpoints: []
+  unlocksNPC: 0
+  npcToUnlock: 0

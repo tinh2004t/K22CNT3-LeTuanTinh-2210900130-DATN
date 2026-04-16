@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a04ab43ec46244e881a610d2970b30, type: 3}
+  m_Name: Start_Quest
+  m_EditorClassIdentifier: Assembly-CSharp::QuestInfo
+  initialDialog:
+  - You're finally awake. You've been out cold for two whole days.
+  - I found you passed out deep in the forest. Lucky I dragged you back here before
+    the wolves caught your scent.
+  - But I can't protect you forever. You need to defend yourself. Gather 5 Wood and
+    3 Stone nearby, and I'll help you craft an Axe.
+  initialDialogClips:
+  - {fileID: 8300000, guid: bbeec075103f6fd45ad43d12efc67605, type: 3}
+  - {fileID: 8300000, guid: 1dc5afc9cca073b4294955488ca7bad8, type: 3}
+  - {fileID: 8300000, guid: 659c933cde8c2ae4d8b58eca547a7136, type: 3}
+  acceptOption: Thanks for saving me. I'll gather the materials right away.
+  acceptAnswer: Don't mention it. You're still weak, so just look for sticks and
+    loose rocks around the camp. Don't wander too far.
+  acceptAnswerClip: {fileID: 8300000, guid: f79605b4484247140a2649603b1e6f90, type: 3}
+  declineOption: I'm still feeling dizzy... let me rest a bit more.
+  declineAnswer: Alright, take your time. But remember, an empty stomach won't fill
+    itself.
+  declineAnswerClip: {fileID: 8300000, guid: 86e207dd4f42abe47a830d2828465e89, type: 3}
+  comebackAfterDecline: Feeling any better? If you are up for it, bring me 5 Stick
+    and 5 Stone. We really need tools.
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 9fe08963c6a7d714ebb48f44f1a5cb01, type: 3}
+  comebackInProgress: 'Let me see... No, you are still missing some items. Remember:
+    I need 5 Wood and 5 Stone.'
+  comebackInProgressClip: {fileID: 8300000, guid: 36ee9b9e057745946afc63b5e28b8fe0, type: 3}
+  comebackCompleted: Here are a few gold coins for your efforts. Use them when you
+    need them.
+  comebackCompletedClip: {fileID: 8300000, guid: 50e7c34985a73c446b25f31251545a95, type: 3}
+  finalWords: Now! You can press C to craft your axe, and press I to equip it
+  finalWordsClip: {fileID: 8300000, guid: 70637ddda9f90a74285aaed937f6f80d, type: 3}
+  coinReward: 20
+  rewardItem1: 
+  rewardItem2: 
+  firstRequirementItem: Stick
+  firstRequirementAmount: 5
+  secondRequirementItem: Stone
+  secondRequirementAmount: 5
+  hasCheckPoints: 0
+  checkpoints: []

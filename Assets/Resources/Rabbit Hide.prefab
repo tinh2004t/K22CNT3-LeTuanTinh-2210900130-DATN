@@ -117,7 +117,7 @@ MonoBehaviour:
   isTrashable: 1
   thisName: Rabbit Hide
   thisDescription: Normal rabbit hide
-  thisFunctionality: Used craft
+  thisFunctionality: Can sell
   isConsumable: 0
   healthEffect: 0
   caloriesEffect: 0
@@ -126,3 +126,5 @@ MonoBehaviour:
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0
+  sellPrice: 40
+  isSellable: 1
