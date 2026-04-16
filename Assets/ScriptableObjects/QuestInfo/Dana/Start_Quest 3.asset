@@ -40,7 +40,7 @@ MonoBehaviour:
     your first encounter.
   finalWordsClip: {fileID: 8300000, guid: abb5fb604fbe033449147ba50abc8632, type: 3}
   coinReward: 100
-  rewardItem1: Iron ingot
+  rewardItem1: Iron_ingot
   rewardItem2: 
   firstRequirementItem: Slime
   firstRequirementAmount: 5
@@ -48,3 +48,5 @@ MonoBehaviour:
   secondRequirementAmount: 0
   hasCheckPoints: 0
   checkpoints: []
+  unlocksNPC: 0
+  npcToUnlock: 0

@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6379583743598900780}
   m_Layer: 0
-  m_Name: WateringCan_Model
+  m_Name: Watering_can_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

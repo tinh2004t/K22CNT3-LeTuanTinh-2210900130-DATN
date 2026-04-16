@@ -44,7 +44,7 @@ MonoBehaviour:
   coinReward: 20
   rewardItem1: 
   rewardItem2: 
-  firstRequirementItem: Health Potion
+  firstRequirementItem: Health_poition
   firstRequirementAmount: 1
   secondRequirementItem: 
   secondRequirementAmount: 0
