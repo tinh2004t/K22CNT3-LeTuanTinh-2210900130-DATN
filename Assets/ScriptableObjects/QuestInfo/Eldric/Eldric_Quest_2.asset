@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a04ab43ec46244e881a610d2970b30, type: 3}
+  m_Name: Eldric_Quest_2
+  m_EditorClassIdentifier: Assembly-CSharp::QuestInfo
+  initialDialog:
+  - Great job gathering the meat and wood. But eating raw meat in this environment
+    is a terrible idea; it'll make you sick.
+  - You need a fire to cook your food and stay warm when night falls. Press the 'C'
+    key to open your menu, navigate to the 'Survival' tab, and craft a Campfire.
+  initialDialogClips: []
+  acceptOption: Understood, I'll craft a campfire right away.
+  acceptAnswer: Good. Once it's lit, you'll feel much safer in the dark. Don't forget,
+    press 'C' and look under the 'Survival' category!
+  acceptAnswerClip: {fileID: 0}
+  declineOption: I think I'll be fine without a fire for now.
+  declineAnswer: Don't be overconfident. In these lands, the cold can kill you faster
+    than any beast.
+  declineAnswerClip: {fileID: 0}
+  comebackAfterDecline: Changed your mind? Darkness is falling, and you're going
+    to need that fire.
+  comebackAfterDeclineClip: {fileID: 0}
+  comebackInProgress: 'Haven''t crafted it yet? Check if you have enough wood and
+    stones. Remember: press ''C'' to open your menu and check the ''Survival'' tab.'
+  comebackInProgressClip: {fileID: 0}
+  comebackCompleted: Excellent work! That fire looks incredibly warm. Now you can
+    cook your meals and survive the freezing night.
+  comebackCompletedClip: {fileID: 0}
+  finalWords: Here is some extra coal and provisions. Keep your fire burning bright,
+    young traveler.
+  finalWordsClip: {fileID: 0}
+  coinReward: 20
+  rewardItem1: Campfire
+  rewardItem2: 
+  firstRequirementItem: Campfire
+  firstRequirementAmount: 1
+  secondRequirementItem: 
+  secondRequirementAmount: 0
+  hasCheckPoints: 0
+  checkpoints: []
+  unlocksNPC: 0
+  npcToUnlock: 3
