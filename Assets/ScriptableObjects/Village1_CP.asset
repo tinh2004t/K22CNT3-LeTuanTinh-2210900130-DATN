@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Village1_CP
   m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
   name: Dana's Village
-  isCompleted: 1
+  isCompleted: 0
