@@ -43,7 +43,7 @@ public class BuySystem : MonoBehaviour
         //if (TimeManager.Instance.currentSeason == TimeManager.Season.Spring)
         //{
             // Set spring list as our list
-            currentShopList = springList;
+            
 
             // Initialize list
             InitializeBuyList(currentShopList);

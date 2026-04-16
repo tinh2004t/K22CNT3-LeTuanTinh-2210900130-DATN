@@ -17,27 +17,29 @@ MonoBehaviour:
     is a terrible idea; it'll make you sick.
   - You need a fire to cook your food and stay warm when night falls. Press the 'C'
     key to open your menu, navigate to the 'Survival' tab, and craft a Campfire.
-  initialDialogClips: []
+  initialDialogClips:
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
   acceptOption: Understood, I'll craft a campfire right away.
   acceptAnswer: Good. Once it's lit, you'll feel much safer in the dark. Don't forget,
     press 'C' and look under the 'Survival' category!
-  acceptAnswerClip: {fileID: 0}
+  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
   declineOption: I think I'll be fine without a fire for now.
   declineAnswer: Don't be overconfident. In these lands, the cold can kill you faster
     than any beast.
-  declineAnswerClip: {fileID: 0}
+  declineAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
   comebackAfterDecline: Changed your mind? Darkness is falling, and you're going
     to need that fire.
-  comebackAfterDeclineClip: {fileID: 0}
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
   comebackInProgress: 'Haven''t crafted it yet? Check if you have enough wood and
     stones. Remember: press ''C'' to open your menu and check the ''Survival'' tab.'
-  comebackInProgressClip: {fileID: 0}
+  comebackInProgressClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
   comebackCompleted: Excellent work! That fire looks incredibly warm. Now you can
     cook your meals and survive the freezing night.
-  comebackCompletedClip: {fileID: 0}
+  comebackCompletedClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
   finalWords: Here is some extra coal and provisions. Keep your fire burning bright,
     young traveler.
-  finalWordsClip: {fileID: 0}
+  finalWordsClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
   coinReward: 20
   rewardItem1: Campfire
   rewardItem2: 
