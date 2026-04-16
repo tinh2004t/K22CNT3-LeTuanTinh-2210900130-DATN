@@ -94,13 +94,11 @@ public class DeveloperConsole : MonoBehaviour
     {
         if (args.Length < 1)
         {
-            // Cập nhật lại câu thông báo ví dụ cho rõ ràng
             Debug.LogWarning("Sai cú pháp! Ví dụ: bread 2 hoặc raw_meat 5");
             return;
         }
 
-        // SỬA Ở ĐÂY: Thay thế dấu gạch dưới '_' bằng khoảng trắng ' '
-        string itemName = args[0].Replace('_', ' ');
+        string itemName = args[0];
         int amount = 1;
 
         if (args.Length >= 2)
@@ -118,7 +116,6 @@ public class DeveloperConsole : MonoBehaviour
             {
                 InventorySystem.Instance.AddToInventory(itemName);
             }
-            // Thêm dấu nháy đơn vào log để dễ nhìn tên item có khoảng trắng
             Debug.Log($"Đã thêm {amount} '{itemName}' vào túi đồ.");
         }
         else

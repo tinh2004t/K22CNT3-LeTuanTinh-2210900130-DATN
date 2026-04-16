@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5737397510109785655}
   - component: {fileID: -532606053722219754}
   m_Layer: 5
-  m_Name: Raw Meat
+  m_Name: Cooked_meat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914152835132388173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 22.18914}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.61035, y: -0}
+  m_AnchoredPosition: {x: 0, y: -0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5321860345048987812
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cce409d571509b34ca3574dc96f4a82e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16430b46628638540b6c2fc40968f187, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -115,12 +115,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
   isTrashable: 1
-  thisName: Raw Meat
-  thisDescription: Normal raw meat
+  thisName: Cooked Meat
+  thisDescription: Can be eaten.
   thisFunctionality: Used craft
-  isConsumable: 0
-  healthEffect: 0
-  caloriesEffect: 0
+  isConsumable: 1
+  healthEffect: 10
+  caloriesEffect: 500
   hydrationEffect: 0
   isEquippable: 0
   isInsidedQuickSlot: 0

@@ -49,5 +49,5 @@ MonoBehaviour:
   secondRequirementAmount: 0
   hasCheckPoints: 0
   checkpoints: []
-  unlocksNPC: 0
+  unlocksNPC: 1
   npcToUnlock: 3
