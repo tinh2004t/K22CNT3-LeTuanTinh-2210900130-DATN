@@ -13,39 +13,42 @@ MonoBehaviour:
   m_Name: Eldric_Quest_3
   m_EditorClassIdentifier: Assembly-CSharp::QuestInfo
   initialDialog:
-  - Great job gathering the meat and wood. But eating raw meat in this environment
-    is a terrible idea; it'll make you sick.
-  - You need a fire to cook your food and stay warm when night falls. Press the 'C'
-    key to open your menu, navigate to the 'Survival' tab, and craft a Campfire.
-  initialDialogClips: []
-  acceptOption: Understood, I'll craft a campfire right away.
-  acceptAnswer: Good. Once it's lit, you'll feel much safer in the dark. Don't forget,
-    press 'C' and look under the 'Survival' category!
-  acceptAnswerClip: {fileID: 0}
-  declineOption: I think I'll be fine without a fire for now.
-  declineAnswer: Don't be overconfident. In these lands, the cold can kill you faster
-    than any beast.
-  declineAnswerClip: {fileID: 0}
-  comebackAfterDecline: Changed your mind? Darkness is falling, and you're going
-    to need that fire.
-  comebackAfterDeclineClip: {fileID: 0}
-  comebackInProgress: 'Haven''t crafted it yet? Check if you have enough wood and
-    stones. Remember: press ''C'' to open your menu and check the ''Survival'' tab.'
-  comebackInProgressClip: {fileID: 0}
-  comebackCompleted: Excellent work! That fire looks incredibly warm. Now you can
-    cook your meals and survive the freezing night.
-  comebackCompletedClip: {fileID: 0}
-  finalWords: Here is some extra coal and provisions. Keep your fire burning bright,
-    young traveler.
-  finalWordsClip: {fileID: 0}
+  - Ugh... My old wound from the last hunt is acting up again. The cold weather makes
+    it much worse.
+  - I'm too weak to walk to the village right now. Could you go to the Shopkeeper,
+    buy a Health Potion, and bring it back to me?
+  initialDialogClips:
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  acceptOption: Hang in there, I'll get that potion for you immediately.
+  acceptAnswer: Thank you, lad. The Shopkeeper usually has a few in stock. Please,
+    hurry back.
+  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  declineOption: I'm busy with something else. You'll have to wait.
+  declineAnswer: I understand... I'll try to manage the pain a bit longer. Come back
+    if you change your mind.
+  declineAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackAfterDecline: The pain is getting worse. Can you please help me get that
+    Health Potion from the Shopkeeper now?
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackInProgress: Did you find the Shopkeeper? I really need that Health Potion
+    to stabilize this wound.
+  comebackInProgressClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackCompleted: Ah... that's much better. The pain is starting to fade. You've
+    saved me a lot of trouble, young traveler.
+  comebackCompletedClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  finalWords: Now that I'm feeling better, you should head over to the outskirts
+    and meet Elara. She's been looking for someone with your skills to help with
+    a bigger problem.
+  finalWordsClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
   coinReward: 20
-  rewardItem1: Campfire
+  rewardItem1: 
   rewardItem2: 
-  firstRequirementItem: Campfire
+  firstRequirementItem: Health Potion
   firstRequirementAmount: 1
   secondRequirementItem: 
   secondRequirementAmount: 0
   hasCheckPoints: 0
   checkpoints: []
-  unlocksNPC: 0
-  npcToUnlock: 3
+  unlocksNPC: 1
+  npcToUnlock: 5
