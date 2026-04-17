@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a04ab43ec46244e881a610d2970b30, type: 3}
+  m_Name: Eldric_Quest_3
+  m_EditorClassIdentifier: Assembly-CSharp::QuestInfo
+  initialDialog:
+  - Ugh... My old wound from the last hunt is acting up again. The cold weather makes
+    it much worse.
+  - I'm too weak to walk to the village right now. Could you go to the Shopkeeper,
+    buy a Health Potion, and bring it back to me?
+  initialDialogClips:
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  acceptOption: Hang in there, I'll get that potion for you immediately.
+  acceptAnswer: Thank you, lad. The Shopkeeper usually has a few in stock. Please,
+    hurry back.
+  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  declineOption: I'm busy with something else. You'll have to wait.
+  declineAnswer: I understand... I'll try to manage the pain a bit longer. Come back
+    if you change your mind.
+  declineAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackAfterDecline: The pain is getting worse. Can you please help me get that
+    Health Potion from the Shopkeeper now?
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackInProgress: Did you find the Shopkeeper? I really need that Health Potion
+    to stabilize this wound.
+  comebackInProgressClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackCompleted: Ah... that's much better. The pain is starting to fade. You've
+    saved me a lot of trouble, young traveler.
+  comebackCompletedClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  finalWords: Now that I'm feeling better, you should head over to the outskirts
+    and meet Elara. She's been looking for someone with your skills to help with
+    a bigger problem.
+  finalWordsClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  coinReward: 20
+  rewardItem1: 
+  rewardItem2: 
+  firstRequirementItem: Health_poition
+  firstRequirementAmount: 1
+  secondRequirementItem: 
+  secondRequirementAmount: 0
+  hasCheckPoints: 0
+  checkpoints: []
+  unlocksNPC: 1
+  npcToUnlock: 5

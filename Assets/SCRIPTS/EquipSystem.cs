@@ -135,22 +135,36 @@ public class EquipSystem : MonoBehaviour
 
     private void SetEquippedModel(GameObject selectedItem)
     {
-
         if (selectedItemModel != null)
         {
             DestroyImmediate(selectedItemModel.gameObject);
             selectedItemModel = null;
         }
 
-        string selectedItemName = selectedItem.name.Replace("(Clone)", "");
+        // Cắt bỏ chữ (Clone) và các khoảng trắng thừa
+        string selectedItemName = selectedItem.name.Replace("(Clone)", "").Trim();
 
-        //selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"), 
-        //    new Vector3(0.666f, 1.056f, 0.943f), Quaternion.Euler(106, -99.42f, -9.12f));
-        print("Loaded model: " + CalculateItemModel(selectedItemName));
+        string modelName = CalculateItemModel(selectedItemName);
 
-        selectedItemModel = Instantiate(Resources.Load<GameObject>(CalculateItemModel(selectedItemName)));
+        // NẾU VẬT PHẨM KHÔNG CÓ MODEL (modelName bị null), THÌ NGỪNG LẠI KHÔNG INSTANTIATE NỮA
+        if (string.IsNullOrEmpty(modelName))
+        {
+            return;
+        }
 
-        selectedItemModel.transform.SetParent(toolHolder.transform, false);
+        // Load prefab từ Resources
+        GameObject modelPrefab = Resources.Load<GameObject>(modelName);
+
+        // KIỂM TRA NULL LẦN CUỐI TRƯỚC KHI TẠO
+        if (modelPrefab != null)
+        {
+            selectedItemModel = Instantiate(modelPrefab);
+            selectedItemModel.transform.SetParent(toolHolder.transform, false);
+        }
+        else
+        {
+            Debug.LogWarning($"Không tìm thấy Prefab nào tên là '{modelName}' trong thư mục Resources!");
+        }
     }
 
     private string CalculateItemModel(string selectedItemName)
@@ -303,7 +317,8 @@ public class EquipSystem : MonoBehaviour
         {
             switch (selectedItem.gameObject.name)
             {
-                case "Watering Can":
+                case "Watering Can(Clone)":
+                    Console.WriteLine("Player is holding watering can");
                     return true;
                 
                 default:
