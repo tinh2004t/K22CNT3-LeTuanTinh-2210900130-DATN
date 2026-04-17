@@ -127,4 +127,4 @@ MonoBehaviour:
   isSelected: 0
   isUseable: 0
   sellPrice: 5
-  isSellable: 0
+  isSellable: 1

@@ -304,6 +304,7 @@ public class EquipSystem : MonoBehaviour
             switch (selectedItem.gameObject.name)
             {
                 case "Watering Can":
+                    Console.WriteLine("Player is holding watering can");
                     return true;
                 
                 default:

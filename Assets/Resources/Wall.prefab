@@ -126,4 +126,5 @@ MonoBehaviour:
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 1
-  itemPendingToBeUsed: {fileID: 0}
+  sellPrice: 5
+  isSellable: 1
