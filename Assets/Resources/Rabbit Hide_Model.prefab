@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1081928458008870809}
   - component: {fileID: 3878814408826778474}
   m_Layer: 0
-  m_Name: Rabbit_hide_Model
+  m_Name: Rabbit Hide_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

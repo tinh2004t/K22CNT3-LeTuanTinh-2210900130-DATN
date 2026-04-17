@@ -125,3 +125,6 @@ MonoBehaviour:
   isEquippable: 0
   isInsidedQuickSlot: 0
   isSelected: 0
+  isUseable: 0
+  sellPrice: 1
+  isSellable: 1

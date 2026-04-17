@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2157614538528191352}
   - component: {fileID: -2557495649568188869}
   m_Layer: 5
-  m_Name: Bear_heart
+  m_Name: Bear Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

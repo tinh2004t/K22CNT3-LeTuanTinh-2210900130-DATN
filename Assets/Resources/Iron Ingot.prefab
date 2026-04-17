@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2157614538528191352}
   - component: {fileID: -2557495649568188869}
   m_Layer: 5
-  m_Name: Iron_ingot
+  m_Name: Iron Ingot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,5 +126,5 @@ MonoBehaviour:
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0
-  sellPrice: 0
-  isSellable: 0
+  sellPrice: 300
+  isSellable: 1

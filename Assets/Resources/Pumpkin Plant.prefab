@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 3293176872951202747}
   - component: {fileID: 2529500762856033001}
   m_Layer: 0
-  m_Name: Pumpkin_plant
+  m_Name: Pumpkin Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

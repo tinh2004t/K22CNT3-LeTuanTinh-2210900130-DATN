@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5737397510109785655}
   - component: {fileID: -532606053722219754}
   m_Layer: 5
-  m_Name: Raw_meat
+  m_Name: Raw Meat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,3 +126,5 @@ MonoBehaviour:
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0
+  sellPrice: 50
+  isSellable: 1
