@@ -2001,9 +2001,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3615901249780539504}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7305167, z: -0, w: 0.6828948}
+  m_LocalRotation: {x: 0, y: -0.730514, z: 0, w: 0.6828978}
   m_LocalPosition: {x: 1590.6501, y: 62.862244, z: 1411.6067}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.4999999, y: 1.5, z: 1.4999999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3551728516734692685}
@@ -2097,7 +2097,7 @@ MonoBehaviour:
   playerInRange: 0
   isTalkingWithPlayer: 0
   quests:
-  - questName: '"Life is fragile"'
+  - questName: Life is fragile
     questGiver: Dana
     questDescription: Your first weapon/tool
     accepted: 0
@@ -2106,6 +2106,33 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 76e2875db490d4e4c88b6c3dbf64c37a, type: 2}
+  - questName: The Beginning
+    questGiver: Dana
+    questDescription: Chop the tree
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 7de520b99edef3e4d82d1b3e1c09d213, type: 2}
+  - questName: Silent night
+    questGiver: Dana
+    questDescription: Kill the slime
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 0be2ead5619df89489a7719e3b0839bb, type: 2}
+  - questName: The survivors
+    questGiver: Dana
+    questDescription: Go to the village
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: a8a17db611a972e40ba7ad89c0e23f2a, type: 2}
   currentActiveQuest:
     questName: 
     questGiver: 
