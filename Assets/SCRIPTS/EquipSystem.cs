@@ -179,6 +179,8 @@ public class EquipSystem : MonoBehaviour
                 return "Hand_Model";
             case "Watering Can":
                 return "WateringCan_Model";
+            case "Sword":
+                return "Sword_Model";
             default:
                 return null;
         }
