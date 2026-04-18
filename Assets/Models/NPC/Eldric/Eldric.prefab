@@ -2635,7 +2635,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   playerInRange: 0
   isTalkingWithPlayer: 0
-  quests: []
+  quests:
+  - questName: Searching for food
+    questGiver: Eldric
+    questDescription: Hunting rabbits
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 112c3c9a6dea33244a50379013d1ef6a, type: 2}
+  - questName: Crafting campfire
+    questGiver: Eldric
+    questDescription: Press C and craft a campfire
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 3218ec991e81ec143a1abaa23d87c3d3, type: 2}
+  - questName: First aid measures
+    questGiver: Eldric
+    questDescription: Buy a health poison
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 1cc76fa545bf3e34bb4f8b77b0aac314, type: 2}
   currentActiveQuest:
     questName: 
     questGiver: 
