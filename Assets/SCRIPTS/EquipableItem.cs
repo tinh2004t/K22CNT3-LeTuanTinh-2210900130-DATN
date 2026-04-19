@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -12,16 +12,14 @@ public class EquipableItem : MonoBehaviour
 
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && //Left mouse button
+        if (Input.GetMouseButtonDown(0) && 
             !InventorySystem.Instance.isOpen && 
             !CraftingSystem.Instance.isOpen && 
             !SelectionManager.Instance.handIsVisible && 
@@ -48,8 +46,22 @@ public class EquipableItem : MonoBehaviour
         if (selectedTree != null)
         {
             SoundManager.Instance.PlaySound(SoundManager.Instance.chopSound);
-
             selectedTree.GetComponent<ChoppableTree>().GetHit();
+            return;
+        }
+
+        Transform targetedTransform = SelectionManager.Instance.currentTarget;
+
+        if (targetedTransform != null)
+        {
+            Animal animal = targetedTransform.GetComponent<Animal>();
+
+            if (animal != null && animal.playerInRange && !animal.isDead)
+            {
+                int damage = EquipSystem.Instance.GetWeaponDamage();
+
+                SelectionManager.Instance.StartCoroutine(SelectionManager.Instance.DealDamageTo(animal, 0f, damage));
+            }
         }
     }
 

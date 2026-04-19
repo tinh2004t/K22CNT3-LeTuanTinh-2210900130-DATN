@@ -13,6 +13,8 @@ public class SelectionManager : MonoBehaviour
 
     public bool onTarget;
 
+    public Transform currentTarget;
+
     public GameObject selectedObject;
 
 
@@ -63,6 +65,8 @@ public class SelectionManager : MonoBehaviour
         {
             var selectionTransform = hit.transform;
 
+            currentTarget = selectionTransform;
+
             ShopKeeper shop = selectionTransform.GetComponent<ShopKeeper>();
 
             if (shop && shop.playerInRange)
@@ -106,13 +110,11 @@ public class SelectionManager : MonoBehaviour
 
             ChoppableTree choppableTree = selectionTransform.GetComponent<ChoppableTree>();
 
-            // Nếu không thấy, thử tìm trong các đối tượng con (vì script có thể nằm ở object con trigger như 'tree_base')
             if (choppableTree == null)
             {
                 choppableTree = selectionTransform.GetComponentInChildren<ChoppableTree>();
             }
 
-            // (Tùy chọn) Đôi khi raycast trúng lá cây (con), script lại nằm ở cha, nên có thể thêm dòng này để chắc chắn:
             if (choppableTree == null)
             {
                 choppableTree = selectionTransform.GetComponentInParent<ChoppableTree>();
@@ -292,11 +294,6 @@ public class SelectionManager : MonoBehaviour
                     handIcon.gameObject .SetActive(false);
 
                     handIsVisible = false;
-
-                    if (Input.GetMouseButtonDown(0) && EquipSystem.Instance.IsHoldingWeapon())
-                    {
-                        StartCoroutine(DealDamageTo(animal, 0.3f, EquipSystem.Instance.GetWeaponDamage()));
-                    }
                 }
             }
 
@@ -367,7 +364,7 @@ public class SelectionManager : MonoBehaviour
 
     }
 
-    IEnumerator  DealDamageTo(Animal animal, float delay, int damage)
+    public IEnumerator DealDamageTo(Animal animal, float delay, int damage)
     {
         yield return new WaitForSeconds(delay);
         animal.TakeDamage(damage);

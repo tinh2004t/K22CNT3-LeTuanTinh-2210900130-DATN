@@ -196,7 +196,7 @@ public class PlayerState : MonoBehaviour
         {
             Vector3 position = registeredRespawnLocation.transform.position;
 
-            position.y += 7f; // above the location
+            position.y += 3f; // above the location
             position.z += 7f; // next to the location
 
             playerBody.transform.position = position; // actually respawn the player
