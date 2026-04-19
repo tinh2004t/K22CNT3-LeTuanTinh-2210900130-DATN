@@ -6786,6 +6786,7 @@ GameObject:
   - component: {fileID: 8683329845449154876}
   - component: {fileID: 4675298493920278699}
   - component: {fileID: 7955745033079518596}
+  - component: {fileID: 6937971819210002550}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -6969,6 +6970,9 @@ MonoBehaviour:
   - item: {fileID: 7383848779887517975, guid: 37715089c92bd0042b1db15db38616bc, type: 3}
     amountMin: 1
     amountMax: 1
+  - item: {fileID: 926420032572402803, guid: 421f30bf5836d5c4290ba90599fc76b6, type: 3}
+    amountMin: -9
+    amountMax: 1
   finalLoot: []
   wasLootCalculated: 0
 --- !u!82 &7955745033079518596
@@ -7068,6 +7072,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &6937971819210002550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5322320973374374807}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5416927414933716308
 GameObject:
   m_ObjectHideFlags: 0
