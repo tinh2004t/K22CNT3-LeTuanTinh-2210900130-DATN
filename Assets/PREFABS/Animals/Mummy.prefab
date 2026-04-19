@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 6820819492427077633}
   - component: {fileID: 3736051797655295386}
   - component: {fileID: 6365864423373337069}
+  - component: {fileID: 1124438167475424487}
   m_Layer: 0
   m_Name: Mummy
   m_TagString: Untagged
@@ -661,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98c85fffc29e8748bf8412a3d6864d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animal
-  animalName: Bear
+  animalName: Mummy
   playerInRange: 0
   currentHealth: 0
   maxHealth: 15000
@@ -686,7 +687,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33da5a6210d7e146a59cdd5876f99cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lootable
-  possibleLoot: []
+  possibleLoot:
+  - item: {fileID: 4943131167586155556, guid: cf0b80c8dd4abb84b8e63d3a31a1bfff, type: 3}
+    amountMin: -5
+    amountMax: 2
   finalLoot: []
   wasLootCalculated: 0
 --- !u!114 &5591974071075518390
@@ -758,6 +762,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &1124438167475424487
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281407179528652167}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1328107418928262381
 GameObject:
   m_ObjectHideFlags: 0

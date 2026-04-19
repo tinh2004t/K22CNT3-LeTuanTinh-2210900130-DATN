@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 6663989483420288817}
   - component: {fileID: -9152539917186420894}
   - component: {fileID: 4826127925631634290}
+  - component: {fileID: 1585692346497198902}
   m_Layer: 0
   m_Name: SlimePBR
   m_TagString: Untagged
@@ -618,6 +619,9 @@ MonoBehaviour:
   - item: {fileID: 7383848779887517975, guid: 22f715b2caa22024fac5aae1d2a50f31, type: 3}
     amountMin: -2
     amountMax: 2
+  - item: {fileID: 4943131167586155556, guid: c276263b4aa80504daa67eb18e6f9027, type: 3}
+    amountMin: -18
+    amountMax: 1
   finalLoot: []
   wasLootCalculated: 0
 --- !u!82 &4826127925631634290
@@ -717,6 +721,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &1585692346497198902
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931298151966786}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &323531783244266815
 GameObject:
   m_ObjectHideFlags: 0
