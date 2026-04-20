@@ -4,19 +4,21 @@ using System.Collections.Generic;
 [System.Serializable]
 public struct MaterialRequirement
 {
-    public ItemSO item; // Cấu trúc ItemSO hiện tại của game bạn
+    public string itemName;
     public int amount;
 }
 
 [CreateAssetMenu(fileName = "New Upgrade Recipe", menuName = "Survival Game/Upgrade Recipe")]
 public class UpgradeRecipeSO : ScriptableObject
 {
-    public string recipeName;
-    public ItemSO baseItem;             // Vật phẩm gốc (VD: Kiếm sắt)
-    public ItemSO upgradedItem;         // Vật phẩm sau khi nâng cấp (VD: Kiếm thép)
+    [Header("Yêu cầu")]
+    public GameObject baseItemPrefab; // Kéo thả prefab UI đồ gốc vào đây
+    public int coinCost;
+    public List<MaterialRequirement> requiredMaterials;
 
-    public int coinCost;                // Số vàng yêu cầu
-    public List<MaterialRequirement> requiredMaterials; // Danh sách nguyên liệu
+    [Header("Kết quả")]
+    public GameObject upgradedItemPrefab; // Kéo thả prefab UI đồ nâng cấp vào đây (Để lấy Tên và Icon)
 
-    public GameObject upgradeEffect;    // Hiệu ứng hạt (Particle) khi nâng cấp thành công
+    [Header("Hiệu ứng")]
+    public GameObject upgradeEffect;
 }
