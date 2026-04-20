@@ -179,8 +179,14 @@ public class EquipSystem : MonoBehaviour
                 return "Hand_Model";
             case "Watering Can":
                 return "WateringCan_Model";
-            case "Sword":
-                return "Sword_Model";
+            case "Iron Sword":
+                return "Iron Sword_Model";
+            case "Great Sword lv1":
+                return "Great Sword lv1_Model";
+            case "Great Sword lv2":
+                return "Great Sword lv2_Model";
+            case "Great Sword lv3":
+                return "Great Sword lv3_Model";
             default:
                 return null;
         }
