@@ -88,6 +88,27 @@ public class SelectionManager : MonoBehaviour
                 }
             }
 
+            BlacksmithNPC blacksmith = selectionTransform.GetComponent<BlacksmithNPC>();
+
+            if (blacksmith && blacksmith.playerInRange)
+            {
+                if (blacksmith.isTalkingWithPlayer == false)
+                {
+                    interaction_text.text = "Talk";
+                    interaction_Info_UI.SetActive(true);
+                }
+                else
+                {
+                    interaction_text.text = "";
+                    interaction_Info_UI.SetActive(false);
+                }
+
+                if (Input.GetMouseButtonDown(0) && blacksmith.isTalkingWithPlayer == false)
+                {
+                    blacksmith.Talk();
+                }
+            }
+
 
             NPC npc = selectionTransform.GetComponent<NPC>();
 
@@ -306,7 +327,7 @@ public class SelectionManager : MonoBehaviour
                 handIcon.gameObject.SetActive(false);
             }
 
-            if (!npc && !interactable && !animal && !choppableTree && !storageBox && !campfire && !soil && !shop)
+            if (!npc && !interactable && !animal && !choppableTree && !storageBox && !campfire && !soil && !shop && !blacksmith)
             {
                 interaction_text.text = "";
                 interaction_Info_UI.SetActive(false); 
