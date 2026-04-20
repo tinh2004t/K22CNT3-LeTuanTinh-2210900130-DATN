@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091fd653b100c4a48a2f29ee0e0ee379, type: 3}
   m_Name: New Upgrade Recipe
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeRecipeSO
-  recipeName: 
-  baseItemName: Iron Sword
+  baseItemPrefab: {fileID: 7383848779887517975, guid: d3412242362188147b4350a3d8fb8278, type: 3}
   coinCost: 1000
   requiredMaterials:
-  - itemName: Green gem
+  - itemName: Green Gem
     amount: 4
   upgradedItemPrefab: {fileID: 7383848779887517975, guid: 2e8a60735df9b844c918b02e27c54578, type: 3}
   upgradeEffect: {fileID: 0}

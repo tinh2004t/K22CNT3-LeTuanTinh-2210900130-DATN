@@ -1754,6 +1754,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6961521263635916279}
   - component: {fileID: 4153862443121466823}
+  - component: {fileID: 4297836367904437166}
+  - component: {fileID: 467326806350987318}
+  - component: {fileID: 176272882988581667}
   m_Layer: 0
   m_Name: Blacksmith
   m_TagString: Untagged
@@ -1801,6 +1804,65 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4297836367904437166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227940247423969891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6209f868390f41f4592637524b7944fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlacksmithNPC
+  playerInRange: 0
+  isTalkingWithPlayer: 0
+  npcRecipe: {fileID: 11400000, guid: 41bad5586d043ef4d984a5df6a27a46f, type: 2}
+  npcRecipes:
+  - {fileID: 11400000, guid: 41bad5586d043ef4d984a5df6a27a46f, type: 2}
+--- !u!65 &467326806350987318
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227940247423969891}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.742981, y: 2.495491, z: 2.7145996}
+  m_Center: {x: 0.04763794, y: 0.7477455, z: 0.23812866}
+--- !u!65 &176272882988581667
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227940247423969891}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6435195736229411182
 GameObject:
   m_ObjectHideFlags: 0
