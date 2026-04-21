@@ -114,15 +114,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491ac392107b1264980c3b2f21968326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
-  isTrashable: 1
+  isTrashable: 0
   thisName: Iron Ingot
-  thisDescription: Just a normal Axe
-  thisFunctionality: Used cut down the tree
+  thisDescription: 
+  thisFunctionality: 
   isConsumable: 0
   healthEffect: 0
   caloriesEffect: 0
   hydrationEffect: 0
-  isEquippable: 1
+  maxHealthEffect: 0
+  isEquippable: 0
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0

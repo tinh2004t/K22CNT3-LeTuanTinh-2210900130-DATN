@@ -6456,7 +6456,7 @@ RectTransform:
   m_Father: {fileID: 5563678719390026835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.01928711, y: -0.010002136}
   m_SizeDelta: {x: -0.038574, y: 0.47673}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6786,6 +6786,7 @@ GameObject:
   - component: {fileID: 8683329845449154876}
   - component: {fileID: 4675298493920278699}
   - component: {fileID: 7955745033079518596}
+  - component: {fileID: 6937971819210002550}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -6859,7 +6860,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -6898,7 +6899,7 @@ MonoBehaviour:
   animalName: Bear
   playerInRange: 0
   currentHealth: 0
-  maxHealth: 200
+  maxHealth: 150
   soundChannel: {fileID: 7955745033079518596}
   animalHitAndScream: {fileID: 8300000, guid: ffc0e36960a4cc549b7b9d6c8c36519e, type: 3}
   animalHitAndDie: {fileID: 8300000, guid: 0c0763ec65669dd408fb68826a49170f, type: 3}
@@ -6948,7 +6949,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.282122, y: 1.7051611, z: 6.356045}
+  m_Size: {x: 12, y: 12, z: 12}
   m_Center: {x: 0.097257614, y: 0.85096526, z: 0.3397944}
 --- !u!114 &4675298493920278699
 MonoBehaviour:
@@ -6968,6 +6969,9 @@ MonoBehaviour:
     amountMax: 4
   - item: {fileID: 7383848779887517975, guid: 37715089c92bd0042b1db15db38616bc, type: 3}
     amountMin: 1
+    amountMax: 1
+  - item: {fileID: 926420032572402803, guid: 421f30bf5836d5c4290ba90599fc76b6, type: 3}
+    amountMin: -9
     amountMax: 1
   finalLoot: []
   wasLootCalculated: 0
@@ -7068,6 +7072,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &6937971819210002550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5322320973374374807}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5416927414933716308
 GameObject:
   m_ObjectHideFlags: 0
@@ -7962,7 +7993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3594536495959007879
 RectTransform:
   m_ObjectHideFlags: 0

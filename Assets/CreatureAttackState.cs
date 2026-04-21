@@ -11,7 +11,7 @@ public class CreatureAttackState : StateMachineBehaviour
 
     public float attackRate = 1f;
     private float attackTimer;
-    private int damageToInflict = 1;
+    public int damageToInflict = 1;
 
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state

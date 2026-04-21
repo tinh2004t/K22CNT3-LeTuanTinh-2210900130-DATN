@@ -94,21 +94,25 @@ public class DeveloperConsole : MonoBehaviour
     {
         if (args.Length < 1)
         {
-            Debug.LogWarning("Sai cú pháp! Ví dụ: bread 2 hoặc raw_meat 5");
+            Debug.LogWarning("Sai cú pháp! Ví dụ: bread 2 hoặc raw meat 5");
             return;
         }
 
-        string itemName = args[0];
+        string itemName = "";
         int amount = 1;
 
-        if (args.Length >= 2)
+        if (args.Length >= 2 && int.TryParse(args[args.Length - 1], out int parsedAmount))
         {
-            if (!int.TryParse(args[1], out amount))
-            {
-                Debug.LogWarning("Số lượng không hợp lệ!");
-                return;
-            }
+            amount = parsedAmount;
+
+            itemName = string.Join(" ", args, 0, args.Length - 1);
         }
+        else
+        {
+            itemName = string.Join(" ", args);
+        }
+
+        itemName = itemName.Trim();
 
         if (InventorySystem.Instance.CheckSlotsAvailable(amount))
         {

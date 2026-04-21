@@ -18,10 +18,22 @@ public class CraftingSystem : MonoBehaviour
     Button toolsBTN, survivalBTN, refineBTN, constructionBTN;                                                                 
 
     //Craft Buttons
-    Button craftAxeBTN, craftPlankBTN, craftFoundationBTN, craftWallBTN, craftStorageBoxBTN, craftCampfireBTN;
+    Button  craftAxeBTN, 
+            craftPlankBTN, 
+            craftFoundationBTN, 
+            craftWallBTN, 
+            craftStorageBoxBTN, 
+            craftCampfireBTN, 
+            craftIronSwordBTN;
 
     //Requirement Text
-    public TMP_Text AxeReq1, AxeReq2, PlankReq1, FoundationReq1, WallReq1, StorageBoxReq1, CampfireReq1, CampfireReq2;
+    public TMP_Text AxeReq1, AxeReq2, 
+                    PlankReq1, 
+                    FoundationReq1, 
+                    WallReq1, 
+                    StorageBoxReq1, 
+                    CampfireReq1, CampfireReq2, 
+                    IronSwordReq1, IronSwordReq2;
 
     public bool isOpen;
 
@@ -33,6 +45,7 @@ public class CraftingSystem : MonoBehaviour
     public Blueprint WallBLP = new Blueprint("Wall",3, 1, "Plank", 2, "", 0);
     public Blueprint StorageBoxBLP = new Blueprint("StorageBox", 1, 1, "Plank", 2, "", 0);
     public Blueprint CampfireBLP = new Blueprint("Campfire", 1, 2, "Stick", 3, "Stone", 5);
+    public Blueprint IronSwordBLP = new Blueprint("Iron Sword", 1, 2, "Iron Ingot", 5, "Stick", 3);
 
 
 
@@ -110,6 +123,13 @@ public class CraftingSystem : MonoBehaviour
 
         craftCampfireBTN = survivalScreenUI.transform.Find("Campfire").transform.Find("Button").GetComponent<Button>();
         craftCampfireBTN.onClick.AddListener(delegate { CraftAnyItem(CampfireBLP); });
+
+        //Iron Sword
+        IronSwordReq1 = toolsScreenUI.transform.Find("Iron Sword").transform.Find("req1").GetComponent<TMP_Text>();
+        IronSwordReq2 = toolsScreenUI.transform.Find("Iron Sword").transform.Find("req2").GetComponent<TMP_Text>();
+
+        craftIronSwordBTN = toolsScreenUI.transform.Find("Iron Sword").transform.Find("Button").GetComponent<Button>();
+        craftIronSwordBTN.onClick.AddListener(delegate { CraftAnyItem(IronSwordBLP); });
     }
 
 
@@ -268,6 +288,7 @@ public class CraftingSystem : MonoBehaviour
         int stick_count = 0;
         int log_count = 0;
         int plank_count = 0;
+        int ironIngot_count = 0;
 
         inventoryItemList = InventorySystem.Instance.itemList;
 
@@ -286,6 +307,9 @@ public class CraftingSystem : MonoBehaviour
                     break;
                 case "Plank":
                     plank_count++;
+                    break;
+                case "Iron Ingot":
+                    ironIngot_count++;
                     break;
             }
 
@@ -378,6 +402,18 @@ public class CraftingSystem : MonoBehaviour
 
         }
 
+        //--- Iron Sword x1 ---//
+        IronSwordReq1.text = "5 Iron Ingot [" + ironIngot_count + "]";
+        IronSwordReq2.text = "3 Stick [" + stick_count + "]";
+
+        if (ironIngot_count >= 5 && stick_count >= 3 && InventorySystem.Instance.CheckSlotsAvailable(1))
+        {
+            craftIronSwordBTN.gameObject.SetActive(true);
+        }
+        else
+        {
+            craftIronSwordBTN.gameObject.SetActive(false);
+        }
     }
 
 

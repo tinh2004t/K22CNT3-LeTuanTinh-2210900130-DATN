@@ -28,6 +28,8 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public float caloriesEffect;
     public float hydrationEffect;
 
+    public float maxHealthEffect;
+
     // --- Equipping --- //
     public bool isEquippable;
     private GameObject itemPendingEquiping;
@@ -89,7 +91,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             {
                 // Setting this specific gameobject to be the item we want to destroy later
                 itemPendingConsumption = gameObject;
-                consumingFunction(healthEffect, caloriesEffect, hydrationEffect);
+                consumingFunction(healthEffect, caloriesEffect, hydrationEffect, maxHealthEffect);
             }
 
             if (isEquippable && isInsidedQuickSlot == false && EquipSystem.Instance.CheckIfFull() == false)
@@ -174,16 +176,25 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    private void consumingFunction(float healthEffect, float caloriesEffect, float hydrationEffect)
+    private void consumingFunction(float healthEffect, float caloriesEffect, float hydrationEffect, float maxHealthEffect)
     {
         itemInfoUI.SetActive(false);
 
+        maxHealthEffectCalculation(maxHealthEffect);
+
         healthEffectCalculation(healthEffect);
-
         caloriesEffectCalculation(caloriesEffect);
-
         hydrationEffectCalculation(hydrationEffect);
+    }
 
+    private static void maxHealthEffectCalculation(float maxHealthEffect)
+    {
+        if (maxHealthEffect > 0)
+        {
+            PlayerState.Instance.maxHealth += maxHealthEffect;
+
+            PlayerState.Instance.setHealth(PlayerState.Instance.currentHealth + maxHealthEffect);
+        }
     }
 
 

@@ -45,6 +45,7 @@ public class Animal : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (!gameObject.scene.isLoaded) return;
         OnDestroyed?.Invoke();
     }
 
