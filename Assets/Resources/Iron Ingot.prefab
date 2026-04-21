@@ -116,8 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
   isTrashable: 1
   thisName: Iron Ingot
-  thisDescription: Just a normal Axe
-  thisFunctionality: Used cut down the tree
+  thisDescription: 
+  thisFunctionality: 
   isConsumable: 0
   healthEffect: 0
   caloriesEffect: 0

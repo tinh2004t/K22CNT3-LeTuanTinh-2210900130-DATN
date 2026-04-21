@@ -119,10 +119,10 @@ public class PlayerState : MonoBehaviour
 
 
         //Test code to decrease health
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            currentHealth -= 10;
-        }
+        //if (Input.GetKeyDown(KeyCode.N))
+        //{
+        //    currentHealth -= 10;
+        //}
 
 
         
