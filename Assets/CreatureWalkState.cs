@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,34 +16,55 @@ public class CreatureWalkState : StateMachineBehaviour
     List<Transform> waypointsList = new List<Transform>();
 
 
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // -- Initialization -- //
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
+
         agent = animator.GetComponent<NavMeshAgent>();
 
-        agent.speed = walkSpeed;
+        if (agent != null)
+        {
+            agent.speed = walkSpeed;
+        }
         timer = 0;
 
         // -- Get all waypoints and Move to the first waypoint -- //
-        GameObject waypointsCluster = animator.GetComponent<NPCWaypoints>().npmWaypointsCluster;
-        foreach (Transform t in waypointsCluster.transform)
+        waypointsList.Clear();
+
+        NPCWaypoints waypointsComponent = animator.GetComponent<NPCWaypoints>();
+        if (waypointsComponent != null && waypointsComponent.npmWaypointsCluster != null)
         {
-            waypointsList.Add(t);
+            GameObject waypointsCluster = waypointsComponent.npmWaypointsCluster;
+            foreach (Transform t in waypointsCluster.transform)
+            {
+                waypointsList.Add(t);
+            }
         }
 
-        Vector3 firstPosition = waypointsList[Random.Range(0, waypointsList.Count)].position;
-        agent.SetDestination(firstPosition);
+        if (agent != null && agent.isActiveAndEnabled && agent.isOnNavMesh && waypointsList.Count > 0)
+        {
+            Vector3 firstPosition = waypointsList[Random.Range(0, waypointsList.Count)].position;
+            agent.SetDestination(firstPosition);
+        }
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // -- If agent arrived at waypoint, move to next waypoint -- //
-        if (agent.remainingDistance <= agent.stoppingDistance)
+        if (agent != null && agent.isActiveAndEnabled && agent.isOnNavMesh)
         {
-            agent.SetDestination(waypointsList[Random.Range(0, waypointsList.Count)].position);
+            // -- If agent arrived at waypoint, move to next waypoint -- //
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                if (waypointsList.Count > 0)
+                {
+                    agent.SetDestination(waypointsList[Random.Range(0, waypointsList.Count)].position);
+                }
+            }
         }
 
         // -- Transition to Idle State -- //
@@ -54,17 +75,22 @@ public class CreatureWalkState : StateMachineBehaviour
         }
 
         // -- Transition to Chase State -- //
-        float distanceFromPlayer = Vector3.Distance(player.position, animator.transform.position);
-        if (distanceFromPlayer < detectionAreaRadius)
+        if (player != null)
         {
-            animator.SetBool("isChasing", true);
+            float distanceFromPlayer = Vector3.Distance(player.position, animator.transform.position);
+            if (distanceFromPlayer < detectionAreaRadius)
+            {
+                animator.SetBool("isChasing", true);
+            }
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        agent.SetDestination(agent.transform.position);
+        if (agent != null && agent.isActiveAndEnabled && agent.isOnNavMesh)
+        {
+            agent.ResetPath();
+        }
     }
-
 }
