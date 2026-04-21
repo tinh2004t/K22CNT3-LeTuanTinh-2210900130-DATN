@@ -122,7 +122,7 @@ MonoBehaviour:
   healthEffect: 10
   caloriesEffect: 200
   hydrationEffect: 0
-  maxHealthEffect: 900
+  maxHealthEffect: 0
   isEquippable: 0
   isInsidedQuickSlot: 0
   isSelected: 0

@@ -6899,7 +6899,7 @@ MonoBehaviour:
   animalName: Bear
   playerInRange: 0
   currentHealth: 0
-  maxHealth: 15000
+  maxHealth: 150
   soundChannel: {fileID: 7955745033079518596}
   animalHitAndScream: {fileID: 8300000, guid: ffc0e36960a4cc549b7b9d6c8c36519e, type: 3}
   animalHitAndDie: {fileID: 8300000, guid: 0c0763ec65669dd408fb68826a49170f, type: 3}

@@ -122,9 +122,10 @@ MonoBehaviour:
   healthEffect: 20
   caloriesEffect: 300
   hydrationEffect: 30
+  maxHealthEffect: 0
   isEquippable: 0
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0
-  sellPrice: 30
+  sellPrice: 45
   isSellable: 1

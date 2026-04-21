@@ -665,7 +665,7 @@ MonoBehaviour:
   animalName: Mummy
   playerInRange: 0
   currentHealth: 0
-  maxHealth: 15000
+  maxHealth: 750
   soundChannel: {fileID: 5611735962784066375}
   animalHitAndScream: {fileID: 8300000, guid: ffc0e36960a4cc549b7b9d6c8c36519e, type: 3}
   animalHitAndDie: {fileID: 8300000, guid: 0c0763ec65669dd408fb68826a49170f, type: 3}
@@ -688,8 +688,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lootable
   possibleLoot:
-  - item: {fileID: 4943131167586155556, guid: cf0b80c8dd4abb84b8e63d3a31a1bfff, type: 3}
+  - item: {fileID: 4943131167586155556, guid: c276263b4aa80504daa67eb18e6f9027, type: 3}
     amountMin: -5
+    amountMax: 2
+  - item: {fileID: 4943131167586155556, guid: 9ca3df713ddf5214f81c6bed6927b647, type: 3}
+    amountMin: -18
     amountMax: 2
   finalLoot: []
   wasLootCalculated: 0
