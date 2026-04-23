@@ -112,7 +112,8 @@ public class SelectionManager : MonoBehaviour
 
             NPC npc = selectionTransform.GetComponent<NPC>();
 
-            if (npc && npc.playerInRange)
+            if (npc &&
+                npc.playerInRange)
             {
                 interaction_text.text = "Talk";
                 interaction_Info_UI.SetActive(true);

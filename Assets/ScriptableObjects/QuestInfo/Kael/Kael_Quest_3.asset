@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a04ab43ec46244e881a610d2970b30, type: 3}
+  m_Name: Kael_Quest_3
+  m_EditorClassIdentifier: Assembly-CSharp::QuestInfo
+  initialDialog:
+  - Greetings, survivor. Look at that dull Iron Sword of yours. Are you planning
+    to tickle the monsters out there?
+  - To survive in this land, muscle alone won't cut it. You need a sharper weapon.
+    Go see the Blacksmith in the central hub; he can help you upgrade your gear.
+  - But he will need materials. Let me teach you the secret to finding Gems for forging...
+  - Red Gems often drop from ferocious Bears. Green Gems can be found in the cores
+    of gooey Slimes. And Blue Gems are hidden within the bandages of Mummies.
+  - Do you catch my drift? Gather the materials, visit the Blacksmith, upgrade that
+    Iron Sword into a Great Sword Lv1, and bring it back here so I can see it.
+  initialDialogClips:
+  - {fileID: 8300000, guid: 36fd0b1a5badc5740991754dd63d1316, type: 3}
+  - {fileID: 8300000, guid: 4a7681b179c97884dbfafd1f41dcdfc9, type: 3}
+  - {fileID: 8300000, guid: 2700dcdd06d894b41baa3cef1676f39c, type: 3}
+  - {fileID: 8300000, guid: 2700dcdd06d894b41baa3cef1676f39c, type: 3}
+  - {fileID: 8300000, guid: 2700dcdd06d894b41baa3cef1676f39c, type: 3}
+  acceptOption: Got it. I'll go gather the Gems and upgrade my weapon right away!
+  acceptAnswer: Excellent! Remember where the monsters roam, and try not to die before
+    you bring that Great Sword Lv1 back.
+  acceptAnswerClip: {fileID: 8300000, guid: aa13f2bf2574c2040a13a99aa5b4c030, type: 3}
+  declineOption: I'll pass. This Iron Sword is still good enough for me. I'm busy.
+  declineAnswer: Suit yourself. Just don't come crying to me when that blade shatters
+    in the middle of a monster horde.
+  declineAnswerClip: {fileID: 8300000, guid: 7b02fcca5160da24ba08997ea71b9587, type: 3}
+  comebackAfterDecline: Changed your mind? Ready to learn how to forge a real weapon?
+  comebackAfterDeclineClip: {fileID: 8300000, guid: b60f944f797979349b4829f656a2d985, type: 3}
+  comebackInProgress: 'You haven''t upgraded your weapon yet? Let me repeat: Red
+    Gems from Bears, Green Gems from Slimes, and Blue Gems from Mummies. Go to the
+    Blacksmith, craft the Great Sword Lv1, and bring it here.'
+  comebackInProgressClip: {fileID: 8300000, guid: d06e3c146bb6a5f4a88c7fefbf7a12ca, type: 3}
+  comebackCompleted: Well, well! Look at that Great Sword Lv1. The Blacksmith's craftsmanship
+    is as good as ever. Now you are truly ready to face real challenges.
+  comebackCompletedClip: {fileID: 8300000, guid: f56de347d241eac49956843cb0c1e9f2, type: 3}
+  finalWords: Don't stop at Lv1. The stronger your weapon, the higher your chances
+    of survival. Good luck out there, survivor.
+  finalWordsClip: {fileID: 8300000, guid: fcc6b93be3a87c24d9c66bd84869c796, type: 3}
+  coinReward: 200
+  rewardItem1: Health Potion
+  rewardItem2: Great Sword lv1
+  firstRequirementItem: Great Sword lv1
+  firstRequirementAmount: 1
+  secondRequirementItem: 
+  secondRequirementAmount: 0
+  hasCheckPoints: 0
+  checkpoints: []
+  unlocksNPC: 0
+  npcToUnlock: 0

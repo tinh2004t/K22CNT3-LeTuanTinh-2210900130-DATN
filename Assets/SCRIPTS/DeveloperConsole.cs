@@ -31,12 +31,16 @@ public class DeveloperConsole : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F9))
         {
             ToggleConsole();
-            MovementManager.Instance.canMove = !isConsoleOpen;
+            
+
         }
 
         if (isConsoleOpen && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
+            
+
             ExecuteCommand();
+
         }
     }
 
@@ -47,18 +51,24 @@ public class DeveloperConsole : MonoBehaviour
 
         if (isConsoleOpen)
         {
+            MovementManager.Instance.canMove = !isConsoleOpen;
             MovementManager.Instance.EnableLook(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            SelectionManager.Instance.DisableSelection();
+            SelectionManager.Instance.GetComponent<SelectionManager>().enabled = false;
 
             commandInput.ActivateInputField();
             commandInput.text = "";
         }
         else
         {
+            MovementManager.Instance.canMove = !isConsoleOpen;
             MovementManager.Instance.EnableLook(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            SelectionManager.Instance.EnableSelection();
+            SelectionManager.Instance.GetComponent<SelectionManager>().enabled = true;
         }
     }
 
