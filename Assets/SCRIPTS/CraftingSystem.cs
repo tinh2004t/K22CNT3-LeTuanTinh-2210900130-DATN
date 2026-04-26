@@ -24,7 +24,8 @@ public class CraftingSystem : MonoBehaviour
             craftWallBTN, 
             craftStorageBoxBTN, 
             craftCampfireBTN, 
-            craftIronSwordBTN;
+            craftIronSwordBTN,
+            craftTheGenesisCoreBTN;
 
     //Requirement Text
     public TMP_Text AxeReq1, AxeReq2, 
@@ -33,19 +34,21 @@ public class CraftingSystem : MonoBehaviour
                     WallReq1, 
                     StorageBoxReq1, 
                     CampfireReq1, CampfireReq2, 
-                    IronSwordReq1, IronSwordReq2;
+                    IronSwordReq1, IronSwordReq2,
+                    TheGenesisCoreReq1, TheGenesisCoreReq2, TheGenesisCoreReq3, TheGenesisCoreReq4;
 
     public bool isOpen;
 
     //All Blueprint
 
-    public Blueprint AxeBLP = new Blueprint("Axe",1, 2, "Stone", 3, "Stick", 3);
-    public Blueprint PlankBLP = new Blueprint("Plank",2, 1, "Log", 1, "", 0);
-    public Blueprint FoundationBLP = new Blueprint("Foundation",3, 1, "Plank", 1, "", 0);
-    public Blueprint WallBLP = new Blueprint("Wall",3, 1, "Plank", 2, "", 0);
-    public Blueprint StorageBoxBLP = new Blueprint("StorageBox", 1, 1, "Plank", 2, "", 0);
-    public Blueprint CampfireBLP = new Blueprint("Campfire", 1, 2, "Stick", 3, "Stone", 5);
-    public Blueprint IronSwordBLP = new Blueprint("Iron Sword", 1, 2, "Iron Ingot", 5, "Stick", 3);
+    public Blueprint AxeBLP = new Blueprint("Axe",1, 2, "Stone", 3, "Stick", 3, "", 0, "", 0);
+    public Blueprint PlankBLP = new Blueprint("Plank",2, 1, "Log", 1, "", 0, "", 0, "", 0);
+    public Blueprint FoundationBLP = new Blueprint("Foundation",3, 1, "Plank", 1, "", 0, "", 0, "", 0);
+    public Blueprint WallBLP = new Blueprint("Wall",3, 1, "Plank", 2, "", 0, "", 0, "", 0);
+    public Blueprint StorageBoxBLP = new Blueprint("StorageBox", 1, 1, "Plank", 2, "", 0, "", 0, "", 0);
+    public Blueprint CampfireBLP = new Blueprint("Campfire", 1, 2, "Stick", 3, "Stone", 5, "", 0, "", 0);
+    public Blueprint IronSwordBLP = new Blueprint("Iron Sword", 1, 2, "Iron Ingot", 5, "Stick", 3, "", 0, "", 0);
+    public Blueprint TheGenesisCoreBLP = new Blueprint("The Genesis Core", 1, 4, "Green Gem", 2, "Purple Gem", 2, "Red Gem", 2, "Blue Gem", 2);
 
 
 
@@ -130,6 +133,16 @@ public class CraftingSystem : MonoBehaviour
 
         craftIronSwordBTN = toolsScreenUI.transform.Find("Iron Sword").transform.Find("Button").GetComponent<Button>();
         craftIronSwordBTN.onClick.AddListener(delegate { CraftAnyItem(IronSwordBLP); });
+
+        //The Genesis Core
+        TheGenesisCoreReq1 = refineScreenUI.transform.Find("The Genesis Core").transform.Find("req1").GetComponent<TMP_Text>();
+        TheGenesisCoreReq2 = refineScreenUI.transform.Find("The Genesis Core").transform.Find("req2").GetComponent<TMP_Text>();
+        TheGenesisCoreReq3 = refineScreenUI.transform.Find("The Genesis Core").transform.Find("req3").GetComponent<TMP_Text>();
+        TheGenesisCoreReq4 = refineScreenUI.transform.Find("The Genesis Core").transform.Find("req4").GetComponent<TMP_Text>();
+
+        craftTheGenesisCoreBTN = refineScreenUI.transform.Find("The Genesis Core").transform.Find("Button").GetComponent<Button>();
+        craftTheGenesisCoreBTN.onClick.AddListener(delegate { CraftAnyItem(TheGenesisCoreBLP); });
+
     }
 
 
@@ -194,6 +207,17 @@ public class CraftingSystem : MonoBehaviour
         {
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req1, blueprintToCraft.Req1amount);
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req2, blueprintToCraft.Req2amount);
+        }else if (blueprintToCraft.numOfRequriments == 3)
+        {
+            InventorySystem.Instance.RemoveItem(blueprintToCraft.Req1, blueprintToCraft.Req1amount);
+            InventorySystem.Instance.RemoveItem(blueprintToCraft.Req2, blueprintToCraft.Req2amount);
+            InventorySystem.Instance.RemoveItem(blueprintToCraft.Req3, blueprintToCraft.Req3amount);
+            }else if (blueprintToCraft.numOfRequriments == 4)
+        {
+            InventorySystem.Instance.RemoveItem(blueprintToCraft.Req1, blueprintToCraft.Req1amount);
+            InventorySystem.Instance.RemoveItem(blueprintToCraft.Req2, blueprintToCraft.Req2amount);
+            InventorySystem.Instance.RemoveItem(blueprintToCraft.Req3, blueprintToCraft.Req3amount);
+            InventorySystem.Instance.RemoveItem(blueprintToCraft.Req4, blueprintToCraft.Req4amount);
         }
 
 
@@ -289,6 +313,11 @@ public class CraftingSystem : MonoBehaviour
         int log_count = 0;
         int plank_count = 0;
         int ironIngot_count = 0;
+        int greenGem_count = 0;
+        int purpleGem_count = 0;
+        int redGem_count = 0;
+        int blueGem_count = 0;
+
 
         inventoryItemList = InventorySystem.Instance.itemList;
 
@@ -311,6 +340,19 @@ public class CraftingSystem : MonoBehaviour
                 case "Iron Ingot":
                     ironIngot_count++;
                     break;
+                case "Green Gem":
+                    greenGem_count++;
+                    break;
+                case "Purple Gem":
+                    purpleGem_count++;
+                    break;
+                case "Red Gem":
+                    redGem_count++;
+                    break;
+                case "Blue Gem":
+                    blueGem_count++;
+                    break;
+                      
             }
 
 
@@ -413,6 +455,21 @@ public class CraftingSystem : MonoBehaviour
         else
         {
             craftIronSwordBTN.gameObject.SetActive(false);
+        }
+
+        //--- The Genesis Core x1 ---//
+        TheGenesisCoreReq1.text = "2 Green Gem [" + greenGem_count + "]";
+        TheGenesisCoreReq2.text = "2 Purple Gem [" + purpleGem_count + "]";
+        TheGenesisCoreReq3.text = "2 Red Gem [" + redGem_count + "]";
+        TheGenesisCoreReq4.text = "2 Blue Gem [" + blueGem_count + "]";
+
+        if (greenGem_count >= 2 && purpleGem_count >= 2 && redGem_count >= 2 && blueGem_count >= 2 && InventorySystem.Instance.CheckSlotsAvailable(1))
+        {
+            craftTheGenesisCoreBTN.gameObject.SetActive(true);
+        }
+        else
+        {
+            craftTheGenesisCoreBTN.gameObject.SetActive(false);
         }
     }
 
