@@ -1,18 +1,24 @@
 ﻿using UnityEngine;
+using System.Collections; // Bắt buộc thêm thư viện này để dùng Coroutine
 
 public class BossAreaTeleporter : MonoBehaviour
 {
     [Header("Cấu hình dịch chuyển")]
-    public Transform destination; // Kéo BossArena_SpawnPoint vào đây
-    public GameObject vfxEffect; // Hiệu ứng biến mất (tùy chọn)
+    public Transform destination;
+    public GameObject vfxEffect;
 
     [Header("Điều kiện dịch chuyển")]
-    public string requiredItemName = "The Genesis Core"; // Tên vật phẩm yêu cầu (Phải gõ chính xác tên Prefab/Item)
-    public bool consumeKeyOnUse = true; // Chìa khóa có bị mất sau khi dùng không?
+    public string requiredItemName = "The Genesis Core";
+    public bool consumeKeyOnUse = true;
+
+    [Header("Cấu hình UI Thông báo")]
+    [Tooltip("Kéo thả GameObject chứa Text thông báo vào đây")]
+    public GameObject warningMessageUI;
+    [Tooltip("Thời gian hiển thị thông báo (giây)")]
+    public float messageDisplayTime = 3f;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Kiểm tra nếu vật thể chạm vào là Player
         if (other.CompareTag("Player"))
         {
             if (HasRequiredItem())
@@ -21,34 +27,48 @@ public class BossAreaTeleporter : MonoBehaviour
             }
             else
             {
-                // Thông báo khi không đủ điều kiện
                 Debug.Log($"Bạn không thể vào! Cần có vật phẩm: {requiredItemName}");
 
-                // Bạn có thể kích hoạt một UI Text trên màn hình tại đây nếu muốn
-                // Ví dụ: UIManager.Instance.ShowMessage("Cần có " + requiredItemName);
+                // Gọi hàm hiển thị UI
+                ShowWarningUI();
             }
         }
     }
 
-    /// <summary>
-    /// Kiểm tra và tiêu hao vật phẩm từ InventorySystem của bạn
-    /// </summary>
+    private void ShowWarningUI()
+    {
+        if (warningMessageUI != null)
+        {
+            // Dừng các Coroutine cũ (nếu người chơi spam đâm vào cửa nhiều lần) để tránh lỗi nhấp nháy UI
+            StopAllCoroutines();
+            StartCoroutine(DisplayWarningRoutine());
+        }
+        else
+        {
+            Debug.LogWarning("Bạn chưa gán warningMessageUI trong Inspector!");
+        }
+    }
+
+    // Coroutine xử lý việc Bật -> Chờ -> Tắt UI
+    private IEnumerator DisplayWarningRoutine()
+    {
+        warningMessageUI.SetActive(true); // Bật thông báo
+        yield return new WaitForSeconds(messageDisplayTime); // Đợi vài giây
+        warningMessageUI.SetActive(false); // Tắt thông báo
+    }
+
     private bool HasRequiredItem()
     {
-        // Kiểm tra xem hệ thống Inventory có đang tồn tại trong Scene không
         if (InventorySystem.Instance != null)
         {
-            // Kiểm tra xem số lượng vật phẩm yêu cầu trong túi đồ có lớn hơn 0 không
             if (InventorySystem.Instance.CheckItemAmount(requiredItemName) > 0)
             {
-                // Nếu cấu hình yêu cầu tiêu hao chìa khóa
                 if (consumeKeyOnUse)
                 {
                     InventorySystem.Instance.RemoveItem(requiredItemName, 1);
                     Debug.Log($"Đã tiêu hao 1 {requiredItemName} để mở cổng Boss!");
                 }
-
-                return true; // Đủ điều kiện
+                return true;
             }
         }
         else
@@ -56,22 +76,19 @@ public class BossAreaTeleporter : MonoBehaviour
             Debug.LogError("Lỗi: Không tìm thấy InventorySystem trong Scene!");
         }
 
-        return false; // Không đủ điều kiện (hoặc không có item)
+        return false;
     }
 
     void TeleportPlayer(GameObject player)
     {
-        // Tắt CharacterController trước khi dời vị trí để tránh bị lỗi giật ngược (rubber banding)
         CharacterController cc = player.GetComponent<CharacterController>();
         if (cc != null) cc.enabled = false;
 
-        // Dịch chuyển vị trí và góc quay
         player.transform.position = destination.position;
         player.transform.rotation = destination.rotation;
 
         if (cc != null) cc.enabled = true;
 
-        // Tạo hiệu ứng tại điểm đến nếu có
         if (vfxEffect != null)
         {
             Instantiate(vfxEffect, destination.position, Quaternion.identity);

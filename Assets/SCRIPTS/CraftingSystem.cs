@@ -260,7 +260,8 @@ public class CraftingSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C) && !isOpen &&
             !ConstructionManager.Instance.inConstructionMode &&
-            !DeveloperConsole.Instance.isConsoleOpen)
+            !DeveloperConsole.Instance.isConsoleOpen &&
+            !EndGamePortal.isCutscenePlaying)
         {
 
 

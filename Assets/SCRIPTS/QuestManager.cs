@@ -131,7 +131,9 @@ public class QuestManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Q) && !isQuestMenuOpen && !ConstructionManager.Instance.inConstructionMode)
+        if (Input.GetKeyDown(KeyCode.Q) && !isQuestMenuOpen && 
+            !ConstructionManager.Instance.inConstructionMode && 
+            !EndGamePortal.isCutscenePlaying)
         {
 
             questMenu.SetActive(true);

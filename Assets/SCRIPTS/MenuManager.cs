@@ -38,7 +38,9 @@ public class MenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M) && 
             !isMenuOpen &&
-            !DeveloperConsole.Instance.isConsoleOpen)
+            !DeveloperConsole.Instance.isConsoleOpen &&
+            !EndGamePortal.isCutscenePlaying
+            )
         {
             uiCanvas.SetActive(false);
             menuCanvas.SetActive(true);

@@ -83,7 +83,8 @@ public class InventorySystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I) && !isOpen &&
             !ConstructionManager.Instance.inConstructionMode &&
-            !DeveloperConsole.Instance.isConsoleOpen
+            !DeveloperConsole.Instance.isConsoleOpen &&
+            !EndGamePortal.isCutscenePlaying
             )
         {
             MovementManager.Instance.EnableLook(false);

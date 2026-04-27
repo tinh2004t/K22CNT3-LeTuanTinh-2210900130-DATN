@@ -5,5 +5,6 @@
     Eldric,
     ShopKeeper,
     Kael,
-    Elara
+    Elara,
+    EndGate
 }
