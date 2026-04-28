@@ -689,7 +689,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Lootable
   possibleLoot:
   - item: {fileID: 4943131167586155556, guid: c276263b4aa80504daa67eb18e6f9027, type: 3}
-    amountMin: -5
+    amountMin: -8
+    amountMax: 2
+  - item: {fileID: 4943131167586155556, guid: fc5090a7f92b2e845be1fc787cbf1c48, type: 3}
+    amountMin: -8
     amountMax: 2
   finalLoot: []
   wasLootCalculated: 0

@@ -2767,7 +2767,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33da5a6210d7e146a59cdd5876f99cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lootable
-  possibleLoot: []
+  possibleLoot:
+  - item: {fileID: 4943131167586155556, guid: 480c9fffcb3c02347b10a34beb91a5ae, type: 3}
+    amountMin: 1
+    amountMax: 1
   finalLoot: []
   wasLootCalculated: 0
 --- !u!114 &518169217729636055

@@ -1438,8 +1438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Lootable
   possibleLoot:
   - item: {fileID: 914152835132388173, guid: 73da3a5db4ddd334d89c8c7297441817, type: 3}
-    amountMin: 0
-    amountMax: 1
+    amountMin: -2
+    amountMax: 3
   - item: {fileID: 914152835132388173, guid: 36edb9610b19b8b4a89ea1d9391509d3, type: 3}
     amountMin: 1
     amountMax: 2
