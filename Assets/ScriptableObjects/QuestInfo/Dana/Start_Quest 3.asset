@@ -20,25 +20,25 @@ MonoBehaviour:
   - Use your Stone Axe to fend them off. If you get hurt, remember we still have
     some bread in the emergency rations.
   initialDialogClips:
-  - {fileID: 8300000, guid: d7c665acbf3fb3d4685f59787961e65f, type: 3}
-  - {fileID: 8300000, guid: 00c942a6c2e959742986d8e1e29686a2, type: 3}
-  - {fileID: 8300000, guid: c971267591d8cac4b909f6feb87937df, type: 3}
+  - {fileID: 8300000, guid: f217f860f6c737345853180f6bfbb516, type: 3}
+  - {fileID: 8300000, guid: d7dc9363d6649414790f7aa066dae6f5, type: 3}
+  - {fileID: 8300000, guid: 3e5b17819ce71bf4c8faa918b66a8abc, type: 3}
   acceptOption: I'll handle these pests.
   acceptAnswer: Stay sharp. Don't let them surround you!
-  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  acceptAnswerClip: {fileID: 8300000, guid: 55320cc0d407190459567bf5de001eb5, type: 3}
   declineOption: I'm not ready for this...
   declineAnswer: You don't have a choice! Fight or run!
-  declineAnswerClip: {fileID: 8300000, guid: ea000b2629d8e104db216d24868afb17, type: 3}
+  declineAnswerClip: {fileID: 8300000, guid: 10c82aa72ff8920418b32e0dec43af83, type: 3}
   comebackAfterDecline: The slimes are still out there. You have to clear the area!
-  comebackAfterDeclineClip: {fileID: 8300000, guid: 5b74928bee9709d409115ca9a195ee3c, type: 3}
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 4d01fe0eaceab5a439b5acfa68b79b93, type: 3}
   comebackInProgress: You've survived the first wave, but there are still slimes
     nearby. And look at your wounds, you should eat something.
-  comebackInProgressClip: {fileID: 8300000, guid: 38ef40db76924b842b03a4411f912419, type: 3}
+  comebackInProgressClip: {fileID: 8300000, guid: 7af382568da11a94b8617801057f8271, type: 3}
   comebackCompleted: The area is quiet again. You've proven you can survive the night.
-  comebackCompletedClip: {fileID: 8300000, guid: 08ceb276d1e7ffa47bce6d3045b3de6d, type: 3}
+  comebackCompletedClip: {fileID: 8300000, guid: d3b79e27f765324418ace632f9babcb5, type: 3}
   finalWords: Rest up while you can. The night is long, but you've managed well for
     your first encounter.
-  finalWordsClip: {fileID: 8300000, guid: abb5fb604fbe033449147ba50abc8632, type: 3}
+  finalWordsClip: {fileID: 8300000, guid: cea2198730b405a4ea1eaabd23fb3ddd, type: 3}
   coinReward: 100
   rewardItem1: Iron Ingot
   rewardItem2: 

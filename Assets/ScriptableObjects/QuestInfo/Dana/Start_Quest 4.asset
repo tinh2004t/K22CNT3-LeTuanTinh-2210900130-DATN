@@ -20,27 +20,27 @@ MonoBehaviour:
   - Be careful. The Plains are crawling with Wild Wolves and Bear. If they attack,
     use that Axe to defend yourself.
   initialDialogClips:
-  - {fileID: 8300000, guid: d7c665acbf3fb3d4685f59787961e65f, type: 3}
-  - {fileID: 8300000, guid: 00c942a6c2e959742986d8e1e29686a2, type: 3}
-  - {fileID: 8300000, guid: c971267591d8cac4b909f6feb87937df, type: 3}
+  - {fileID: 8300000, guid: 7340366182c51394ab353a414df340eb, type: 3}
+  - {fileID: 8300000, guid: 1d2c923e0cf126842bcdca6b8e93cf9d, type: 3}
+  - {fileID: 8300000, guid: c2e8df0f51be7bb4993513d3fa423f29, type: 3}
   acceptOption: I'm ready. I will head to the Village.
   acceptAnswer: Good spirit. The villagers might need help too. Go safe!
-  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  acceptAnswerClip: {fileID: 8300000, guid: 1832917faf3307749937f0341804a4a7, type: 3}
   declineOption: Monsters? I think I'll stay here a bit longer...
   declineAnswer: Suit yourself. But you can't survive on berries forever.
-  declineAnswerClip: {fileID: 8300000, guid: ea000b2629d8e104db216d24868afb17, type: 3}
+  declineAnswerClip: {fileID: 8300000, guid: 3263b9074329a2e4faa80061be01bd29, type: 3}
   comebackAfterDecline: Changed your mind? You can't hide here forever. The path
     to the Village is still open if you are ready.
-  comebackAfterDeclineClip: {fileID: 8300000, guid: 5b74928bee9709d409115ca9a195ee3c, type: 3}
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 51fec8a6044f8a54fb35cd46f2d47b1b, type: 3}
   comebackInProgress: Lost? Just look for the Signpost down the path. It points straight
     to the Village.
-  comebackInProgressClip: {fileID: 8300000, guid: 38ef40db76924b842b03a4411f912419, type: 3}
+  comebackInProgressClip: {fileID: 8300000, guid: 9781d92dee50e3c4bbcfb202d007f4f6, type: 3}
   comebackCompleted: Here are a few gold coins for your efforts. Use them when you
     need them.
-  comebackCompletedClip: {fileID: 8300000, guid: 08ceb276d1e7ffa47bce6d3045b3de6d, type: 3}
+  comebackCompletedClip: {fileID: 8300000, guid: 54849aa4690fc8f4fb89288410d976c7, type: 3}
   finalWords: Safe travels. Remember to watch for the Signposts. And don't let the
     wolves bite!
-  finalWordsClip: {fileID: 8300000, guid: abb5fb604fbe033449147ba50abc8632, type: 3}
+  finalWordsClip: {fileID: 8300000, guid: 719f9339652882b4e9f330dc8e289bcb, type: 3}
   coinReward: 20
   rewardItem1: 
   rewardItem2: 

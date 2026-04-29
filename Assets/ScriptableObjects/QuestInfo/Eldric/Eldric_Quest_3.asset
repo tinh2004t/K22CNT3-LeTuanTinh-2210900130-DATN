@@ -18,29 +18,29 @@ MonoBehaviour:
   - I'm too weak to walk to the village right now. Could you go to the Shopkeeper,
     buy a Health Potion, and bring it back to me?
   initialDialogClips:
-  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
-  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  - {fileID: 8300000, guid: 2afb9f55f06831a4d8a8b4c049dc195c, type: 3}
+  - {fileID: 8300000, guid: 105241c221af14043a5873c9fda43f3b, type: 3}
   acceptOption: Hang in there, I'll get that potion for you immediately.
   acceptAnswer: Thank you, lad. The Shopkeeper usually has a few in stock. Please,
     hurry back.
-  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  acceptAnswerClip: {fileID: 8300000, guid: 19a4795960152e44a832836b307f7acb, type: 3}
   declineOption: I'm busy with something else. You'll have to wait.
   declineAnswer: I understand... I'll try to manage the pain a bit longer. Come back
     if you change your mind.
-  declineAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  declineAnswerClip: {fileID: 8300000, guid: 88fc13fade824b34090a0120f82d5c07, type: 3}
   comebackAfterDecline: The pain is getting worse. Can you please help me get that
     Health Potion from the Shopkeeper now?
-  comebackAfterDeclineClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 4536724912c1b0b4a893e689c8b7130b, type: 3}
   comebackInProgress: Did you find the Shopkeeper? I really need that Health Potion
     to stabilize this wound.
-  comebackInProgressClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackInProgressClip: {fileID: 8300000, guid: 36f4aef664e8d4a4aa39fcfa6162874a, type: 3}
   comebackCompleted: Ah... that's much better. The pain is starting to fade. You've
     saved me a lot of trouble, young traveler.
-  comebackCompletedClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackCompletedClip: {fileID: 8300000, guid: 6f6989c55333b47408a5ea79cb954823, type: 3}
   finalWords: Now that I'm feeling better, you should head over to the outskirts
     and meet Elara. She's been looking for someone with your skills to help with
     a bigger problem.
-  finalWordsClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  finalWordsClip: {fileID: 8300000, guid: 34bf9b0f5ba06714582b2231f01447ff, type: 3}
   coinReward: 20
   rewardItem1: 
   rewardItem2: 

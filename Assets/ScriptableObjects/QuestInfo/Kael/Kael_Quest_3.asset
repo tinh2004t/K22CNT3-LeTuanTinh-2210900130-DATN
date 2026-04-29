@@ -23,31 +23,31 @@ MonoBehaviour:
   - Do you catch my drift? Gather the materials, visit the Blacksmith, upgrade that
     Iron Sword into a Great Sword Lv1, and bring it back here so I can see it.
   initialDialogClips:
-  - {fileID: 8300000, guid: 36fd0b1a5badc5740991754dd63d1316, type: 3}
-  - {fileID: 8300000, guid: 4a7681b179c97884dbfafd1f41dcdfc9, type: 3}
-  - {fileID: 8300000, guid: 2700dcdd06d894b41baa3cef1676f39c, type: 3}
-  - {fileID: 8300000, guid: 2700dcdd06d894b41baa3cef1676f39c, type: 3}
-  - {fileID: 8300000, guid: 2700dcdd06d894b41baa3cef1676f39c, type: 3}
+  - {fileID: 8300000, guid: 282a99ae03df7f645bc3f5eb1817c6bf, type: 3}
+  - {fileID: 8300000, guid: 993a6b072fcf76e4db8f06c0f04f8318, type: 3}
+  - {fileID: 8300000, guid: 85208eea06e59fc49b3266ce18a1f887, type: 3}
+  - {fileID: 8300000, guid: 7df418643db3d6f4dacf258336911449, type: 3}
+  - {fileID: 8300000, guid: 5bd1b75b75ea8d645a1a5930e6a4ab33, type: 3}
   acceptOption: Got it. I'll go gather the Gems and upgrade my weapon right away!
   acceptAnswer: Excellent! Remember where the monsters roam, and try not to die before
     you bring that Great Sword Lv1 back.
-  acceptAnswerClip: {fileID: 8300000, guid: aa13f2bf2574c2040a13a99aa5b4c030, type: 3}
+  acceptAnswerClip: {fileID: 8300000, guid: 60845dbb8224e3445a7223ba204e5c94, type: 3}
   declineOption: I'll pass. This Iron Sword is still good enough for me. I'm busy.
   declineAnswer: Suit yourself. Just don't come crying to me when that blade shatters
     in the middle of a monster horde.
-  declineAnswerClip: {fileID: 8300000, guid: 7b02fcca5160da24ba08997ea71b9587, type: 3}
+  declineAnswerClip: {fileID: 8300000, guid: 187e983c83a2c774a8ff564d489a279f, type: 3}
   comebackAfterDecline: Changed your mind? Ready to learn how to forge a real weapon?
-  comebackAfterDeclineClip: {fileID: 8300000, guid: b60f944f797979349b4829f656a2d985, type: 3}
+  comebackAfterDeclineClip: {fileID: 8300000, guid: e2e45889c1bd7514e97a3050128ffeb1, type: 3}
   comebackInProgress: 'You haven''t upgraded your weapon yet? Let me repeat: Red
     Gems from Bears, Green Gems from Slimes, and Blue Gems from Mummies. Go to the
     Blacksmith, craft the Great Sword Lv1, and bring it here.'
-  comebackInProgressClip: {fileID: 8300000, guid: d06e3c146bb6a5f4a88c7fefbf7a12ca, type: 3}
+  comebackInProgressClip: {fileID: 8300000, guid: 74fef7ee1e1012349a547125bc6d8910, type: 3}
   comebackCompleted: Well, well! Look at that Great Sword Lv1. The Blacksmith's craftsmanship
     is as good as ever. Now you are truly ready to face real challenges.
-  comebackCompletedClip: {fileID: 8300000, guid: f56de347d241eac49956843cb0c1e9f2, type: 3}
+  comebackCompletedClip: {fileID: 8300000, guid: 4419cbe1a706f2146a3fdc4f70d83b1f, type: 3}
   finalWords: Don't stop at Lv1. The stronger your weapon, the higher your chances
     of survival. Good luck out there, survivor.
-  finalWordsClip: {fileID: 8300000, guid: fcc6b93be3a87c24d9c66bd84869c796, type: 3}
+  finalWordsClip: {fileID: 8300000, guid: 2e205857a0e103e41a86329100fa0173, type: 3}
   coinReward: 200
   rewardItem1: Health Potion
   rewardItem2: Great Sword lv1
