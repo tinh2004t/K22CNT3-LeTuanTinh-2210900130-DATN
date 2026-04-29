@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections; // Bắt buộc thêm thư viện này để dùng Coroutine
+using System.Collections;
 
 public class BossAreaTeleporter : MonoBehaviour
 {
@@ -29,7 +29,6 @@ public class BossAreaTeleporter : MonoBehaviour
             {
                 Debug.Log($"Bạn không thể vào! Cần có vật phẩm: {requiredItemName}");
 
-                // Gọi hàm hiển thị UI
                 ShowWarningUI();
             }
         }
@@ -39,7 +38,6 @@ public class BossAreaTeleporter : MonoBehaviour
     {
         if (warningMessageUI != null)
         {
-            // Dừng các Coroutine cũ (nếu người chơi spam đâm vào cửa nhiều lần) để tránh lỗi nhấp nháy UI
             StopAllCoroutines();
             StartCoroutine(DisplayWarningRoutine());
         }
@@ -49,12 +47,11 @@ public class BossAreaTeleporter : MonoBehaviour
         }
     }
 
-    // Coroutine xử lý việc Bật -> Chờ -> Tắt UI
     private IEnumerator DisplayWarningRoutine()
     {
-        warningMessageUI.SetActive(true); // Bật thông báo
-        yield return new WaitForSeconds(messageDisplayTime); // Đợi vài giây
-        warningMessageUI.SetActive(false); // Tắt thông báo
+        warningMessageUI.SetActive(true); 
+        yield return new WaitForSeconds(messageDisplayTime); 
+        warningMessageUI.SetActive(false); 
     }
 
     private bool HasRequiredItem()

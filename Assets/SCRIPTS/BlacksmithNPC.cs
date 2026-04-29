@@ -6,18 +6,18 @@ public class BlacksmithNPC : MonoBehaviour
     public bool playerInRange;
     public bool isTalkingWithPlayer;
 
-    public UpgradeRecipeSO npcRecipe; // Công thức của NPC này
+    public UpgradeRecipeSO npcRecipe; 
 
 
     [Header("Danh sách rèn")]
-    public List<UpgradeRecipeSO> npcRecipes; // Đổi thành List
+    public List<UpgradeRecipeSO> npcRecipes; 
 
     public void Talk()
     {
         isTalkingWithPlayer = true;
         LookAtPlayer();
 
-        // Truyền List vào
+        
         UpgradeUIManager.Instance.OpenMenu(npcRecipes);
 
         MovementManager.Instance.EnableLook(false);
@@ -31,14 +31,11 @@ public class BlacksmithNPC : MonoBehaviour
     {
         isTalkingWithPlayer = false;
 
-        // 1. Đóng giao diện nâng cấp
         UpgradeUIManager.Instance.CloseMenu();
 
-        // 2. Trả lại quyền điều khiển cho Player
         MovementManager.Instance.EnableLook(true);
         MovementManager.Instance.EnableMovement(true);
 
-        // 3. Ẩn chuột đi
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -68,7 +65,7 @@ public class BlacksmithNPC : MonoBehaviour
             playerInRange = false;
             if (isTalkingWithPlayer)
             {
-                StopTalking(); // Tự động đóng nếu lỡ bị đẩy ra xa
+                StopTalking(); 
             }
         }
     }

@@ -15,8 +15,8 @@ public class UpgradeUIManager : MonoBehaviour
     [Header("References")]
     public BlacksmithNPC blacksmith;
     public GameObject upgradePanelUI;
-    public Transform contentTransform;    // Nơi chứa các slot
-    public GameObject upgradeSlotPrefab;  // Kéo Prefab vừa tạo ở Bước 2 vào đây
+    public Transform contentTransform;    
+    public GameObject upgradeSlotPrefab;  
     public Button exitButton;
 
     void Start()
@@ -24,33 +24,27 @@ public class UpgradeUIManager : MonoBehaviour
         exitButton.onClick.AddListener(ExitUpgradeMode);
     }
 
-    // Hàm này sẽ sinh các UI Slot ra màn hình
     public void OpenMenu(List<UpgradeRecipeSO> recipes)
     {
         upgradePanelUI.SetActive(true);
 
-        // Xóa các slot cũ (nếu có) để không bị trùng lặp
         foreach (Transform child in contentTransform)
         {
             Destroy(child.gameObject);
         }
 
-        // Tạo danh sách mới
         foreach (var recipe in recipes)
         {
             GameObject prefab = Instantiate(upgradeSlotPrefab, contentTransform);
             UpgradeItemSlot slot = prefab.GetComponent<UpgradeItemSlot>();
             slot.recipe = recipe;
 
-            // Lấy dữ liệu từ GameObject (Y hệt cách bạn làm trong BuySystem)
             InventoryItem upgradedItemInfo = recipe.upgradedItemPrefab.GetComponent<InventoryItem>();
             InventoryItem baseItemInfo = recipe.baseItemPrefab.GetComponent<InventoryItem>();
 
-            // Gán thông tin hiển thị lên UI
             slot.itemNameUI.text = upgradedItemInfo.thisName;
             slot.itemImageUI.sprite = recipe.upgradedItemPrefab.GetComponent<Image>().sprite;
 
-            // Ghi text nguyên liệu cần thiết
             string requirements = $"Vàng: {recipe.coinCost}\n";
             requirements += $"- {baseItemInfo.thisName} (x1)\n";
             foreach (var mat in recipe.requiredMaterials)
@@ -66,7 +60,6 @@ public class UpgradeUIManager : MonoBehaviour
         blacksmith.StopTalking();
     }
 
-    // --- HÀM XỬ LÝ TRỪ ĐỒ/ THÊM ĐỒ (Logic ở tin nhắn trước) ---
     public void AttemptUpgrade(UpgradeRecipeSO recipe)
     {
         string baseName = recipe.baseItemPrefab.GetComponent<InventoryItem>().thisName;
@@ -74,14 +67,12 @@ public class UpgradeUIManager : MonoBehaviour
 
         print($"--- ĐANG THỬ NÂNG CẤP: {baseName} lên {upgradedName} ---");
 
-        // 1. Kiểm tra tiền
         if (InventorySystem.Instance.currentCoins < recipe.coinCost)
         {
             print($"[Lỗi Nâng Cấp]: Không đủ tiền vàng! Yêu cầu: {recipe.coinCost}, Hiện có: {InventorySystem.Instance.currentCoins}");
             return;
         }
 
-        // 2. Kiểm tra đồ gốc trong túi
         int baseCount = 0;
         foreach (string item in InventorySystem.Instance.itemList)
         {
@@ -94,7 +85,6 @@ public class UpgradeUIManager : MonoBehaviour
             return;
         }
 
-        // 3. Kiểm tra từng loại nguyên liệu
         foreach (var mat in recipe.requiredMaterials)
         {
             int matCount = 0;
@@ -110,7 +100,6 @@ public class UpgradeUIManager : MonoBehaviour
             }
         }
 
-        // --- NẾU VƯỢ QUA HẾT CÁC BƯỚC TRÊN THÌ BẮT ĐẦU TRỪ ĐỒ ---
         print("Đủ điều kiện! Đang tiến hành rèn...");
 
         InventorySystem.Instance.currentCoins -= recipe.coinCost;
@@ -125,7 +114,6 @@ public class UpgradeUIManager : MonoBehaviour
 
         print($"[Thành công]: Chúc mừng bạn đã nhận được {upgradedName}!");
 
-        // Đóng giao diện sau khi rèn xong
         ExitUpgradeMode();
     }
 

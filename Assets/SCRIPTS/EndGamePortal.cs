@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.Playables;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EndGamePortal : MonoBehaviour
 {
-    // --- THÊM BIẾN NÀY ---
-    // Biến static để các script khác (như túi đồ) có thể dễ dàng kiểm tra
     public static bool isCutscenePlaying = false;
-    // ----------------------
 
     [Header("Cấu hình Cutscene")]
     [Tooltip("Kéo PlayableDirector chứa Timeline End Game vào đây")]
@@ -24,11 +22,17 @@ public class EndGamePortal : MonoBehaviour
     [Tooltip("Thời gian hiển thị thông báo (giây)")]
     public float messageDisplayTime = 3f;
 
+    [Header("UI Canvas")]
+    [Tooltip("Kéo Main Canvas của game vào đây")]
+    public GameObject mainCanvas;
+
+    [Tooltip("Tên chính xác của Scene Main Menu (ví dụ: MainMenu)")]
+    public string mainMenuSceneName = "MainMenu";
+
     private bool hasTriggered = false;
 
     private void Start()
     {
-        // Đảm bảo khi mới vào game, biến này luôn ở trạng thái false
         isCutscenePlaying = false;
     }
 
@@ -97,6 +101,7 @@ public class EndGamePortal : MonoBehaviour
 
         if (endCutsceneDirector != null)
         {
+            endCutsceneDirector.stopped += OnCutsceneFinished;
             endCutsceneDirector.Play();
         }
         else
@@ -105,15 +110,24 @@ public class EndGamePortal : MonoBehaviour
         }
     }
 
+    private void OnCutsceneFinished(PlayableDirector director)
+    {
+        endCutsceneDirector.stopped -= OnCutsceneFinished;
+
+        Debug.Log("Cutscene kết thúc. Đang chuyển về Main Menu...");
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        SceneManager.LoadScene(mainMenuSceneName);
+    }
+
     public void PrepareEndGame()
     {
-        // --- CẬP NHẬT TRẠNG THÁI ---
         isCutscenePlaying = true;
         MovementManager.Instance.canMove = false;
         MovementManager.Instance.EnableLook(false);
 
-        // Bật cờ báo hiệu Cutscene đang chạy
-        // ---------------------------
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
@@ -121,6 +135,8 @@ public class EndGamePortal : MonoBehaviour
             if (player.TryGetComponent(out CharacterController cc)) cc.enabled = false;
             Debug.Log("Đã khóa Player");
         }
+
+
 
         GameObject mainCanvas = GameObject.Find("Canvas");
         if (mainCanvas != null)
@@ -133,6 +149,8 @@ public class EndGamePortal : MonoBehaviour
 
             Transform interactUI = mainCanvas.transform.Find("Interaction_Info_UI");
             if (interactUI != null) interactUI.gameObject.SetActive(false);
+
+            mainCanvas.SetActive(false);
         }
 
         GameObject npcContainer = GameObject.Find("NPC");

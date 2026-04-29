@@ -300,6 +300,7 @@ public class QuestManager : MonoBehaviour
             if (npc.npcID == idToUnlock)
             {
                 npc.npcObject.SetActive(true);
+                Debug.Log($"NPC {idToUnlock} has been unlocked!");
                 return;
             }
         }

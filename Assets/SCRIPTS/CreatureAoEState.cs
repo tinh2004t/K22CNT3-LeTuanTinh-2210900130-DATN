@@ -9,11 +9,11 @@ public class CreatureAoEState : StateMachineBehaviour
     public float damageTime = 0.5f;
 
     [Header("Hiệu ứng & Cảnh báo")]
-    public GameObject warningPrefab; // Kéo Prefab RedWarningCircle vào đây
-    public GameObject aoeEffectPrefab; // Hiệu ứng nổ bùm (nếu có)
+    public GameObject warningPrefab;
+    public GameObject aoeEffectPrefab;
 
     private bool hasDealtDamage;
-    private GameObject currentWarningObject; // Biến lưu trữ vòng đỏ đang hiển thị
+    private GameObject currentWarningObject;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -22,22 +22,17 @@ public class CreatureAoEState : StateMachineBehaviour
         NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
         if (agent != null) agent.isStopped = true;
 
-        // --- SINH RA VÒNG CẢNH BÁO ---
         if (warningPrefab != null)
         {
-            // Đặt vòng đỏ ngay dưới chân Boss, nhích lên trục Y một chút (0.1f) để không bị chìm dưới mặt đất
             Vector3 spawnPos = animator.transform.position + Vector3.up * 0.1f;
             currentWarningObject = Instantiate(warningPrefab, spawnPos, warningPrefab.transform.rotation);
 
-            // Tự động scale vòng đỏ to bằng đúng phạm vi sát thương
-            // Nhân 2 vì aoeRadius là bán kính, còn Scale trong Unity tính theo đường kính
             currentWarningObject.transform.localScale = new Vector3(aoeRadius * 2, 0.01f, aoeRadius * 2);
         }
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // Khi đến thời điểm vung tay xuống đất
         if (stateInfo.normalizedTime >= damageTime && !hasDealtDamage)
         {
             PerformAoE(animator.transform);
@@ -55,7 +50,6 @@ public class CreatureAoEState : StateMachineBehaviour
         NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
         if (agent != null) agent.isStopped = false;
 
-        // Dọn dẹp: Nếu vòng đỏ chưa bị xóa (ví dụ Boss bị choáng ngắt animation giữa chừng) thì xóa nó đi
         if (currentWarningObject != null)
         {
             Destroy(currentWarningObject);
@@ -64,7 +58,6 @@ public class CreatureAoEState : StateMachineBehaviour
 
     private void PerformAoE(Transform bossTransform)
     {
-        // --- XÓA VÒNG ĐỎ VÀ TẠO HIỆU ỨNG NỔ ---
         if (currentWarningObject != null)
         {
             Destroy(currentWarningObject);
@@ -75,7 +68,6 @@ public class CreatureAoEState : StateMachineBehaviour
             Instantiate(aoeEffectPrefab, bossTransform.position, Quaternion.identity);
         }
 
-        // Quét sát thương
         Collider[] hitColliders = Physics.OverlapSphere(bossTransform.position, aoeRadius);
         foreach (var hit in hitColliders)
         {

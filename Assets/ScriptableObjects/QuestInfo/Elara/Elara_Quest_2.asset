@@ -46,7 +46,7 @@ MonoBehaviour:
   rewardItem2: 
   firstRequirementItem: Raw Meat
   firstRequirementAmount: 5
-  secondRequirementItem: Brear Heart
+  secondRequirementItem: Bear Heart
   secondRequirementAmount: 2
   hasCheckPoints: 0
   checkpoints: []

@@ -25,15 +25,12 @@ public class DayNightSystem : MonoBehaviour
     private bool lockNextDayTrigger = false;
     private int lastHour = -1;
 
-    // Cache lại mapping hiện tại để không phải loop mỗi frame
     private SkyboxTimeMapping currentMapping;
-    // Cache lại ID của thuộc tính shader để truy xuất siêu nhanh thay vì dùng string
     private int transitionFactorID;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
-        // Tối ưu: Lấy ID của property thay vì dùng string tên
         transitionFactorID = Shader.PropertyToID("_TransitionFactor");
     }
 
@@ -44,39 +41,32 @@ public class DayNightSystem : MonoBehaviour
 
     private void Update()
     {
-        // 1. Tăng thời gian
         currentTimeOfDay += Time.deltaTime / dayDurationInSeconds;
         currentTimeOfDay %= 1;
 
-        // 2. Tính toán giờ
         currentHour = Mathf.FloorToInt(currentTimeOfDay * 24);
 
-        // 3. Xử lý khi GIỜ THAY ĐỔI (Chỉ chạy 1 lần mỗi giờ in-game)
         if (currentHour != lastHour)
         {
             OnHourChanged();
             lastHour = currentHour;
         }
 
-        // 4. Cập nhật UI
         if (timeUI != null)
         {
             timeUI.text = $"{currentHour:00}:00";
         }
 
-        // 5. Xoay mặt trời
         if (directionalLight != null)
         {
             directionalLight.transform.rotation = Quaternion.Euler(new Vector3((currentTimeOfDay * 360f) - 90f, 170f, 0));
         }
 
-        // 6. Xử lý Blend Skybox mượt mà mỗi frame
         HandleSkyboxBlending();
     }
 
     private void OnHourChanged()
     {
-        // Kích hoạt qua ngày mới
         if (currentHour == 0 && !lockNextDayTrigger)
         {
             if (TimeManager.Instance != null) TimeManager.Instance.TriggerNextDay();
@@ -87,13 +77,12 @@ public class DayNightSystem : MonoBehaviour
             lockNextDayTrigger = false;
         }
 
-        // Tìm Skybox phù hợp cho giờ hiện tại (Chỉ loop 1 lần/giờ)
         foreach (SkyboxTimeMapping mapping in timeMappings)
         {
             if (currentHour == mapping.hour)
             {
                 currentMapping = mapping;
-                blendedValue = 0f; // Reset blend value cho skybox mới
+                blendedValue = 0f; 
 
                 if (RenderSettings.skybox != currentMapping.skyboxMaterial)
                 {
@@ -107,16 +96,13 @@ public class DayNightSystem : MonoBehaviour
 
     private void HandleSkyboxBlending()
     {
-        // Kiểm tra xem mapping hiện tại có dùng shader blend không
         if (currentMapping != null && RenderSettings.skybox != null)
         {
-            // Tối ưu hiệu năng: Nếu có thay đổi thông số thì gọi SetFloat bằng ID
             if (RenderSettings.skybox.HasProperty(transitionFactorID) && blendedValue < 1f)
             {
-                blendedValue += Time.deltaTime; // Bạn có thể chia cho 1 biến duration để chỉnh tốc độ blend
+                blendedValue += Time.deltaTime; 
                 blendedValue = Mathf.Clamp01(blendedValue);
 
-                // Chỉnh sửa trực tiếp trên RenderSettings.skybox (an toàn hơn là sửa trên file asset mapping)
                 RenderSettings.skybox.SetFloat(transitionFactorID, blendedValue);
             }
         }

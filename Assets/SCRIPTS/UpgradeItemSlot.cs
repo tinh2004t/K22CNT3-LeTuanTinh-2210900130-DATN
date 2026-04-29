@@ -8,7 +8,7 @@ public class UpgradeItemSlot : MonoBehaviour
 
     public Image itemImageUI;
     public TextMeshProUGUI itemNameUI;
-    public TextMeshProUGUI costTextUI; // Dùng để hiển thị danh sách nguyên liệu
+    public TextMeshProUGUI costTextUI; 
     public Button upgradeButton;
 
     private void Start()
@@ -18,7 +18,6 @@ public class UpgradeItemSlot : MonoBehaviour
 
     private void OnUpgradeClicked()
     {
-        // Khi bấm nút ở slot nào, nó sẽ gửi công thức của slot đó cho Manager xử lý
         UpgradeUIManager.Instance.AttemptUpgrade(recipe);
     }
 }

@@ -10,13 +10,11 @@ public class CreditsScroller : MonoBehaviour
 
     void Start()
     {
-        // Lấy component RectTransform của chính object chứa script này
         textRectTransform = GetComponent<RectTransform>();
     }
 
     void Update()
     {
-        // Đẩy vị trí chữ lên trên đều đặn theo thời gian
         if (textRectTransform != null)
         {
             textRectTransform.anchoredPosition += Vector2.up * scrollSpeed * Time.deltaTime;
