@@ -18,6 +18,7 @@ MonoBehaviour:
   - You need a fire to cook your food and stay warm when night falls. Press the 'C'
     key to open your menu, navigate to the 'Survival' tab, and craft a Campfire.
   initialDialogClips:
+<<<<<<< HEAD
   - {fileID: 8300000, guid: 5a68a6c7f06783e4da4a754b054a7b45, type: 3}
   - {fileID: 8300000, guid: acee4e4814ef0854582d894e63f5247d, type: 3}
   acceptOption: Understood, I'll craft a campfire right away.
@@ -40,6 +41,30 @@ MonoBehaviour:
   finalWords: Here is some extra coal and provisions. Keep your fire burning bright,
     young traveler.
   finalWordsClip: {fileID: 8300000, guid: 14c1e399671a4874b99bae577d0c9ad1, type: 3}
+=======
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  acceptOption: Understood, I'll craft a campfire right away.
+  acceptAnswer: Good. Once it's lit, you'll feel much safer in the dark. Don't forget,
+    press 'C' and look under the 'Survival' category!
+  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  declineOption: I think I'll be fine without a fire for now.
+  declineAnswer: Don't be overconfident. In these lands, the cold can kill you faster
+    than any beast.
+  declineAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackAfterDecline: Changed your mind? Darkness is falling, and you're going
+    to need that fire.
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackInProgress: 'Haven''t crafted it yet? Check if you have enough wood and
+    stones. Remember: press ''C'' to open your menu and check the ''Survival'' tab.'
+  comebackInProgressClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackCompleted: Excellent work! That fire looks incredibly warm. Now you can
+    cook your meals and survive the freezing night.
+  comebackCompletedClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  finalWords: Here is some extra coal and provisions. Keep your fire burning bright,
+    young traveler.
+  finalWordsClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+>>>>>>> origin/main
   coinReward: 20
   rewardItem1: Campfire
   rewardItem2: 

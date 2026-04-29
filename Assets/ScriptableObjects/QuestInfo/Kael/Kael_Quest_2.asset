@@ -23,6 +23,7 @@ MonoBehaviour:
   - 'Fair warning: the drop rate for those gems is quite low. You will likely have
     to hunt down several Slimes in the dark before you find what you need. Stay vigilant.'
   initialDialogClips:
+<<<<<<< HEAD
   - {fileID: 8300000, guid: 7017c56b79d8fa942b2213ea0916bf72, type: 3}
   - {fileID: 8300000, guid: 1de51cbe19d78f347abd8c719cd998fa, type: 3}
   - {fileID: 8300000, guid: 1b63c1ef8a0be5b408c278435f851b2e, type: 3}
@@ -31,10 +32,21 @@ MonoBehaviour:
   acceptAnswer: Good hunting! Don't forget to bring a torch, the wilderness gets
     pitch black at night.
   acceptAnswerClip: {fileID: 8300000, guid: fa422c79d18fe214e898aca985ef5fbd, type: 3}
+=======
+  - {fileID: 8300000, guid: 36fd0b1a5badc5740991754dd63d1316, type: 3}
+  - {fileID: 8300000, guid: 4a7681b179c97884dbfafd1f41dcdfc9, type: 3}
+  - {fileID: 8300000, guid: 2700dcdd06d894b41baa3cef1676f39c, type: 3}
+  - {fileID: 8300000, guid: 2700dcdd06d894b41baa3cef1676f39c, type: 3}
+  acceptOption: I will get you the Bear Heart and the Green Gems. See you soon.
+  acceptAnswer: Good hunting! Don't forget to bring a torch, the wilderness gets
+    pitch black at night.
+  acceptAnswerClip: {fileID: 8300000, guid: aa13f2bf2574c2040a13a99aa5b4c030, type: 3}
+>>>>>>> origin/main
   declineOption: Hunting in the dark sounds too dangerous right now. I need more
     preparation.
   declineAnswer: A wise decision if you're not ready. The night claims many careless
     adventurers. Come back when you feel braver.
+<<<<<<< HEAD
   declineAnswerClip: {fileID: 8300000, guid: 1003907fb91915e4fae0326f87261f21, type: 3}
   comebackAfterDecline: Ready to face the night and hunt down those beasts?
   comebackAfterDeclineClip: {fileID: 8300000, guid: 7a8e25a4d10e78c4e8f90d3b70c1c7a7, type: 3}
@@ -48,6 +60,21 @@ MonoBehaviour:
   finalWords: Take this reward, as promised. You are quickly proving yourself to
     be a true survivor.
   finalWordsClip: {fileID: 8300000, guid: f06745903e7a431428d0d97c8b70521b, type: 3}
+=======
+  declineAnswerClip: {fileID: 8300000, guid: 7b02fcca5160da24ba08997ea71b9587, type: 3}
+  comebackAfterDecline: Ready to face the night and hunt down those beasts?
+  comebackAfterDeclineClip: {fileID: 8300000, guid: b60f944f797979349b4829f656a2d985, type: 3}
+  comebackInProgress: You are still missing some materials. Remember, I need 1 Bear
+    Heart and 2 Green Gems. Wait until nightfall to hunt the Slimes, and keep trying
+    if they don't drop the gems right away!
+  comebackInProgressClip: {fileID: 8300000, guid: d06e3c146bb6a5f4a88c7fefbf7a12ca, type: 3}
+  comebackCompleted: You made it back in one piece! And you brought exactly what
+    I asked for. That was no easy task.
+  comebackCompletedClip: {fileID: 8300000, guid: f56de347d241eac49956843cb0c1e9f2, type: 3}
+  finalWords: Take this reward, as promised. You are quickly proving yourself to
+    be a true survivor.
+  finalWordsClip: {fileID: 8300000, guid: fcc6b93be3a87c24d9c66bd84869c796, type: 3}
+>>>>>>> origin/main
   coinReward: 100
   rewardItem1: MRE
   rewardItem2: 

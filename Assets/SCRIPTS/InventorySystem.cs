@@ -83,8 +83,12 @@ public class InventorySystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I) && !isOpen &&
             !ConstructionManager.Instance.inConstructionMode &&
+<<<<<<< HEAD
             !DeveloperConsole.Instance.isConsoleOpen &&
             !EndGamePortal.isCutscenePlaying
+=======
+            !DeveloperConsole.Instance.isConsoleOpen
+>>>>>>> origin/main
             )
         {
             MovementManager.Instance.EnableLook(false);
@@ -175,15 +179,24 @@ public class InventorySystem : MonoBehaviour
 
     void TriggerPickupPopUp(string itemName, Sprite itemSprite)
     {
+<<<<<<< HEAD
+=======
+        // 1. C?p nh?t thông tin UI
+>>>>>>> origin/main
         pickupAlert.SetActive(true);
         pickupName.text = itemName;
         pickupImage.sprite = itemSprite;
 
+<<<<<<< HEAD
+=======
+        // 2. N?u ?ang có b? ??m ng??c c? (do nh?t liên ti?p), hãy h?y nó ?i
+>>>>>>> origin/main
         if (hideCoroutine != null)
         {
             StopCoroutine(hideCoroutine);
         }
 
+<<<<<<< HEAD
         hideCoroutine = StartCoroutine(HidePopupAfterDelay(4f));
     }
 
@@ -193,6 +206,22 @@ public class InventorySystem : MonoBehaviour
 
         pickupAlert.SetActive(false);
 
+=======
+        // 3. B?t ??u b? ??m ng??c m?i 4 giây
+        hideCoroutine = StartCoroutine(HidePopupAfterDelay(4f));
+    }
+
+    // Hàm Coroutine ?? ??m ng??c và t?t
+    IEnumerator HidePopupAfterDelay(float delay)
+    {
+        // Ch? 4 giây (theo th?i gian game)
+        yield return new WaitForSeconds(delay);
+
+        // Sau khi ch? xong thì t?t Popup
+        pickupAlert.SetActive(false);
+
+        // Reset bi?n coroutine v? null
+>>>>>>> origin/main
         hideCoroutine = null;
     }
 

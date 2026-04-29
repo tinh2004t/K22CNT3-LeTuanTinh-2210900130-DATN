@@ -131,9 +131,13 @@ public class QuestManager : MonoBehaviour
     void Update()
     {
 
+<<<<<<< HEAD
         if (Input.GetKeyDown(KeyCode.Q) && !isQuestMenuOpen && 
             !ConstructionManager.Instance.inConstructionMode && 
             !EndGamePortal.isCutscenePlaying)
+=======
+        if (Input.GetKeyDown(KeyCode.Q) && !isQuestMenuOpen && !ConstructionManager.Instance.inConstructionMode)
+>>>>>>> origin/main
         {
 
             questMenu.SetActive(true);
@@ -300,7 +304,10 @@ public class QuestManager : MonoBehaviour
             if (npc.npcID == idToUnlock)
             {
                 npc.npcObject.SetActive(true);
+<<<<<<< HEAD
                 Debug.Log($"NPC {idToUnlock} has been unlocked!");
+=======
+>>>>>>> origin/main
                 return;
             }
         }

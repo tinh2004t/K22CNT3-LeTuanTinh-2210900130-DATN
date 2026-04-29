@@ -24,8 +24,12 @@ public class CraftingSystem : MonoBehaviour
             craftWallBTN, 
             craftStorageBoxBTN, 
             craftCampfireBTN, 
+<<<<<<< HEAD
             craftIronSwordBTN,
             craftTheGenesisCoreBTN;
+=======
+            craftIronSwordBTN;
+>>>>>>> origin/main
 
     //Requirement Text
     public TMP_Text AxeReq1, AxeReq2, 
@@ -34,13 +38,18 @@ public class CraftingSystem : MonoBehaviour
                     WallReq1, 
                     StorageBoxReq1, 
                     CampfireReq1, CampfireReq2, 
+<<<<<<< HEAD
                     IronSwordReq1, IronSwordReq2,
                     TheGenesisCoreReq1, TheGenesisCoreReq2, TheGenesisCoreReq3, TheGenesisCoreReq4;
+=======
+                    IronSwordReq1, IronSwordReq2;
+>>>>>>> origin/main
 
     public bool isOpen;
 
     //All Blueprint
 
+<<<<<<< HEAD
     public Blueprint AxeBLP = new Blueprint("Axe",1, 2, "Stone", 3, "Stick", 3, "", 0, "", 0);
     public Blueprint PlankBLP = new Blueprint("Plank",2, 1, "Log", 1, "", 0, "", 0, "", 0);
     public Blueprint FoundationBLP = new Blueprint("Foundation",3, 1, "Plank", 1, "", 0, "", 0, "", 0);
@@ -49,6 +58,15 @@ public class CraftingSystem : MonoBehaviour
     public Blueprint CampfireBLP = new Blueprint("Campfire", 1, 2, "Stick", 3, "Stone", 5, "", 0, "", 0);
     public Blueprint IronSwordBLP = new Blueprint("Iron Sword", 1, 2, "Iron Ingot", 5, "Stick", 3, "", 0, "", 0);
     public Blueprint TheGenesisCoreBLP = new Blueprint("The Genesis Core", 1, 4, "Green Gem", 2, "Purple Gem", 2, "Red Gem", 2, "Blue Gem", 2);
+=======
+    public Blueprint AxeBLP = new Blueprint("Axe",1, 2, "Stone", 3, "Stick", 3);
+    public Blueprint PlankBLP = new Blueprint("Plank",2, 1, "Log", 1, "", 0);
+    public Blueprint FoundationBLP = new Blueprint("Foundation",3, 1, "Plank", 1, "", 0);
+    public Blueprint WallBLP = new Blueprint("Wall",3, 1, "Plank", 2, "", 0);
+    public Blueprint StorageBoxBLP = new Blueprint("StorageBox", 1, 1, "Plank", 2, "", 0);
+    public Blueprint CampfireBLP = new Blueprint("Campfire", 1, 2, "Stick", 3, "Stone", 5);
+    public Blueprint IronSwordBLP = new Blueprint("Iron Sword", 1, 2, "Iron Ingot", 5, "Stick", 3);
+>>>>>>> origin/main
 
 
 
@@ -133,6 +151,7 @@ public class CraftingSystem : MonoBehaviour
 
         craftIronSwordBTN = toolsScreenUI.transform.Find("Iron Sword").transform.Find("Button").GetComponent<Button>();
         craftIronSwordBTN.onClick.AddListener(delegate { CraftAnyItem(IronSwordBLP); });
+<<<<<<< HEAD
 
         //The Genesis Core
         TheGenesisCoreReq1 = refineScreenUI.transform.Find("The Genesis Core").transform.Find("req1").GetComponent<TMP_Text>();
@@ -143,6 +162,8 @@ public class CraftingSystem : MonoBehaviour
         craftTheGenesisCoreBTN = refineScreenUI.transform.Find("The Genesis Core").transform.Find("Button").GetComponent<Button>();
         craftTheGenesisCoreBTN.onClick.AddListener(delegate { CraftAnyItem(TheGenesisCoreBLP); });
 
+=======
+>>>>>>> origin/main
     }
 
 
@@ -207,6 +228,7 @@ public class CraftingSystem : MonoBehaviour
         {
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req1, blueprintToCraft.Req1amount);
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req2, blueprintToCraft.Req2amount);
+<<<<<<< HEAD
         }else if (blueprintToCraft.numOfRequriments == 3)
         {
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req1, blueprintToCraft.Req1amount);
@@ -218,6 +240,8 @@ public class CraftingSystem : MonoBehaviour
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req2, blueprintToCraft.Req2amount);
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req3, blueprintToCraft.Req3amount);
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req4, blueprintToCraft.Req4amount);
+=======
+>>>>>>> origin/main
         }
 
 
@@ -260,8 +284,12 @@ public class CraftingSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C) && !isOpen &&
             !ConstructionManager.Instance.inConstructionMode &&
+<<<<<<< HEAD
             !DeveloperConsole.Instance.isConsoleOpen &&
             !EndGamePortal.isCutscenePlaying)
+=======
+            !DeveloperConsole.Instance.isConsoleOpen)
+>>>>>>> origin/main
         {
 
 
@@ -314,11 +342,14 @@ public class CraftingSystem : MonoBehaviour
         int log_count = 0;
         int plank_count = 0;
         int ironIngot_count = 0;
+<<<<<<< HEAD
         int greenGem_count = 0;
         int purpleGem_count = 0;
         int redGem_count = 0;
         int blueGem_count = 0;
 
+=======
+>>>>>>> origin/main
 
         inventoryItemList = InventorySystem.Instance.itemList;
 
@@ -341,6 +372,7 @@ public class CraftingSystem : MonoBehaviour
                 case "Iron Ingot":
                     ironIngot_count++;
                     break;
+<<<<<<< HEAD
                 case "Green Gem":
                     greenGem_count++;
                     break;
@@ -354,6 +386,8 @@ public class CraftingSystem : MonoBehaviour
                     blueGem_count++;
                     break;
                       
+=======
+>>>>>>> origin/main
             }
 
 
@@ -457,6 +491,7 @@ public class CraftingSystem : MonoBehaviour
         {
             craftIronSwordBTN.gameObject.SetActive(false);
         }
+<<<<<<< HEAD
 
         //--- The Genesis Core x1 ---//
         TheGenesisCoreReq1.text = "2 Green Gem [" + greenGem_count + "]";
@@ -472,6 +507,8 @@ public class CraftingSystem : MonoBehaviour
         {
             craftTheGenesisCoreBTN.gameObject.SetActive(false);
         }
+=======
+>>>>>>> origin/main
     }
 
 

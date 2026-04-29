@@ -5,6 +5,10 @@
     Eldric,
     ShopKeeper,
     Kael,
+<<<<<<< HEAD
     Elara,
     EndGate
+=======
+    Elara
+>>>>>>> origin/main
 }

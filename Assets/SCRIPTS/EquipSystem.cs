@@ -105,7 +105,11 @@ public class EquipSystem : MonoBehaviour
                 TMP_Text toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("Text").GetComponent<TMP_Text>();
                 toBeChanged.color = Color.white;
             }
+<<<<<<< HEAD
             else 
+=======
+            else // We are trying select the same slot
+>>>>>>> origin/main
             {
                 selectedNumber = -1; // null
 
@@ -141,10 +145,18 @@ public class EquipSystem : MonoBehaviour
             selectedItemModel = null;
         }
 
+<<<<<<< HEAD
+=======
+        // Cắt bỏ chữ (Clone) và các khoảng trắng thừa
+>>>>>>> origin/main
         string selectedItemName = selectedItem.name.Replace("(Clone)", "").Trim();
 
         string modelName = CalculateItemModel(selectedItemName);
 
+<<<<<<< HEAD
+=======
+        // NẾU VẬT PHẨM KHÔNG CÓ MODEL (modelName bị null), THÌ NGỪNG LẠI KHÔNG INSTANTIATE NỮA
+>>>>>>> origin/main
         if (string.IsNullOrEmpty(modelName))
         {
             return;
@@ -153,6 +165,10 @@ public class EquipSystem : MonoBehaviour
         // Load prefab từ Resources
         GameObject modelPrefab = Resources.Load<GameObject>(modelName);
 
+<<<<<<< HEAD
+=======
+        // KIỂM TRA NULL LẦN CUỐI TRƯỚC KHI TẠO
+>>>>>>> origin/main
         if (modelPrefab != null)
         {
             selectedItemModel = Instantiate(modelPrefab);

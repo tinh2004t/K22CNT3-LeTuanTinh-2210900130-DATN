@@ -19,6 +19,7 @@ MonoBehaviour:
     hunt a few for meat, and while you're at it, gather some dry sticks to keep our
     fire going?
   initialDialogClips:
+<<<<<<< HEAD
   - {fileID: 8300000, guid: a847d55fd479e154393da4c603a98e5e, type: 3}
   - {fileID: 8300000, guid: 39c11ba02071cf94095e990f05ab90b5, type: 3}
   acceptOption: Sure, I'll bring back the meat and firewood for you.
@@ -45,6 +46,34 @@ MonoBehaviour:
   rewardItem1: Raw Meat
   rewardItem2: Raw Meat
   firstRequirementItem: Raw Meat
+=======
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  acceptOption: Sure, I'll bring back the meat and firewood for you.
+  acceptAnswer: Excellent! Make sure your aim is true; those rabbits are incredibly
+    fast. Good luck hunting!
+  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  declineOption: I'm too busy surviving on my own right now. Maybe another time.
+  declineAnswer: Ah... That's a shame. Let's hope tonight isn't too freezing, or
+    the folks in the camp will be in deep trouble.
+  declineAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackAfterDecline: Changed your mind? The campfire is dying out and everyone
+    is starving. Will you help us?
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackInProgress: Looks like your inventory doesn't have everything yet. Remember,
+    I need 5 pieces of rabbit meat and 4 sticks. Don't come back empty-handed!
+  comebackInProgressClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackCompleted: Wonderful! This meat and firewood are more than enough for us
+    to have a warm, hearty dinner tonight.
+  comebackCompletedClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  finalWords: Thank you so much. Here is a little reward for your hard work. Use
+    it well to survive out there.
+  finalWordsClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  coinReward: 50
+  rewardItem1: Raw_meat
+  rewardItem2: Raw_meat
+  firstRequirementItem: Raw_meat
+>>>>>>> origin/main
   firstRequirementAmount: 5
   secondRequirementItem: Stick
   secondRequirementAmount: 4

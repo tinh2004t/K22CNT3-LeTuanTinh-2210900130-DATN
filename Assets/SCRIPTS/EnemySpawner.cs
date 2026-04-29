@@ -22,6 +22,10 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnProcess()
     {
+<<<<<<< HEAD
+=======
+        // Tùy chọn: Chờ một khoảng thời gian trước khi bắt đầu sinh quái lần đầu tiên
+>>>>>>> origin/main
         if (waitBeforeFirstSpawn)
         {
             yield return new WaitForSeconds(respawnDelay);
@@ -29,6 +33,10 @@ public class EnemySpawner : MonoBehaviour
 
         while (true)
         {
+<<<<<<< HEAD
+=======
+            // Kiểm tra: Chưa có quái VÀ ĐÚNG thời gian thì mới spawn
+>>>>>>> origin/main
             if (currentEnemy == null && CanSpawnNow())
             {
                 SpawnEnemy();
@@ -40,6 +48,10 @@ public class EnemySpawner : MonoBehaviour
 
     private bool CanSpawnNow()
     {
+<<<<<<< HEAD
+=======
+        // ĐÃ SỬA: Nếu DayNightSystem chưa sẵn sàng, trả về false để bắt spawner phải CHỜ.
+>>>>>>> origin/main
         if (DayNightSystem.Instance == null) return false;
 
         bool isNight = DayNightSystem.Instance.IsNight();

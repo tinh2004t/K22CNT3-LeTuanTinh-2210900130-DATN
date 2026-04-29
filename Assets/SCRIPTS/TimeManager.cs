@@ -14,7 +14,11 @@ public class TimeManager : MonoBehaviour
 
     private void Awake()
     {
+<<<<<<< HEAD
         
+=======
+        // Khởi tạo Singleton
+>>>>>>> origin/main
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -32,10 +36,17 @@ public class TimeManager : MonoBehaviour
 
     public void TriggerNextDay()
     {
+<<<<<<< HEAD
         dayInGame += 1; 
         UpdateDayUI();
 
         OnDayPass.Invoke(); 
+=======
+        dayInGame += 1; // Tăng ngày lên 1
+        UpdateDayUI();
+
+        OnDayPass.Invoke(); // Gọi sự kiện ngày mới
+>>>>>>> origin/main
     }
 
     void UpdateDayUI()

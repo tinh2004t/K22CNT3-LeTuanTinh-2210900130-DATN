@@ -20,6 +20,7 @@ MonoBehaviour:
   - Craft a Stone Axe, chop down some trees to gather 30 Wood, and build a Wooden
     Chest to store your items safely.
   initialDialogClips:
+<<<<<<< HEAD
   - {fileID: 8300000, guid: bdc780e241142864eba55edac952e9b9, type: 3}
   - {fileID: 8300000, guid: 543f3cb2f7af81a4fa3b8a8e72563179, type: 3}
   - {fileID: 8300000, guid: fc6c51d727163864c964a22d350fd0bf, type: 3}
@@ -40,6 +41,28 @@ MonoBehaviour:
   finalWords: Now that we have basic storage, we can start planning a real shelter.
     Here, take these supplies for your hard work.
   finalWordsClip: {fileID: 8300000, guid: ef24e9c8dfcb5b24b90b7c2ebfdc9a49, type: 3}
+=======
+  - {fileID: 8300000, guid: d7c665acbf3fb3d4685f59787961e65f, type: 3}
+  - {fileID: 8300000, guid: 00c942a6c2e959742986d8e1e29686a2, type: 3}
+  - {fileID: 8300000, guid: c971267591d8cac4b909f6feb87937df, type: 3}
+  acceptOption: I will gather the materials and build the chest.
+  acceptAnswer: Excellent. Keep your eyes peeled while you're out in the forest.
+  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  declineOption: I have other things to deal with right now.
+  declineAnswer: Don't take too long. Our supplies won't protect themselves from
+    scavengers.
+  declineAnswerClip: {fileID: 8300000, guid: ea000b2629d8e104db216d24868afb17, type: 3}
+  comebackAfterDecline: Have you changed your mind? Ready to start woodworking?
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 5b74928bee9709d409115ca9a195ee3c, type: 3}
+  comebackInProgress: Still working on it? Remember, you need to craft an axe, gather
+    15 Log, and place a Wooden Chest.
+  comebackInProgressClip: {fileID: 8300000, guid: 38ef40db76924b842b03a4411f912419, type: 3}
+  comebackCompleted: Great job! That chest will keep our hard-earned resources safe.
+  comebackCompletedClip: {fileID: 8300000, guid: 08ceb276d1e7ffa47bce6d3045b3de6d, type: 3}
+  finalWords: Now that we have basic storage, we can start planning a real shelter.
+    Here, take these supplies for your hard work.
+  finalWordsClip: {fileID: 8300000, guid: abb5fb604fbe033449147ba50abc8632, type: 3}
+>>>>>>> origin/main
   coinReward: 50
   rewardItem1: Bread
   rewardItem2: Bread
@@ -49,5 +72,8 @@ MonoBehaviour:
   secondRequirementAmount: 3
   hasCheckPoints: 0
   checkpoints: []
+<<<<<<< HEAD
   unlocksNPC: 0
   npcToUnlock: 0
+=======
+>>>>>>> origin/main

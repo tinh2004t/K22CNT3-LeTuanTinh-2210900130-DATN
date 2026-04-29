@@ -618,10 +618,17 @@ MonoBehaviour:
   possibleLoot:
   - item: {fileID: 7383848779887517975, guid: 22f715b2caa22024fac5aae1d2a50f31, type: 3}
     amountMin: -2
+<<<<<<< HEAD
     amountMax: 8
   - item: {fileID: 4943131167586155556, guid: cf0b80c8dd4abb84b8e63d3a31a1bfff, type: 3}
     amountMin: -6
     amountMax: 4
+=======
+    amountMax: 2
+  - item: {fileID: 4943131167586155556, guid: cf0b80c8dd4abb84b8e63d3a31a1bfff, type: 3}
+    amountMin: -18
+    amountMax: 1
+>>>>>>> origin/main
   finalLoot: []
   wasLootCalculated: 0
 --- !u!82 &4826127925631634290

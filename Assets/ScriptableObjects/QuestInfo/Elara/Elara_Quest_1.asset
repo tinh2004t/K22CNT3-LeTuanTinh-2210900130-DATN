@@ -19,6 +19,7 @@ MonoBehaviour:
     and gather some fresh produce for our first harvest? I specifically need Tomatoes
     and Pumpkins.
   initialDialogClips:
+<<<<<<< HEAD
   - {fileID: 8300000, guid: 41179e5671287ec41931e35734502717, type: 3}
   - {fileID: 8300000, guid: 9ee2c2f32d7e85d4eae423d093c4c60f, type: 3}
   acceptOption: I'll head to the lake and find those crops for you.
@@ -41,6 +42,30 @@ MonoBehaviour:
   finalWords: You've been a huge help. With these, we won't have to worry about starving
     when the game is scarce. Here is a little something for your trouble.
   finalWordsClip: {fileID: 8300000, guid: 8b93223dd12b1e64f9bf2936b1ff3fb5, type: 3}
+=======
+  - {fileID: 8300000, guid: 36fd0b1a5badc5740991754dd63d1316, type: 3}
+  - {fileID: 8300000, guid: 4a7681b179c97884dbfafd1f41dcdfc9, type: 3}
+  acceptOption: I'll head to the lake and find those crops for you.
+  acceptAnswer: Thank you! Be careful, the area around the lake can be slippery,
+    and wild animals often gather there to drink. Bring me 3 Tomatoes and 5 Pumpkins.
+  acceptAnswerClip: {fileID: 8300000, guid: aa13f2bf2574c2040a13a99aa5b4c030, type: 3}
+  declineOption: I'm not interested in gardening right now.
+  declineAnswer: That's a pity. Fresh vegetables are vital for a healthy diet in
+    this wilderness. Come back if you change your mind.
+  declineAnswerClip: {fileID: 8300000, guid: 7b02fcca5160da24ba08997ea71b9587, type: 3}
+  comebackAfterDecline: The soil is ready for planting, but I'm still missing the
+    crops. Will you help me get them from the lake now?
+  comebackAfterDeclineClip: {fileID: 8300000, guid: b60f944f797979349b4829f656a2d985, type: 3}
+  comebackInProgress: You haven't found enough yet? Remember, the lake is to the
+    East. I need 3 Tomatoes and 5 Pumpkins to get started.
+  comebackInProgressClip: {fileID: 8300000, guid: d06e3c146bb6a5f4a88c7fefbf7a12ca, type: 3}
+  comebackCompleted: Wonderful! These look so fresh and ripe. This is exactly what
+    we need to start our garden.
+  comebackCompletedClip: {fileID: 8300000, guid: f56de347d241eac49956843cb0c1e9f2, type: 3}
+  finalWords: You've been a huge help. With these, we won't have to worry about starving
+    when the game is scarce. Here is a little something for your trouble.
+  finalWordsClip: {fileID: 8300000, guid: fcc6b93be3a87c24d9c66bd84869c796, type: 3}
+>>>>>>> origin/main
   coinReward: 80
   rewardItem1: Tomato Seed
   rewardItem2: Pumpkin Seed

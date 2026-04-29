@@ -18,6 +18,7 @@ MonoBehaviour:
   - I'm too weak to walk to the village right now. Could you go to the Shopkeeper,
     buy a Health Potion, and bring it back to me?
   initialDialogClips:
+<<<<<<< HEAD
   - {fileID: 8300000, guid: 2afb9f55f06831a4d8a8b4c049dc195c, type: 3}
   - {fileID: 8300000, guid: 105241c221af14043a5873c9fda43f3b, type: 3}
   acceptOption: Hang in there, I'll get that potion for you immediately.
@@ -45,6 +46,35 @@ MonoBehaviour:
   rewardItem1: 
   rewardItem2: 
   firstRequirementItem: Health Potion
+=======
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  - {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  acceptOption: Hang in there, I'll get that potion for you immediately.
+  acceptAnswer: Thank you, lad. The Shopkeeper usually has a few in stock. Please,
+    hurry back.
+  acceptAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  declineOption: I'm busy with something else. You'll have to wait.
+  declineAnswer: I understand... I'll try to manage the pain a bit longer. Come back
+    if you change your mind.
+  declineAnswerClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackAfterDecline: The pain is getting worse. Can you please help me get that
+    Health Potion from the Shopkeeper now?
+  comebackAfterDeclineClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackInProgress: Did you find the Shopkeeper? I really need that Health Potion
+    to stabilize this wound.
+  comebackInProgressClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  comebackCompleted: Ah... that's much better. The pain is starting to fade. You've
+    saved me a lot of trouble, young traveler.
+  comebackCompletedClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  finalWords: Now that I'm feeling better, you should head over to the outskirts
+    and meet Elara. She's been looking for someone with your skills to help with
+    a bigger problem.
+  finalWordsClip: {fileID: 8300000, guid: 87c3c55a6e8b8f04f9896044f2a95851, type: 3}
+  coinReward: 20
+  rewardItem1: 
+  rewardItem2: 
+  firstRequirementItem: Health_poition
+>>>>>>> origin/main
   firstRequirementAmount: 1
   secondRequirementItem: 
   secondRequirementAmount: 0

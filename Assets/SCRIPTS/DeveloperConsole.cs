@@ -28,19 +28,30 @@ public class DeveloperConsole : MonoBehaviour
 
     private void Update()
     {
+<<<<<<< HEAD
         if (Input.GetKeyDown(KeyCode.F9) && !EndGamePortal.isCutscenePlaying)
         {
             ToggleConsole();
             
 
+=======
+        if (Input.GetKeyDown(KeyCode.F9))
+        {
+            ToggleConsole();
+            MovementManager.Instance.canMove = !isConsoleOpen;
+>>>>>>> origin/main
         }
 
         if (isConsoleOpen && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
+<<<<<<< HEAD
             
 
             ExecuteCommand();
 
+=======
+            ExecuteCommand();
+>>>>>>> origin/main
         }
     }
 
@@ -51,24 +62,36 @@ public class DeveloperConsole : MonoBehaviour
 
         if (isConsoleOpen)
         {
+<<<<<<< HEAD
             MovementManager.Instance.canMove = !isConsoleOpen;
             MovementManager.Instance.EnableLook(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SelectionManager.Instance.DisableSelection();
             SelectionManager.Instance.GetComponent<SelectionManager>().enabled = false;
+=======
+            MovementManager.Instance.EnableLook(false);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+>>>>>>> origin/main
 
             commandInput.ActivateInputField();
             commandInput.text = "";
         }
         else
         {
+<<<<<<< HEAD
             MovementManager.Instance.canMove = !isConsoleOpen;
             MovementManager.Instance.EnableLook(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             SelectionManager.Instance.EnableSelection();
             SelectionManager.Instance.GetComponent<SelectionManager>().enabled = true;
+=======
+            MovementManager.Instance.EnableLook(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+>>>>>>> origin/main
         }
     }
 
