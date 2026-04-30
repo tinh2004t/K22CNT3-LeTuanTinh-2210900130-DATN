@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   chaseSpeed: 6
   stopChasingDistance: 21
-  attackingDistance: 5
+  attackingDistance: 2
   aoeChance: 30
   aoeCooldown: 8
 --- !u!1101 &-6438548080977396272
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e8595df70b07c429bfc227b1798cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  stopAttackingDistance: 7.5
+  stopAttackingDistance: 3
   damageToInflict: 30
   damageTime: 0.5
 --- !u!1101 &3070760237462238358
