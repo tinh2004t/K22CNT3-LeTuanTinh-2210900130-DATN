@@ -2788,7 +2788,7 @@ MonoBehaviour:
   animalName: King Orc
   playerInRange: 0
   currentHealth: 0
-  maxHealth: 999999
+  maxHealth: 1500
   soundChannel: {fileID: 5369380302039887606}
   animalHitAndScream: {fileID: 0}
   animalHitAndDie: {fileID: 0}

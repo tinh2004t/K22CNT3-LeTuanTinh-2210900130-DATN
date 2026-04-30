@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   stopAttackingDistance: 7.5
-  damageToInflict: 1
+  damageToInflict: 50
   damageTime: 0.5
 --- !u!1101 &3070760237462238358
 AnimatorStateTransition:
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreatureAoEState
   aoeRadius: 15
-  aoeDamage: 30
+  aoeDamage: 100
   damageTime: 0.5
   warningPrefab: {fileID: 7916120068676119903, guid: 03c336f66b282f141a71b5f81c1ce05e, type: 3}
   aoeEffectPrefab: {fileID: 0}

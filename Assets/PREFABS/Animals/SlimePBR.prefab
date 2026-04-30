@@ -551,7 +551,7 @@ MonoBehaviour:
   animalName: Slime
   playerInRange: 0
   currentHealth: 0
-  maxHealth: 120
+  maxHealth: 40
   soundChannel: {fileID: 4826127925631634290}
   animalHitAndScream: {fileID: 0}
   animalHitAndDie: {fileID: 0}

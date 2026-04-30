@@ -128,7 +128,7 @@ MonoBehaviour:
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0
-  sellPrice: 500
+  sellPrice: 350
   isSellable: 1
 --- !u!114 &176764325817444526
 MonoBehaviour:
@@ -142,4 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64022155560a53f47959f84e0117f6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  weaponDamage: 100
+  weaponDamage: 55

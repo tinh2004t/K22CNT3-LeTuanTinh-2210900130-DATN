@@ -6899,7 +6899,7 @@ MonoBehaviour:
   animalName: Bear
   playerInRange: 0
   currentHealth: 0
-  maxHealth: 150
+  maxHealth: 120
   soundChannel: {fileID: 7955745033079518596}
   animalHitAndScream: {fileID: 8300000, guid: ffc0e36960a4cc549b7b9d6c8c36519e, type: 3}
   animalHitAndDie: {fileID: 8300000, guid: 0c0763ec65669dd408fb68826a49170f, type: 3}
@@ -6968,8 +6968,8 @@ MonoBehaviour:
     amountMin: -16
     amountMax: 4
   - item: {fileID: 926420032572402803, guid: 421f30bf5836d5c4290ba90599fc76b6, type: 3}
-    amountMin: -16
-    amountMax: 4
+    amountMin: -3
+    amountMax: 2
   finalLoot: []
   wasLootCalculated: 0
 --- !u!82 &7955745033079518596

@@ -119,12 +119,13 @@ MonoBehaviour:
   thisDescription: Can be eaten.
   thisFunctionality: Used craft
   isConsumable: 1
-  healthEffect: 10
-  caloriesEffect: 500
+  healthEffect: 30
+  caloriesEffect: 400
   hydrationEffect: 0
+  maxHealthEffect: 0
   isEquippable: 0
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0
-  sellPrice: 40
+  sellPrice: 5
   isSellable: 1
