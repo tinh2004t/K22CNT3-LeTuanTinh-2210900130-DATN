@@ -1317,7 +1317,7 @@ MonoBehaviour:
   animalName: Big Rabbit
   playerInRange: 0
   currentHealth: 0
-  maxHealth: 40
+  maxHealth: 15
   soundChannel: {fileID: 4526360288015935458}
   animalHitAndScream: {fileID: 0}
   animalHitAndDie: {fileID: 0}

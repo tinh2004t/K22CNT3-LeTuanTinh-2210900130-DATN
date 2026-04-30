@@ -665,7 +665,7 @@ MonoBehaviour:
   animalName: Mummy
   playerInRange: 0
   currentHealth: 0
-  maxHealth: 750
+  maxHealth: 250
   soundChannel: {fileID: 5611735962784066375}
   animalHitAndScream: {fileID: 8300000, guid: ffc0e36960a4cc549b7b9d6c8c36519e, type: 3}
   animalHitAndDie: {fileID: 8300000, guid: 0c0763ec65669dd408fb68826a49170f, type: 3}

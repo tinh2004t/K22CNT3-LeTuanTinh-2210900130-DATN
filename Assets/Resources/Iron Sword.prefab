@@ -115,10 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491ac392107b1264980c3b2f21968326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
-  isTrashable: 1
+  isTrashable: 0
   thisName: Iron Sword
-  thisDescription: Just a normal Axe
-  thisFunctionality: Used cut down the tree
+  thisDescription: 
+  thisFunctionality: 
   isConsumable: 0
   healthEffect: 0
   caloriesEffect: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0
-  sellPrice: 300
+  sellPrice: 100
   isSellable: 1
 --- !u!114 &176764325817444526
 MonoBehaviour:
@@ -142,4 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64022155560a53f47959f84e0117f6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  weaponDamage: 50
+  weaponDamage: 25

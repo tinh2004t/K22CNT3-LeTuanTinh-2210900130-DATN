@@ -119,7 +119,7 @@ MonoBehaviour:
   thisDescription: Just a normal Axe
   thisFunctionality: Used cut down the tree
   isConsumable: 1
-  healthEffect: 10
+  healthEffect: 15
   caloriesEffect: 200
   hydrationEffect: 0
   maxHealthEffect: 0
@@ -127,5 +127,5 @@ MonoBehaviour:
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0
-  sellPrice: 5
+  sellPrice: 2
   isSellable: 1

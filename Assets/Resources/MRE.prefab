@@ -119,13 +119,13 @@ MonoBehaviour:
   thisDescription: 
   thisFunctionality: 
   isConsumable: 1
-  healthEffect: 0
-  caloriesEffect: 0
-  hydrationEffect: 0
-  maxHealthEffect: 500
+  healthEffect: 50
+  caloriesEffect: 100
+  hydrationEffect: 100
+  maxHealthEffect: 20
   isEquippable: 0
   isInsidedQuickSlot: 0
   isSelected: 0
   isUseable: 0
-  sellPrice: 5
+  sellPrice: 50
   isSellable: 1
